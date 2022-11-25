@@ -1,7 +1,6 @@
 import {
   mdiAccountCircle,
   mdiMonitor,
-  mdiGithub,
   mdiAccountKey,
   mdiAccountEye,
   mdiAccountGroup,
@@ -29,10 +28,4 @@ export default [
     icon: mdiAccountGroup,
     label: 'Users'
   },
-  {
-    href: 'https://github.com/balajidharma/laravel-vue-admin-panel',
-    label: 'GitHub',
-    icon: mdiGithub,
-    target: '_blank'
-  }
 ]
