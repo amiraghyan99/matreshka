@@ -5,7 +5,7 @@ import FormControl from '@/Components/FormControl.vue'
 <template>
   <FormControl
     ref="root"
-    placeholder="Search (ctrl+k)"
+    placeholder="Search (Ctrl + K)"
     ctrl-k-focus
     transparent
     borderless
