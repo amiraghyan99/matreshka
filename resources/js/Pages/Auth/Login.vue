@@ -118,6 +118,7 @@ const submit = () => {
             />
           </BaseButtons>
           <Link
+              v-if="route().has('register')"
             :href="route('register')"
           >
             Register

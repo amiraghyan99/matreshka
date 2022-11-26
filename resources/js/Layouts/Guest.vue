@@ -4,6 +4,7 @@ import { Link } from '@inertiajs/inertia-vue3';
 </script>
 
 <template>
+
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
         <div>
             <Link href="/">
@@ -16,3 +17,8 @@ import { Link } from '@inertiajs/inertia-vue3';
         </div>
     </div>
 </template>
+
+<style scoped>
+@import "@/../css/frontend/bootstrap.min.css";
+@import "@/../css/frontend/style.css";
+</style>

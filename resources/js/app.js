@@ -1,4 +1,8 @@
 import '../css/main.css';
+import '../css/frontend/main.css';
+
+if(route().current('frontend.*')){
+}
 
 import { createPinia } from 'pinia'
 import { useStyleStore } from '@/Stores/style.js'

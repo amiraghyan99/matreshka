@@ -1,7 +1,7 @@
 <script setup>
-import { Head } from '@inertiajs/inertia-vue3'
-import { computed, ref, onMounted } from 'vue'
-import { useMainStore } from '@/Stores/main'
+import {Head} from '@inertiajs/inertia-vue3'
+import {computed, ref, onMounted} from 'vue'
+import {useMainStore} from '@/Stores/main'
 import {
   mdiAccountMultiple,
   mdiCartOutline,
@@ -25,6 +25,7 @@ import CardBoxClient from '@/Components/CardBoxClient.vue'
 import LayoutAuthenticated from '@/Layouts/LayoutAuthenticated.vue'
 import SectionTitleLineWithButton from '@/Components/SectionTitleLineWithButton.vue'
 import SectionBannerStarOnGitHub from '@/Components/SectionBannerStarOnGitHub.vue'
+
 const chartData = ref(null)
 const fillChartData = () => {
   chartData.value = chartConfig.sampleChartData()
@@ -44,118 +45,118 @@ const transactionBarItems = computed(() => mainStore.history)
 
 <template>
   <LayoutAuthenticated>
-    <Head title="Dashboard" />
+    <Head title="Dashboard"/>
     <SectionMain>
       <SectionTitleLineWithButton
-        :icon="mdiChartTimelineVariant"
-        title="Overview"
-        main
+          :icon="mdiChartTimelineVariant"
+          title="Overview"
+          main
       >
         <BaseButton
-          href="https://github.com/balajidharma/laravel-vue-admin-panel"
-          target="_blank"
-          :icon="mdiGithub"
-          label="Star on GitHub"
-          color="contrast"
-          rounded-full
-          small
+            href="https://github.com/balajidharma/laravel-vue-admin-panel"
+            target="_blank"
+            :icon="mdiGithub"
+            label="Star on GitHub"
+            color="contrast"
+            rounded-full
+            small
         />
       </SectionTitleLineWithButton>
-      
+
       <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 mb-6">
         <CardBoxWidget
-          trend="12%"
-          trend-type="up"
-          color="text-emerald-500"
-          :icon="mdiAccountMultiple"
-          :number="512"
-          label="Clients"
+            trend="12%"
+            trend-type="up"
+            color="text-emerald-500"
+            :icon="mdiAccountMultiple"
+            :number="512"
+            label="Clients"
         />
         <CardBoxWidget
-          trend="12%"
-          trend-type="down"
-          color="text-blue-500"
-          :icon="mdiCartOutline"
-          :number="7770"
-          prefix="$"
-          label="Sales"
+            trend="12%"
+            trend-type="down"
+            color="text-blue-500"
+            :icon="mdiCartOutline"
+            :number="7770"
+            prefix="$"
+            label="Sales"
         />
         <CardBoxWidget
-          trend="Overflow"
-          trend-type="alert"
-          color="text-red-500"
-          :icon="mdiChartTimelineVariant"
-          :number="256"
-          suffix="%"
-          label="Performance"
+            trend="Overflow"
+            trend-type="alert"
+            color="text-red-500"
+            :icon="mdiChartTimelineVariant"
+            :number="256"
+            suffix="%"
+            label="Performance"
         />
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <div class="flex flex-col justify-between">
           <CardBoxTransaction
-            v-for="(transaction,index) in transactionBarItems"
-            :key="index"
-            :amount="transaction.amount"
-            :date="transaction.date"
-            :business="transaction.business"
-            :type="transaction.type"
-            :name="transaction.name"
-            :account="transaction.account"
+              v-for="(transaction,index) in transactionBarItems"
+              :key="index"
+              :amount="transaction.amount"
+              :date="transaction.date"
+              :business="transaction.business"
+              :type="transaction.type"
+              :name="transaction.name"
+              :account="transaction.account"
           />
         </div>
         <div class="flex flex-col justify-between">
           <CardBoxClient
-            v-for="client in clientBarItems"
-            :key="client.id"
-            :name="client.name"
-            :login="client.login"
-            :date="client.created"
-            :progress="client.progress"
+              v-for="client in clientBarItems"
+              :key="client.id"
+              :name="client.name"
+              :login="client.login"
+              :date="client.created"
+              :progress="client.progress"
           />
         </div>
       </div>
 
-      <SectionBannerStarOnGitHub />
+      <SectionBannerStarOnGitHub/>
 
       <SectionTitleLineWithButton
-        :icon="mdiChartPie"
-        title="Trends overview"
+          :icon="mdiChartPie"
+          title="Trends overview"
       />
 
       <CardBox
-        title="Performance"
-        :icon="mdiFinance"
-        :header-icon="mdiReload"
-        class="mb-6"
-        @header-icon-click="fillChartData"
+          title="Performance"
+          :icon="mdiFinance"
+          :header-icon="mdiReload"
+          class="mb-6"
+          @header-icon-click="fillChartData"
       >
         <div v-if="chartData">
           <line-chart
-            :data="chartData"
-            class="h-96"
+              :data="chartData"
+              class="h-96"
           />
         </div>
       </CardBox>
 
       <SectionTitleLineWithButton
-        :icon="mdiAccountMultiple"
-        title="Clients"
+          :icon="mdiAccountMultiple"
+          title="Clients"
       />
 
       <NotificationBar
-        color="info"
-        :icon="mdiMonitorCellphone"
+          color="info"
+          :icon="mdiMonitorCellphone"
       >
         <b>Responsive table.</b> Collapses on mobile
       </NotificationBar>
 
       <CardBox
-        :icon="mdiMonitorCellphone"
-        title="Responsive table"
-        has-table
+          :icon="mdiMonitorCellphone"
+          title="Responsive table"
+          has-table
       >
-        <TableSampleClients />
+        <TableSampleClients/>
       </CardBox>
     </SectionMain>
   </LayoutAuthenticated>
