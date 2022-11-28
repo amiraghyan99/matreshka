@@ -23,7 +23,8 @@ class Intro extends Model
 
     public function image(): MorphOne
     {
-        return $this->morphOne(Image::class, 'imageable');
+        return $this->morphOne(Image::class, 'image');
     }
+
 
 }

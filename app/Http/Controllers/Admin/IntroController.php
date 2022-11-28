@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreIntroRequest;
 use App\Models\Intro;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -21,6 +22,7 @@ class IntroController extends Controller
     public function index(): Response
     {
         $intros = (new Intro)->newQuery();
+        dd(Intro::first()->url);
 
         if (request()->has('search')) {
             $intros->where('name', 'Like', '%'.request()->input('search').'%');
@@ -40,7 +42,7 @@ class IntroController extends Controller
 
         $intros = $intros->paginate(5)->onEachSide(2)->appends(request()->query());
 
-        return Inertia::render('Admin/Intro/Index', [
+        return inertia('Admin/Intro/Index', [
             'intros' => $intros,
             'filters' => request()->all('search'),
             'can' => [
@@ -59,20 +61,20 @@ class IntroController extends Controller
         return inertia('Admin/Intro/Create');
     }
 
-    public function store(StoreIntroRequest $request)
+    /**
+     * @param StoreIntroRequest $request
+     * @return RedirectResponse
+     */
+    public function store(StoreIntroRequest $request): RedirectResponse
     {
-        $intro = Intro::create([
-            'title' => [
-                'en' => 'Title En',
-                'ru' => 'Title Ru',
-            ],
-            'description' => [
-                'en' => 'Desc En',
-                'ru' => 'Desc Ru',
-            ],
-        ]);
+        $intro = Intro::create($request->only(['title', 'description']));
 
-        return inertia('Admin/Intro', compact($intro));
+        $path = $request->file('image')->storeAs('intros', $intro->getKeyName(),'public');
+        dd($path);
+        $intro->image()->create(['path' => $path]);
+
+        return redirect()->route('intro.index')
+            ->with('message', __('Intro created successfully.'));
     }
 
     /**

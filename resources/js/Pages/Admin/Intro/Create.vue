@@ -12,6 +12,7 @@ import FormField from '@/Components/FormField.vue'
 import FormControl from '@/Components/FormControl.vue'
 import BaseButton from '@/Components/BaseButton.vue'
 import BaseButtons from '@/Components/BaseButtons.vue'
+import FormFilePicker from "@/Components/FormFilePicker.vue";
 
 const form = useForm({
   title: {
@@ -22,9 +23,12 @@ const form = useForm({
     en: '',
     ru: '',
   },
-  qty: [],
   image: null
 })
+
+function submit() {
+  form.post(route('intro.store'))
+}
 </script>
 
 <template>
@@ -37,7 +41,7 @@ const form = useForm({
           main
       >
         <BaseButton
-            :route-name="route('permission.index')"
+            :route-name="route('intro.index')"
             :icon="mdiArrowLeftBoldOutline"
             label="Back"
             color="white"
@@ -45,13 +49,25 @@ const form = useForm({
             small
         />
       </SectionTitleLineWithButton>
+
       <CardBox
           form
-          @submit.prevent="form.post(route('intro.store'))"
+          @submit.prevent="submit"
       >
-        <pre>
-          {{ form.errors }}
-        </pre>
+        <FormField
+            label="Image"
+            :class="{ 'text-red-400': form.errors['image'] }"
+        >
+          <FormFilePicker
+              v-model="form.image"
+              label="Upload Image"
+          >
+            <div class="text-red-400 text-sm" v-if="form.errors['image']">
+              {{ form.errors['image'] }}
+            </div>
+          </FormFilePicker>
+
+        </FormField>
         <FormField
             label="Title EN"
             :class="{ 'text-red-400': form.errors['title.en'] }"
