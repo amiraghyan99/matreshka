@@ -15,17 +15,12 @@ import BaseButtons from '@/Components/BaseButtons.vue'
 
 const form = useForm({
   title: {
-    0: {
-      en: '',
-      ru: '',
-    }
-
+    en: '',
+    ru: '',
   },
   description: {
-    0: {
-      en: '',
-      ru: '',
-    }
+    en: '',
+    ru: '',
   },
   qty: [],
   image: null
@@ -58,20 +53,69 @@ const form = useForm({
           {{ form.errors }}
         </pre>
         <FormField
-            label="Title En"
-            :class="{ 'text-red-400': form.errors.title }"
+            label="Title EN"
+            :class="{ 'text-red-400': form.errors['title.en'] }"
         >
           <FormControl
               v-model="form.title.en"
               type="text"
               placeholder="Enter English Title"
-              :error="form.errors.title"
+              :error="form.errors['title.en']"
           >
-            <div class="text-red-400 text-sm" v-if="form.errors.title">
-              {{ form.errors.title }}
+            <div class="text-red-400 text-sm" v-if="form.errors['title.en']">
+              {{ form.errors['title.en'] }}
             </div>
           </FormControl>
         </FormField>
+
+        <FormField
+            label="Description EN"
+            :class="{ 'text-red-400': form.errors['description.en'] }"
+        >
+          <FormControl
+              v-model="form.description.en"
+              type="textarea"
+              placeholder="Enter English Description"
+              :error="form.errors['description.en']"
+          >
+            <div class="text-red-400 text-sm" v-if="form.errors['description.en']">
+              {{ form.errors['description.en'] }}
+            </div>
+          </FormControl>
+        </FormField>
+
+        <FormField
+            label="Title RU"
+            :class="{ 'text-red-400': form.errors['title.ru'] }"
+        >
+          <FormControl
+              v-model="form.title.ru"
+              type="text"
+              placeholder="Enter Russian Title"
+              :error="form.errors['title.ru']"
+          >
+            <div class="text-red-400 text-sm" v-if="form.errors['title.ru']">
+              {{ form.errors['title.ru'] }}
+            </div>
+          </FormControl>
+        </FormField>
+
+        <FormField
+            label="Description RU"
+            :class="{ 'text-red-400': form.errors['description.ru'] }"
+        >
+          <FormControl
+              v-model="form.description.ru"
+              type="textarea"
+              placeholder="Enter Russian Description"
+              :error="form.errors['description.ru']"
+          >
+            <div class="text-red-400 text-sm" v-if="form.errors['description.ru']">
+              {{ form.errors['description.ru'] }}
+            </div>
+          </FormControl>
+        </FormField>
+
         <template #footer>
           <BaseButtons>
             <BaseButton

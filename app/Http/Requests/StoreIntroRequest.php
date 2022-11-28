@@ -23,16 +23,26 @@ class StoreIntroRequest extends FormRequest
      */
     public function rules(): array
     {
+//        dd($this->all());
         return [
             'title' => ['array', 'required'],
-            'title.*.en' => ['required', 'string', 'max:30'],
-            'title.*.ru' => ['required', 'string', 'max:30'],
+            'title.*' => ['required', 'string', 'max:30'],
 
             'description' => ['array', 'required'],
-            'description.*.en' => ['required', 'string', 'max:150'],
-            'description.*.ru' => ['required', 'string', 'max:150'],
+            'description.*' => ['required', 'string', 'max:150'],
+//            'description.*.ru' => ['required', 'string', 'max:150'],
+//
+//            'image' => ['required', 'mimes:jpg,bmp,png,gif', 'size:20000']
+        ];
+    }
 
-            'image' => ['required', 'mimes:jpg,bmp,png,gif', 'size:20000']
+    public function attributes()
+    {
+        return [
+            'title.en' => 'English Title',
+            'title.ru' => 'Russian Title',
+            'description.en' => 'English Description',
+            'description.ru' => 'Russian Description',
         ];
     }
 }
