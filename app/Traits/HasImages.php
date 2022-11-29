@@ -4,13 +4,14 @@ namespace App\Traits;
 
 trait HasImages
 {
-    public static function bootHasImages()
+    public function initializeHasImages(): void
     {
-       (new static)->append('url');
+        $this->setAppends(['url']);
     }
-    public function getUrlAttribute()
+
+    public function getUrlAttribute(): string
     {
-        return ($this->image()->first('path')->path);
+        return url('storage', $this->image->path);
     }
 
 

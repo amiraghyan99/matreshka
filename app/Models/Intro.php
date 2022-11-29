@@ -21,10 +21,14 @@ class Intro extends Model
 
     protected $fillable = ['title', 'description'];
 
+    protected $with = ['image:image_id,path'];
+
     public function image(): MorphOne
     {
         return $this->morphOne(Image::class, 'image');
     }
+
+
 
 
 }

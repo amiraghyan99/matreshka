@@ -5,28 +5,33 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreIntroRequest;
 use App\Models\Intro;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Inertia\Inertia;
 use Inertia\Response;
 use Inertia\ResponseFactory;
 
 class IntroController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index(): Response
+    public function __construct()
+    {
+        $this->middleware('can:intro list', ['only' => ['index', 'show']]);
+        $this->middleware('can:intro create', ['only' => ['create', 'store']]);
+        $this->middleware('can:intro edit', ['only' => ['edit', 'update']]);
+        $this->middleware('can:intro delete', ['only' => ['destroy']]);
+    }
+
+    public function index()
     {
         $intros = (new Intro)->newQuery();
-        dd(Intro::first()->url);
 
-        if (request()->has('search')) {
-            $intros->where('name', 'Like', '%'.request()->input('search').'%');
-        }
+        $intros->when($key = request()->get('search'), function (Builder $query) use ($key) {
+            return $query->where('title->en', 'Like', '%' . $key . '%')
+                ->orWhere('title->ru', 'Like', '%' . $key . '%')
+                ->orWhere('description->en', 'Like', '%' . $key . '%')
+                ->orWhere('description->ru', 'Like', '%' . $key . '%');
+        });
 
         if (request()->query('sort')) {
             $attribute = request()->query('sort');
@@ -69,8 +74,8 @@ class IntroController extends Controller
     {
         $intro = Intro::create($request->only(['title', 'description']));
 
-        $path = $request->file('image')->storeAs('intros', $intro->getKeyName(),'public');
-        dd($path);
+        $path = $request->file('image')->store('intros','public');
+
         $intro->image()->create(['path' => $path]);
 
         return redirect()->route('intro.index')

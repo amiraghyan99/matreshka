@@ -137,10 +137,9 @@ function destroy(id) {
             </td>
             <td data-label="Image">
               <img
-                  width="40px"
-                  height="20px"
-                  v-if="intro.image"
-                  :src="intro.image.url" :alt="intro.title.en"
+                  v-if="intro.url"
+                  :src="intro.url" :alt="intro.title.en"
+                  class="w-48"
               />
               <Label v-else value="No Image"/>
             </td>
