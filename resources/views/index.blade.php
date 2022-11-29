@@ -36,10 +36,11 @@
 
 <body data-spy="scroll" data-target="#scroll-menu" data-offset="65">
 <!-- Preloader -->
-<div class="preloader-wrap">
-    <div class="preloader-inside">
-        <div class="spinner spinner-1">
-            <img src="assets/img/logo.png" alt="responsive img">
+<div class="preloader-wrap" >
+    <div class="preloader-inside" >
+        <div class="spinner spinner-1 " style="scale: 1.5">
+
+            <img src="assets/images/logo-night-club.PNG" alt="responsive img">
         </div>
     </div>
 </div>
@@ -61,9 +62,12 @@
                     <div class="col-12 col-6 col-lg-4 col-md-3">
                         <ul class="social-link">
 
-                            <li><a href="https://www.facebook.com/matreshkashowclub" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://www.facebook.com/matreshkashowclub" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="https://www.facebook.com/matreshkashowclub" target="_blank"><i class="fa fa-telegram"></i></a></li>
+                            <li><a href="https://www.facebook.com/matreshkashowclub" target="_blank"><i
+                                            class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/matreshkashowclub/" target="_blank"><i
+                                            class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://t.me/matreshkashowclub" target="_blank"><i
+                                            class="fa fa-telegram"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -73,7 +77,7 @@
         <div class="container">
             <div class="logo-menu-wrap">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="/">
                         <img src="assets/images/logo-night-club.PNG" alt="responsive img" class="logo-image">
                     </a>
                 </div>
@@ -81,17 +85,19 @@
                     <nav>
                         <ul>
                             <li>
-                                <a href="#">Menu</a>
-                            </li>
-                            <li><a href="event.html">Videos</a></li>
-                            <li>
-                                <a href="#">Gallery</a>
+                                <a href="/">Menu</a>
                             </li>
                             <li>
-                                <a href="#">Blog</a>
+                                <a href="#videos">Videos</a>
                             </li>
                             <li>
-                                <a href="contact.html">Vacancies</a>
+                                <a href="#gallery">Gallery</a>
+                            </li>
+                            <li>
+                                <a href="#blog">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#vacancies">Vacancies</a>
                             </li>
                         </ul>
                     </nav>
@@ -223,7 +229,7 @@
             <div class="col-12 foo">
                 <div class="section-title-area">
                     <h2 class="section-title">Welcome To Our Club</h2>
-{{--                    <div class="section-divider"></div>--}}
+                    {{--                    <div class="section-divider"></div>--}}
                 </div>
             </div>
         </div>
@@ -278,7 +284,7 @@
 </div>
 <!-- End Service Section -->
 <!-- About Section -->
-<div class="about-area inner-padding">
+<div class="about-area inner-padding" id="videos">
     <div class="container">
         <div class="row">
             <div class="col-12 foo">
@@ -305,7 +311,7 @@
 
 
 
-{{--                            --}}{{--                            <a class="popup-youtube" href="https://player.vimeo.com/video/7217833">--}}
+{{--                                                        <a class="popup-youtube" href="https://player.vimeo.com/video/7217833">--}}
 {{--                                <div class="play-btn"><i class="fa fa-play"></i></div>--}}
 {{--                            </a>--}}
 {{--                        </div>--}}
@@ -315,7 +321,6 @@
         </div>
     </div>
 </div>
-<!-- End About Section -->
 <!-- Event Section -->
 {{--<div class="event-area inner-padding">--}}
 {{--    <div class="event-area-inner">--}}
@@ -408,9 +413,7 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--</div>--}}
-<!-- End Event Section -->
-<!-- Gallery Section  -->
-<div class="gallery-area inner-padding">
+<div class="gallery-area inner-padding" id="gallery">
     <div class="container">
         <div class="row">
             <div class="col-12 foo">
@@ -492,7 +495,7 @@
     </div>
 </div>
 
-<div class="blog-area inner-padding3">
+<div class="blog-area inner-padding3" id="blog">
     <div class="container">
         <div class="row">
             <div class="col-12 foo">
@@ -634,7 +637,7 @@
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                     <div class="company-logo">
-                        <img class="" src="assets/img/logo.png" alt="responsive img">
+                        <img class="" src="assets/images/logo-night-club.PNG" alt="responsive img">
                     </div>
                     <div class="footer-content">
                         <ul class="address-list">
