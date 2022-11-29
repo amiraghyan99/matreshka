@@ -50,9 +50,9 @@ const menuClick = (event, item) => {
         class="flex flex-row h-14 items-center justify-between dark:bg-slate-900"
       >
         <div class="text-center flex-1 lg:text-left lg:pl-6 xl:text-center xl:pl-0 text-amber-300">
-          <b class="font-black tracking-widest">WPW</b>
+          <b class="tracking-widest font-wpw">WPW</b>
         </div>
-        <button 
+        <button
           class="hidden lg:inline-block xl:hidden p-3"
           @click.prevent="layoutStore.isAsideLgActive = false"
         >

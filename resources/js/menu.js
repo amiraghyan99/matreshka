@@ -4,7 +4,7 @@ import {
   mdiAccountKey,
   mdiAccountEye,
   mdiAccountGroup,
-  mdiPalette
+  mdiImageEdit
 } from '@mdi/js'
 
 export default [
@@ -27,5 +27,10 @@ export default [
     route: 'user.index',
     icon: mdiAccountGroup,
     label: 'Users'
+  },
+  {
+    route: 'intro.index',
+    icon: mdiImageEdit,
+    label: 'Intro'
   },
 ]
