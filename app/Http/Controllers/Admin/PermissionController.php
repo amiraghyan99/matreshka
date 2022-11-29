@@ -75,7 +75,7 @@ class PermissionController extends Controller
      */
     public function store(StorePermissionRequest $request)
     {
-        Permission::create($request->all());
+        Permission::create($request->validated());
 
         return redirect()->route('permission.index')
                         ->with('message', __('Permission created successfully.'));

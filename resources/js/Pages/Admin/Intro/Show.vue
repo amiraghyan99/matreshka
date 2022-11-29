@@ -1,5 +1,5 @@
 <script setup>
-import { Head, Link, useForm } from "@inertiajs/inertia-vue3"
+import {Head, Link, useForm} from "@inertiajs/inertia-vue3"
 import {
   mdiAccountKey,
   mdiArrowLeftBoldOutline,
@@ -11,7 +11,7 @@ import CardBox from "@/Components/CardBox.vue"
 import BaseButton from "@/Components/BaseButton.vue"
 
 const props = defineProps({
-  permission: {
+  intro: {
     type: Object,
     default: () => ({}),
   },
@@ -20,27 +20,27 @@ const props = defineProps({
 
 <template>
   <LayoutAuthenticated>
-    <Head title="View permission" />
+    <Head title="View Intro"/>
     <SectionMain>
       <SectionTitleLineWithButton
-        :icon="mdiAccountKey"
-        title="View permission"
-        main
+          :icon="mdiAccountKey"
+          title="View Intro"
+          main
       >
         <BaseButton
-          :route-name="route('permission.index')"
-          :icon="mdiArrowLeftBoldOutline"
-          label="Back"
-          color="white"
-          rounded-full
-          small
+            :route-name="route('intro.index')"
+            :icon="mdiArrowLeftBoldOutline"
+            label="Back"
+            color="white"
+            rounded-full
+            small
         />
       </SectionTitleLineWithButton>
       <CardBox class="mb-6">
         <table>
           <tbody>
-            <tr>
-              <td
+          <tr>
+            <td
                 class="
                   p-4
                   pl-8
@@ -49,15 +49,15 @@ const props = defineProps({
                   hidden
                   lg:block
                 "
-              >
-                Name
-              </td>
-              <td data-label="Name">
-                {{ permission.name }}
-              </td>
-            </tr>
-            <tr>
-              <td
+            >
+              Image
+            </td>
+            <td data-label="Name">
+              <img :src="intro.url" class="w-1/6" alt="Intro Image"/>
+            </td>
+          </tr>
+          <tr>
+            <td
                 class="
                   p-4
                   pl-8
@@ -66,13 +66,81 @@ const props = defineProps({
                   hidden
                   lg:block
                 "
-              >
-                Created
-              </td>
-              <td data-label="Created">
-                {{ new Date(permission.created_at).toLocaleString() }}
-              </td>
-            </tr>
+            >
+              Title En
+            </td>
+            <td data-label="Name">
+              {{ intro.title.en }}
+            </td>
+          </tr>
+          <tr>
+            <td
+                class="
+                  p-4
+                  pl-8
+                  text-slate-500
+                  dark:text-slate-400
+                  hidden
+                  lg:block
+                "
+            >
+              Title Ru
+            </td>
+            <td data-label="Name">
+              {{ intro.title.ru }}
+            </td>
+          </tr>
+          <tr>
+            <td
+                class="
+                  p-4
+                  pl-8
+                  text-slate-500
+                  dark:text-slate-400
+                  hidden
+                  lg:block
+                "
+            >
+              Description En
+            </td>
+            <td data-label="Name">
+              {{ intro.description.en }}
+            </td>
+          </tr>
+          <tr>
+            <td
+                class="
+                  p-4
+                  pl-8
+                  text-slate-500
+                  dark:text-slate-400
+                  hidden
+                  lg:block
+                "
+            >
+              Description Ru
+            </td>
+            <td data-label="Name">
+              {{ intro.description.ru }}
+            </td>
+          </tr>
+          <tr>
+            <td
+                class="
+                  p-4
+                  pl-8
+                  text-slate-500
+                  dark:text-slate-400
+                  hidden
+                  lg:block
+                "
+            >
+              Created
+            </td>
+            <td data-label="Created">
+              {{ intro.created_at }}
+            </td>
+          </tr>
           </tbody>
         </table>
       </CardBox>

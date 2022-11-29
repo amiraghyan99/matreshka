@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreIntroRequest;
+use App\Http\Requests\UpdateIntroRequest;
 use App\Models\Intro;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Response;
 use Inertia\ResponseFactory;
 
@@ -22,11 +23,14 @@ class IntroController extends Controller
         $this->middleware('can:intro delete', ['only' => ['destroy']]);
     }
 
-    public function index()
+    /**
+     * @return Response|ResponseFactory
+     */
+    public function index(): Response|ResponseFactory
     {
         $intros = (new Intro)->newQuery();
 
-        $intros->when($key = request()->get('search'), function (Builder $query) use ($key) {
+        $intros->when($key = request()->query('search'), function (Builder $query) use ($key) {
             return $query->where('title->en', 'Like', '%' . $key . '%')
                 ->orWhere('title->ru', 'Like', '%' . $key . '%')
                 ->orWhere('description->en', 'Like', '%' . $key . '%')
@@ -51,9 +55,9 @@ class IntroController extends Controller
             'intros' => $intros,
             'filters' => request()->all('search'),
             'can' => [
-                'create' => Auth::user()->can('permission create'),
-                'edit' => Auth::user()->can('permission edit'),
-                'delete' => Auth::user()->can('permission delete'),
+                'create' => Auth::user()->can('intro create'),
+                'edit' => Auth::user()->can('intro edit'),
+                'delete' => Auth::user()->can('intro delete'),
             ]
         ]);
     }
@@ -74,7 +78,7 @@ class IntroController extends Controller
     {
         $intro = Intro::create($request->only(['title', 'description']));
 
-        $path = $request->file('image')->store('intros','public');
+        $path = $request->file('image')->store('intros', 'public');
 
         $intro->image()->create(['path' => $path]);
 
@@ -82,48 +86,62 @@ class IntroController extends Controller
             ->with('message', __('Intro created successfully.'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param \App\Models\Intro $intro
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Intro $intro)
-    {
-        //
-    }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Models\Intro $intro
-     * @return \Illuminate\Http\Response
+     * @param Intro $intro
+     * @return Response|ResponseFactory
      */
-    public function edit(Intro $intro)
+    public function show(Intro $intro): Response|ResponseFactory
     {
-        //
+        return inertia('Admin/Intro/Show', [
+            'intro' => $intro,
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Intro $intro
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Intro $intro)
-    {
-        //
-    }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\Models\Intro $intro
-     * @return \Illuminate\Http\Response
+     * @param Intro $intro
+     * @return Response|ResponseFactory
      */
-    public function destroy(Intro $intro)
+    public function edit(Intro $intro): Response|ResponseFactory
     {
-        //
+        return inertia('Admin/Intro/Edit', [
+            'intro' => $intro,
+        ]);
+    }
+
+
+    /**
+     * @param UpdateIntroRequest $request
+     * @param Intro $intro
+     * @return RedirectResponse
+     */
+    public function update(UpdateIntroRequest $request, Intro $intro): RedirectResponse
+    {
+        $intro->update($request->only(['title', 'description']));
+
+        if ($request->hasFile('image'))
+            if (Storage::delete($intro->image->path)) {
+                $path = $request->file('image')->store('intros', 'public');
+                $intro->image()->update(['path' => $path]);
+            }
+        return redirect()->route('intro.index')
+            ->with('message', __('Intro updated successfully'));
+    }
+
+
+    /**
+     * @param Intro $intro
+     * @return RedirectResponse
+     */
+    public function destroy(Intro $intro): RedirectResponse
+    {
+        if ($intro->image?->path)
+            Storage::delete($intro->image->path);
+        $intro->image()->delete();
+        $intro->delete();
+
+        return redirect()->route('intro.index')
+            ->with('message', __('Intro deleted successfully'));
     }
 }

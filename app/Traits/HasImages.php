@@ -11,7 +11,7 @@ trait HasImages
 
     public function getUrlAttribute(): string
     {
-        return url('storage', $this->image->path);
+        return url('storage', $this->image?->path);
     }
 
 

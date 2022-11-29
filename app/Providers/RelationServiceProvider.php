@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Intro;
+use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\Relation;
@@ -30,7 +31,8 @@ class RelationServiceProvider extends ServiceProvider
         Relation::enforceMorphMap([
             'user' => User::class,
             'intro' => Intro::class,
-            'role' => Role::class
+            'role' => Role::class,
+            'permission' => Permission::class,
         ]);
     }
 }

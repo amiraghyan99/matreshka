@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Traits\HasActive;
+use App\Traits\HasDateFormat;
 use App\Traits\HasImages;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,7 +16,7 @@ use Spatie\Translatable\HasTranslations;
  */
 class Intro extends Model
 {
-    use HasFactory, HasTranslations, HasActive, HasImages;
+    use HasFactory, HasTranslations, HasActive, HasImages, HasDateFormat;
 
     public array $translatable = ['title', 'description'];
 
