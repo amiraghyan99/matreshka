@@ -60,11 +60,10 @@
                     </div>
                     <div class="col-12 col-6 col-lg-4 col-md-3">
                         <ul class="social-link">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+
+                            <li><a href="https://www.facebook.com/matreshkashowclub" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/matreshkashowclub" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/matreshkashowclub" target="_blank"><i class="fa fa-telegram"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -426,28 +425,10 @@
             <div class="col-12">
                 <div class="gallery-masonry gallery">
                     <div class="gallery-item">
-                        <img src="assets/images/" alt="responsive img">
-                        <div class="caption">
-                            <div class="caption-inner">
-                                <div class="caption-content">
-
-                                </div>
-                            </div>
-                        </div>
+                        <img src="assets/images/25.02.jpg" alt="responsive img">
                     </div>
                     <div class="gallery-item">
                         <img src="assets/img/gallery-2.png" alt="responsive img">
-                        <div class="caption">
-                            <div class="caption-inner">
-                                <div class="caption-content">
-                                    <ul>
-                                        <li><a href="gallery-photos.html"><i class="fa fa-link"></i></a></li>
-                                        <li><a href="assets/img/gallery-2.png"><i class="fa fa-search-plus"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="assets/img/gallery-3.png" alt="responsive img">
