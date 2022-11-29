@@ -12,6 +12,7 @@ use Spatie\Translatable\HasTranslations;
 
 /**
  * get all active intros
+ *
  * @method static actives()
  */
 class Intro extends Model
@@ -28,8 +29,4 @@ class Intro extends Model
     {
         return $this->morphOne(Image::class, 'image');
     }
-
-
-
-
 }

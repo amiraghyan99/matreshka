@@ -13,6 +13,4 @@ trait HasImages
     {
         return url('storage', $this->image?->path);
     }
-
-
 }

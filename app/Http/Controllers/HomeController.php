@@ -11,6 +11,7 @@ class HomeController extends Controller
     public function __invoke()
     {
         return view('welcome');
+
         return Inertia::render('Welcome', [
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
@@ -18,5 +19,4 @@ class HomeController extends Controller
             'phpVersion' => PHP_VERSION,
         ]);
     }
-
 }

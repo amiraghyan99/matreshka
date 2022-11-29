@@ -1,25 +1,26 @@
 <?php
-    header("Access-Control-Allow-Origin: *");
+
+    header('Access-Control-Allow-Origin: *');
 
     // Only process POST requests.
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Get the form fields and remove whitespace.
-        $first_name = strip_tags(trim($_POST["fname"]));
-        $first_name = str_replace(array("\r","\n"),array(" "," "),$first_name);
-        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-        $phone = trim($_POST["phone"]);
-        $message = trim($_POST["msg"]);
+        $first_name = strip_tags(trim($_POST['fname']));
+        $first_name = str_replace(["\r", "\n"], [' ', ' '], $first_name);
+        $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+        $phone = trim($_POST['phone']);
+        $message = trim($_POST['msg']);
 
         // Check that data was sent to the mailer.
-        if ( empty($first_name) OR empty($last_name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (empty($first_name) or empty($last_name) or empty($message) or ! filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
-            echo "Please complete the form and try again.";
+            echo 'Please complete the form and try again.';
             exit;
         }
 
         // Set the recipient email address.
-        $recipient = "your@email.here";
+        $recipient = 'your@email.here';
 
         // Set the email subject.
         $subject = "Disco - Mail From $first_name";
@@ -194,7 +195,7 @@
                                                     <td width="100%" class="mobile" align="left" valign="middle">
                                                         <h3>Name:</h3>
                                                         <hr>
-                                                        <h2>' . $first_name. '</h2>
+                                                        <h2>'.$first_name.'</h2>
                                                     </td>
                                                 </tr>
                                                 <!--== End Name Field Item ==-->
@@ -210,7 +211,7 @@
                                                     <td width="100%" class="mobile" align="left" valign="middle">
                                                         <h3>Email:</h3>
                                                         <hr>
-                                                        <h2 class="email-txt">'. $email .'</h2>
+                                                        <h2 class="email-txt">'.$email.'</h2>
                                                     </td>
                                                 </tr>
                                                 <!--== Start Email Field Item ==-->
@@ -226,7 +227,7 @@
                                                     <td width="100%" class="mobile" align="left" valign="middle">
                                                         <h3>Phone or Mobile:</h3>
                                                         <hr>
-                                                        <h2>'. $phone .'</h2>
+                                                        <h2>'.$phone.'</h2>
                                                     </td>
                                                 </tr>
                                                 <!--== End Phone Field Item ==-->
@@ -242,7 +243,7 @@
                                                     <td width="100%" class="mobile" align="left" valign="middle">
                                                         <h3>Subject:</h3>
                                                         <hr>
-                                                        <h2>'. $subject .'</h2>
+                                                        <h2>'.$subject.'</h2>
                                                     </td>
                                                 </tr>
                                                 <!--== End Subject Field Item ==-->
@@ -258,7 +259,7 @@
                                                     <td width="100%" class="mobile" align="left" valign="middle">
                                                         <h3>Message:</h3>
                                                         <hr>
-                                                        <p class="message-content">'. $message .'</p>
+                                                        <p class="message-content">'.$message.'</p>
                                                     </td>
                                                 </tr>
                                                 <!--== End Message Field Item ==-->
@@ -294,25 +295,23 @@
         </html>';
 
         // Build the email headers.
-        $email_headers = "MIME-Version: 1.0" . "\r\n";
-        $email_headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-        $email_headers .= 'From:' . $first_name . ' ' . 'noreply@yourdomain.com' . "\r\n";
-        $email_headers .= 'Reply-To:' . $email . "\r\n";
+        $email_headers = 'MIME-Version: 1.0'."\r\n";
+        $email_headers .= 'Content-type:text/html;charset=UTF-8'."\r\n";
+        $email_headers .= 'From:'.$first_name.' '.'noreply@yourdomain.com'."\r\n";
+        $email_headers .= 'Reply-To:'.$email."\r\n";
 
         // Send the email.
         if (mail($recipient, $subject, $email_content, $email_headers)) {
             // Set a 200 (okay) response code.
             http_response_code(200);
-            echo "Thank You! Your message has been sent.";
+            echo 'Thank You! Your message has been sent.';
         } else {
             // Set a 500 (internal server error) response code.
             http_response_code(500);
             echo "Oops! Something went wrong and we couldn't send your message.";
         }
-
     } else {
         // Not a POST request, set a 403 (forbidden) response code.
         http_response_code(403);
-        echo "There was a problem with your submission, please try again.";
+        echo 'There was a problem with your submission, please try again.';
     }
-?>

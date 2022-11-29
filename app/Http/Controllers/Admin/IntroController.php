@@ -31,10 +31,10 @@ class IntroController extends Controller
         $intros = (new Intro)->newQuery();
 
         $intros->when($key = request()->query('search'), function (Builder $query) use ($key) {
-            return $query->where('title->en', 'Like', '%' . $key . '%')
-                ->orWhere('title->ru', 'Like', '%' . $key . '%')
-                ->orWhere('description->en', 'Like', '%' . $key . '%')
-                ->orWhere('description->ru', 'Like', '%' . $key . '%');
+            return $query->where('title->en', 'Like', '%'.$key.'%')
+                ->orWhere('title->ru', 'Like', '%'.$key.'%')
+                ->orWhere('description->en', 'Like', '%'.$key.'%')
+                ->orWhere('description->ru', 'Like', '%'.$key.'%');
         });
 
         if (request()->query('sort')) {
@@ -58,7 +58,7 @@ class IntroController extends Controller
                 'create' => Auth::user()->can('intro create'),
                 'edit' => Auth::user()->can('intro edit'),
                 'delete' => Auth::user()->can('intro delete'),
-            ]
+            ],
         ]);
     }
 
@@ -71,7 +71,7 @@ class IntroController extends Controller
     }
 
     /**
-     * @param StoreIntroRequest $request
+     * @param  StoreIntroRequest  $request
      * @return RedirectResponse
      */
     public function store(StoreIntroRequest $request): RedirectResponse
@@ -86,9 +86,8 @@ class IntroController extends Controller
             ->with('message', __('Intro created successfully.'));
     }
 
-
     /**
-     * @param Intro $intro
+     * @param  Intro  $intro
      * @return Response|ResponseFactory
      */
     public function show(Intro $intro): Response|ResponseFactory
@@ -98,9 +97,8 @@ class IntroController extends Controller
         ]);
     }
 
-
     /**
-     * @param Intro $intro
+     * @param  Intro  $intro
      * @return Response|ResponseFactory
      */
     public function edit(Intro $intro): Response|ResponseFactory
@@ -110,34 +108,35 @@ class IntroController extends Controller
         ]);
     }
 
-
     /**
-     * @param UpdateIntroRequest $request
-     * @param Intro $intro
+     * @param  UpdateIntroRequest  $request
+     * @param  Intro  $intro
      * @return RedirectResponse
      */
     public function update(UpdateIntroRequest $request, Intro $intro): RedirectResponse
     {
         $intro->update($request->only(['title', 'description']));
 
-        if ($request->hasFile('image'))
+        if ($request->hasFile('image')) {
             if (Storage::delete($intro->image->path)) {
                 $path = $request->file('image')->store('intros', 'public');
                 $intro->image()->update(['path' => $path]);
             }
+        }
+
         return redirect()->route('intro.index')
             ->with('message', __('Intro updated successfully'));
     }
 
-
     /**
-     * @param Intro $intro
+     * @param  Intro  $intro
      * @return RedirectResponse
      */
     public function destroy(Intro $intro): RedirectResponse
     {
-        if ($intro->image?->path)
+        if ($intro->image?->path) {
             Storage::delete($intro->image->path);
+        }
         $intro->image()->delete();
         $intro->delete();
 

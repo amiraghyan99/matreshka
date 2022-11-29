@@ -10,9 +10,9 @@ use App\Http\Requests\Admin\UpdateUserRequest;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class UserController extends Controller
@@ -59,7 +59,7 @@ class UserController extends Controller
                 'create' => Auth::user()->can('user create'),
                 'edit' => Auth::user()->can('user edit'),
                 'delete' => Auth::user()->can('user delete'),
-            ]
+            ],
         ]);
     }
 
@@ -70,7 +70,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = Role::all()->pluck("name","id");
+        $roles = Role::all()->pluck('name', 'id');
 
         return Inertia::render('Admin/User/Create', [
             'roles' => $roles,
@@ -100,7 +100,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        $roles = Role::all()->pluck("name","id");
+        $roles = Role::all()->pluck('name', 'id');
         $userHasRoles = array_column(json_decode($user->roles, true), 'id');
 
         return Inertia::render('Admin/User/Show', [
@@ -118,7 +118,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        $roles = Role::all()->pluck("name","id");
+        $roles = Role::all()->pluck('name', 'id');
         $userHasRoles = array_column(json_decode($user->roles, true), 'id');
 
         return Inertia::render('Admin/User/Edit', [

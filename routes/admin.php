@@ -8,11 +8,9 @@ use App\Models\Intro;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-
 Route::get('/dashboard', function () {
     return Inertia::render('Admin/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
 
 Route::resource('user', UserController::class);
 Route::resource('role', RoleController::class);
@@ -26,7 +24,6 @@ Route::get('change-password', [UserController::class, 'changePasswordStore'])->n
 Route::resource('intro', IntroController::class);
 
 Route::get('/test', function () {
-
 //    Update
 //    return Intro::first()->update([
 //        'title' => [

@@ -11,7 +11,7 @@ trait HasDateFormat
         //
     }
 
-    public function getCreatedAtAttribute( $value)
+    public function getCreatedAtAttribute($value)
     {
         return Carbon::parse($value)->diffForHumans();
     }
@@ -20,6 +20,4 @@ trait HasDateFormat
     {
         return Carbon::parse($value)->diffForHumans();
     }
-
-
 }

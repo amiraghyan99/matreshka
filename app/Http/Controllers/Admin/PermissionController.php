@@ -53,7 +53,7 @@ class PermissionController extends Controller
                 'create' => Auth::user()->can('permission create'),
                 'edit' => Auth::user()->can('permission edit'),
                 'delete' => Auth::user()->can('permission delete'),
-            ]
+            ],
         ]);
     }
 

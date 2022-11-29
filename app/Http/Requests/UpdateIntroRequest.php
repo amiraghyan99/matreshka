@@ -31,8 +31,8 @@ class UpdateIntroRequest extends FormRequest
             'description.*' => ['required', 'string', 'max:150'],
 
             'image' => $this->hasFile('image')
-                ? ['image','mimes:jpg,bmp,png,gif', 'max:20000']
-                : ['nullable']
+                ? ['image', 'mimes:jpg,bmp,png,gif', 'max:20000']
+                : ['nullable'],
         ];
     }
 

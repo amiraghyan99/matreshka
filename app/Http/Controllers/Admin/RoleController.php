@@ -49,14 +49,13 @@ class RoleController extends Controller
                 'create' => Auth::user()->can('role create'),
                 'edit' => Auth::user()->can('role edit'),
                 'delete' => Auth::user()->can('role delete'),
-            ]
+            ],
         ]);
     }
 
-
     public function create()
     {
-        $permissions = Permission::all()->pluck("name","id");
+        $permissions = Permission::all()->pluck('name', 'id');
 
         return Inertia::render('Admin/Role/Create', [
             'permissions' => $permissions,
@@ -77,7 +76,7 @@ class RoleController extends Controller
 
     public function show(Role $role)
     {
-        $permissions = Permission::all()->pluck("name","id");
+        $permissions = Permission::all()->pluck('name', 'id');
         $roleHasPermissions = array_column(json_decode($role->permissions, true), 'id');
 
         return Inertia::render('Admin/Role/Show', [
@@ -89,7 +88,7 @@ class RoleController extends Controller
 
     public function edit(Role $role)
     {
-        $permissions = Permission::all()->pluck("name","id");
+        $permissions = Permission::all()->pluck('name', 'id');
         $roleHasPermissions = array_column(json_decode($role->permissions, true), 'id');
 
         return Inertia::render('Admin/Role/Edit', [

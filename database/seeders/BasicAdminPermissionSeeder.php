@@ -22,15 +22,15 @@ class BasicAdminPermissionSeeder extends Seeder
 
         // create permissions
         $permissions = [
-//            'permission list',
-//            'permission create',
-//            'permission edit',
-//            'permission delete',
-//
-//            'role list',
-//            'role create',
-//            'role edit',
-//            'role delete',
+            //            'permission list',
+            //            'permission create',
+            //            'permission edit',
+            //            'permission delete',
+            //
+            //            'role list',
+            //            'role create',
+            //            'role edit',
+            //            'role delete',
 
             'user list',
             'user create',
