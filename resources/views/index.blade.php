@@ -36,11 +36,10 @@
 
 <body data-spy="scroll" data-target="#scroll-menu" data-offset="65">
 <!-- Preloader -->
-<div class="preloader-wrap" >
-    <div class="preloader-inside" >
-        <div class="spinner spinner-1 " style="scale: 1.5">
-
-            <img src="assets/images/logo-night-club.PNG" alt="responsive img">
+<div class="preloader-wrap">
+    <div class="preloader-inside">
+        <div class="logo-loading animated bounce bounceIn">
+            <img src="{{asset('storage/frontend/images/logos/logo-image.webp')}}" alt="responsive img">
         </div>
     </div>
 </div>
@@ -64,8 +63,10 @@
 
                             <li><a href="https://www.facebook.com/matreshkashowclub" target="_blank"><i
                                             class="fa fa-facebook"></i></a></li>
+
                             <li><a href="https://www.instagram.com/matreshkashowclub/" target="_blank"><i
                                             class="fa fa-instagram"></i></a></li>
+
                             <li><a href="https://t.me/matreshkashowclub" target="_blank"><i
                                             class="fa fa-telegram"></i></a></li>
                         </ul>
@@ -78,7 +79,9 @@
             <div class="logo-menu-wrap">
                 <div class="logo">
                     <a href="/">
-                        <img src="assets/images/logo-night-club.PNG" alt="responsive img" class="logo-image">
+                        <img src="{{asset('storage/frontend/images/logos/logo-night-club.webp')}}"
+                             alt="responsive img"
+                             class="logo-image">
                     </a>
                 </div>
                 <div class="main-menu main-menu-mrg1">
@@ -193,7 +196,7 @@
     <div id="hero-slider-screen" class="owl-carousel owl-theme hero-slider-inner">
         <div class="item">
 
-            <img src="assets/images/IMG_3386.JPG" alt="responsive img" class="image-cover">
+            <img src="assets/images/webp/IMG_3386.webp" alt="responsive img" class="image-cover">
             <div class="hero-caption">
                 <div class="hero-caption-inner">
                     <h1 class="hero-caption-title">Матрёшка Night Club</h1>
@@ -202,7 +205,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="assets/images/Gheviphoto-137.jpg" alt="responsive img" class="image-cover">
+            <img src="assets/images/webp/Gheviphoto-137.webp" alt="responsive img" class="image-cover">
             <div class="hero-caption">
                 <div class="hero-caption-inner">
                     <h1 class="hero-caption-title">Матрёшка Night Club</h1>
@@ -211,7 +214,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="assets/images/dancer.jpg" alt="responsive img" class="image-cover">
+            <img src="assets/images/webp/dancer.webp" alt="responsive img" class="image-cover">
             <div class="hero-caption">
                 <div class="hero-caption-inner">
                     <h1 class="hero-caption-title">Матрёшка Night Club</h1>
@@ -236,7 +239,7 @@
         <div class="row">
             <div class="col-md-6 col-lg-4">
                 <div class="service-item">
-                    <img src="assets/images/Gheviphoto-13.jpg" alt="responsive img">
+                    <img src="assets/images/webp/Gheviphoto-13.webp" alt="responsive img">
                     <div class="caption">
                         <div class="caption-inner">
                             <div class="caption-content">
@@ -251,7 +254,7 @@
             </div>
             <div class="col-md-6 col-lg-4">
                 <div class="service-item">
-                    <img src="assets/images/Gheviphoto-23.jpg" alt="responsive img">
+                    <img src="assets/images/webp/Gheviphoto-23.webp" alt="responsive img">
                     <div class="caption">
                         <div class="caption-inner">
                             <div class="caption-content">
@@ -266,7 +269,7 @@
             </div>
             <div class="col-md-6 col-lg-4">
                 <div class="service-item foo">
-                    <img src="assets/images/Gheviphoto-60.jpg" alt="responsive img">
+                    <img src="assets/images/webp/Gheviphoto-60.webp" alt="responsive img">
                     <div class="caption">
                         <div class="caption-inner">
                             <div class="caption-content">
@@ -304,18 +307,18 @@
                         <source src="mov_bbb.ogg" type="video/ogg">
                         Your browser does not support HTML video.
                     </video>
-{{--                    <div class="play-btn-area">--}}
-{{--                        --}}
-{{--                        <div class="about-vedio-btn">--}}
+                    {{--                    <div class="play-btn-area">--}}
+                    {{--                        --}}
+                    {{--                        <div class="about-vedio-btn">--}}
 
 
 
 
-{{--                                                        <a class="popup-youtube" href="https://player.vimeo.com/video/7217833">--}}
-{{--                                <div class="play-btn"><i class="fa fa-play"></i></div>--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    {{--                                                        <a class="popup-youtube" href="https://player.vimeo.com/video/7217833">--}}
+                    {{--                                <div class="play-btn"><i class="fa fa-play"></i></div>--}}
+                    {{--                            </a>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -428,7 +431,7 @@
             <div class="col-12">
                 <div class="gallery-masonry gallery">
                     <div class="gallery-item">
-                        <img src="assets/images/25.02.jpg" alt="responsive img">
+                        <img src="assets/images/webp/25.02.webp" alt="responsive img">
                     </div>
                     <div class="gallery-item">
                         <img src="assets/img/gallery-2.png" alt="responsive img">
@@ -637,7 +640,7 @@
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                     <div class="company-logo">
-                        <img class="" src="assets/images/logo-night-club.PNG" alt="responsive img">
+                        <img class="" src="assets/images/logos/light-logo.webp" alt="responsive img">
                     </div>
                     <div class="footer-content">
                         <ul class="address-list">

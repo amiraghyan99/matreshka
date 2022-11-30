@@ -593,6 +593,7 @@
     /* Footer Section */
     .company-logo {
         margin: 5px 0px 12px;
+        width: 60px;
     }
 
     .footer-content {

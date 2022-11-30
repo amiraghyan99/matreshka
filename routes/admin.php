@@ -15,11 +15,13 @@ Route::get('/dashboard', function () {
 Route::resource('user', UserController::class);
 Route::resource('role', RoleController::class);
 Route::resource('permission', PermissionController::class);
+
+
 Route::get('edit-account-info', [UserController::class, 'accountInfo'])->name('admin.account.info');
 Route::post('edit-account-info', [UserController::class, 'accountInfoStore'])->name('admin.account.info.store');
-Route::post('change-password', [UserController::class, 'changePasswordStore'])->name('admin.account.password.store');
 
 Route::get('change-password', [UserController::class, 'changePasswordStore'])->name('admin.account.password.store');
+Route::post('change-password', [UserController::class, 'changePasswordStore'])->name('admin.account.password.store');
 
 Route::resource('intro', IntroController::class);
 

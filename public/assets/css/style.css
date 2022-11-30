@@ -23,10 +23,10 @@
   -- Blog Section
   -- What We Offers Section
   -- Booking Section
-  -- Contact Us Section 
+  -- Contact Us Section
   -- Jockey Section
   -- Error Section
-  -- Footer Section 
+  -- Footer Section
   -- Copyright Section
   -- Footer Style 2
 - Single Post Page
@@ -101,6 +101,13 @@
     border-top-color: var(--neon-text-color);
     border-bottom-color: var(--neon-text-color);
     animation: spinny 2s linear infinite;
+}
+
+.logo-loading {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: inline-block;
 }
 
 @keyframes spinny {
@@ -199,29 +206,21 @@
     margin: 0;
 }
 
-.social-link a {
+.social-link > li > a {
     font-size: 16px;
     line-height: 24px;
     color: #ccc;
-    margin: 0px 12px;
-    text-shadow: -0.2rem -0.2rem 20rem #fff,
+    margin: 0 12px;
+    text-shadow:
     0.2rem 0.2rem 20rem #fff,
-    0 0 2rem var(--neon-text-color),
-    0 0 4rem var(--neon-text-color),
-    0 0 6rem var(--neon-text-color),
-    0 0 8rem var(--neon-text-color),
-    0 0 10rem var(--neon-text-color);
+    0 0 2rem var(--neon-text-color);
 }
 
-.social-link a:hover {
+.social-link > li > a:hover {
     color: var(--neon-border-color) !important;
     text-shadow: -0.2rem -0.2rem 5rem #fff,
     0.2rem 0.2rem 1rem #fff,
-    0 0 2rem var(--neon-text-color),
-    0 0 4rem var(--neon-text-color),
-    0 0 6rem var(--neon-text-color),
-    0 0 8rem var(--neon-text-color),
-    0 0 10rem var(--neon-text-color);
+    0 0 2rem var(--neon-text-color);
 
 }
 
@@ -281,13 +280,11 @@
 
 .main-menu > nav > ul > li {
     margin-bottom: 0;
+}
+
+.main-menu > nav > ul > li:hover {
     text-shadow: -0.2rem -0.2rem 1rem #fff,
-    0.2rem 0.2rem 1rem #fff,
-    0 0 2rem var(--neon-border-color),
-    0 0 4rem var(--neon-border-color),
-    0 0 6rem var(--neon-border-color),
-    0 0 8rem var(--neon-border-color),
-    0 0 10rem var(--neon-border-color) !important;
+    0 0 2rem var(--neon-border-color) !important;
 }
 
 .main-menu > nav > ul > li > a {
@@ -318,7 +315,6 @@
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open:hover > a {
     color: #fff !important;
-    background-color: var(--neon-text-color) !important;
 }
 
 .dropdown-menu {
@@ -2905,6 +2901,7 @@ a.close-me,
 
 .company-logo {
     margin: 5px 0px 30px;
+    width: 120px;
 }
 
 .footer-content {
