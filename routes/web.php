@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use Intervention\Image\Facades\Image;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +13,6 @@ use Intervention\Image\Facades\Image;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 
 Route::get('/', HomeController::class)->name('frontend.home');
 

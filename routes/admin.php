@@ -16,7 +16,6 @@ Route::resource('user', UserController::class);
 Route::resource('role', RoleController::class);
 Route::resource('permission', PermissionController::class);
 
-
 Route::get('edit-account-info', [UserController::class, 'accountInfo'])->name('admin.account.info');
 Route::post('edit-account-info', [UserController::class, 'accountInfoStore'])->name('admin.account.info.store');
 

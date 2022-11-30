@@ -3,6 +3,7 @@
     header('Access-Control-Allow-Origin: *');
 
     // Only process POST requests.
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Get the form fields and remove whitespace.
         $first_name = strip_tags(trim($_POST['fname']));

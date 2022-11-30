@@ -16,6 +16,6 @@ return [
     */
 
     'driver' => 'gd',
-    'route' => 'imagecache'
+    'route' => 'imagecache',
 
 ];

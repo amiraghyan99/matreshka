@@ -17,7 +17,7 @@ defineProps({
   <div class="preloader-wrap">
     <div class="preloader-inside">
       <div class="logo-loading animated bounce bounceIn">
-        <img src="{{asset('storage/frontend/images/logos/logo-image.webp')}}" alt="responsive img">
+        <img src="storage/app/public/frontend/images/logos/logo-image.webp" alt="responsive img">
       </div>
     </div>
   </div>
