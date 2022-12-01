@@ -2,26 +2,31 @@
 
 namespace App\Http\Middleware;
 
+use Closure;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
+use Symfony\Component\HttpFoundation\Response;
 use Tightenco\Ziggy\Ziggy;
 
 class HandleInertiaRequests extends Middleware
 {
+    const APP_ROUTES = [
+        'admin',
+        'auth',
+    ];
+
     /**
      * The root template that is loaded on the first page visit.
      *
      * @var string
      */
-    protected $rootView = 'app';
+    protected $rootView = 'frontend';
 
     /**
-     * Determine the current asset version.
-     *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Request  $request
      * @return string|null
      */
-    public function version(Request $request)
+    public function version(Request $request): ?string
     {
         return parent::version($request);
     }
@@ -29,10 +34,10 @@ class HandleInertiaRequests extends Middleware
     /**
      * Define the props that are shared by default.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Request  $request
      * @return array
      */
-    public function share(Request $request)
+    public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
             'auth' => [
@@ -47,5 +52,19 @@ class HandleInertiaRequests extends Middleware
                 'message' => fn () => $request->session()->get('message'),
             ],
         ]);
+    }
+
+    /**
+     * @param  Request  $request
+     * @param  Closure  $next
+     * @return Response
+     */
+    public function handle(Request $request, Closure $next): Response
+    {
+        if (in_array($request->route()->getPrefix(), self::APP_ROUTES)) {
+            $this->rootView = 'app';
+        }
+
+        return parent::handle($request, $next);
     }
 }

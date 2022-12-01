@@ -3,7 +3,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "deploy": "bash deploy.sh"
+        "git": "bash deploy.sh"
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.11.0",

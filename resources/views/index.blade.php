@@ -54,8 +54,8 @@
                 <div class="row">
                     <div class="d-none d-md-block col-xl-6 col-lg-8 col-md-9">
                         <ul class="online">
-                            <li><a href="#">Contact:<span>0088-234-675-827</span></a></li>
-                            <li><a href="#">Opening Hours:<span><small>Mon-Fri:</small>8.00 to 18.00</span></a></li>
+                            <li><a href="tel:+37412345678">Phone:<span>+374 12 345678</span></a></li>
+                            <li><a href="#">Opening Hours:<span><small>Mon-Fri:</small>22:00 - 09:00</span></a></li>
                         </ul>
                     </div>
                     <div class="col-12 col-6 col-lg-4 col-md-3">

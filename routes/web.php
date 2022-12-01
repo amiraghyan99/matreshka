@@ -15,5 +15,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeController::class)->name('frontend.home');
-
-require __DIR__.'/auth.php';
