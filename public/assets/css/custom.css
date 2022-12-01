@@ -41,7 +41,6 @@ body {
 :root {
     /* Base font size */
     font-size: 10px;
-
     /* Set neon color */
     --neon-text-color: #f043f0;
     --neon-border-color: #08f;
@@ -61,7 +60,6 @@ body {
 
 /* Animate neon flicker */
 @keyframes flicker {
-
 
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
         transform: translateZ(0);

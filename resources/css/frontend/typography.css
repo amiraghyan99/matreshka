@@ -318,13 +318,14 @@ dd {
 }
 
 .section-divider {
-    width: 90px;
-    height: 25px;
-    text-align: center;
+    height: 30px;
     margin: auto;
-    background-image: url(../img/divider.png);
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    background-image: url('storage/frontend/images/svg/divider1.svg');
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center center;
 }
 
 
