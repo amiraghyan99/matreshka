@@ -11,7 +11,7 @@
     @vite('resources/js/frontend.js')
     @inertiaHead
 </head>
-<body class="font-sans antialiased">
+<body data-spy="scroll" data-target="#scroll-menu" data-offset="65">
 @inertia
 </body>
 </html>

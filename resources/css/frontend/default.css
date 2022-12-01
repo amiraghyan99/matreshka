@@ -40,7 +40,7 @@ html {
 }
 
 body {
-    background: #1c1c1c url(../img/bg.png) repeat fixed;
+    background: #1c1c1c url(assets/img/bg.png) repeat fixed;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 15px;
@@ -323,7 +323,7 @@ label {
     height: 400px;
     margin: 0;
     padding: 0;
-    background-image: url('../img/header-bg-1.png');
+    background-image: url('assets/img/header-bg-1.png');
     -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
