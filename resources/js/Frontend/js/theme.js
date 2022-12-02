@@ -27,6 +27,7 @@
  ===========================================================
  */
 $(window).on('load', function () {
+    console.log(132123132)
     // Preloader
     $('.preloader-wrap').fadeOut('slow', function () {
         $(this).remove();

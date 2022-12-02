@@ -60,15 +60,20 @@
                     </div>
                     <div class="col-12 col-6 col-lg-4 col-md-3">
                         <ul class="social-link">
-
-                            <li><a href="https://www.facebook.com/matreshkashowclub" target="_blank"><i
-                                            class="fa fa-facebook"></i></a></li>
-
-                            <li><a href="https://www.instagram.com/matreshkashowclub/" target="_blank"><i
-                                            class="fa fa-instagram"></i></a></li>
-
-                            <li><a href="https://t.me/matreshkashowclub" target="_blank"><i
-                                            class="fa fa-telegram"></i></a></li>
+                            <li><a href="https://www.facebook.com/matreshkashowclub" target="_blank">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/matreshkashowclub/" target="_blank">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://t.me/matreshkashowclub" target="_blank">
+                                    <i class="fa fa-telegram"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

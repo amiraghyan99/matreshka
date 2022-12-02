@@ -13,8 +13,7 @@ export default defineConfig({
             input: [
                 'resources/js/app.js',
                 'resources/js/frontend.js',
-
-                'resources/js/Frontend/js/bootstrap.bundle.min.js'
+                'resources/js/Frontend/js/main.js'
             ],
             refresh: true,
         }),
@@ -27,4 +26,9 @@ export default defineConfig({
             },
         }),
     ],
+    resolve: {
+        alias: {
+            '@': '/resources/js',
+        },
+    },
 });

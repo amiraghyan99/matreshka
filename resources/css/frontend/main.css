@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Exo+2:200i");
+@import url('https://fonts.googleapis.com/css?family=Exo+2:200i');
+
 @import "animate.min.css";
 @import "bootstrap.min.css";
-@import "custom.css";
 @import "default.css";
 @import "font-awesome.min.css";
 @import "magnific-popup.css";
@@ -10,3 +10,5 @@
 @import "responsive.css";
 @import "style.css";
 @import "typography.css";
+@import "custom.css";
+

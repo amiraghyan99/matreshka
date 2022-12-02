@@ -1,16 +1,22 @@
 <script setup>
 
+import {Head} from '@inertiajs/inertia-vue3'
+import Footer from "@/Frontend/Components/Footer.vue";
+
+
 </script>
 
 <template>
+  <Head><title> Welcome to Home</title></Head>
+
   <!-- Preloader -->
-  <!--  <div class="preloader-wrap">
-      <div class="preloader-inside">
-        <div class="logo-loading animated bounce bounceIn">
-          <img src="storage/frontend/images/logos/logo-image.webp" alt="responsive img">
-        </div>
-      </div>
-    </div>-->
+<!--    <div class="preloader-wrap">-->
+<!--      <div class="preloader-inside">-->
+<!--        <div class="logo-loading animated bounce bounceIn">-->
+<!--          <img src="storage/frontend/images/logos/logo-image.webp" alt="responsive img">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
   <!-- End Preloader -->
   <!-- Nav Section -->
   <header class="header-area">
@@ -46,8 +52,8 @@
       <div class="container">
         <div class="logo-menu-wrap">
           <div class="logo">
-            <a href="/">
-              <img src="{{asset('storage/frontend/images/logos/logo-night-club.webp')}}"
+            <a href="/public">
+              <img src="storage/frontend/images/logos/logo-night-club.webp"
                    alt="responsive img"
                    class="logo-image">
             </a>
@@ -56,7 +62,7 @@
             <nav>
               <ul>
                 <li>
-                  <a href="/">Menu</a>
+                  <a href="/public">Menu</a>
                 </li>
                 <li>
                   <a href="#videos">Videos</a>
@@ -180,15 +186,6 @@
           </div>
         </div>
       </div>
-      <div class="item">
-        <img src="assets/images/webp/dancer.webp" alt="responsive img" class="image-cover">
-        <div class="hero-caption">
-          <div class="hero-caption-inner">
-            <h1 class="hero-caption-title">Матрёшка Night Club</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <!-- End Hero Section -->
@@ -274,13 +271,6 @@
               <source src="mov_bbb.ogg" type="video/ogg">
               Your browser does not support HTML video.
             </video>
-            <div class="play-btn-area">
-              <div class="about-vedio-btn">
-                <a class="popup-youtube" href="https://player.vimeo.com/video/7217833">
-                  <div class="play-btn"><i class="fa fa-play"></i></div>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -292,6 +282,7 @@
         <div class="col-12 foo">
           <div class="section-title-area">
             <h2 class="section-title">Night Club Gallery</h2>
+            <div class="section-divider"/>
           </div>
         </div>
       </div>
@@ -502,106 +493,9 @@
       </div>
     </div>
   </div>
-  <!-- End Blog Section  -->
-  <!-- Footer Section -->
-  <footer>
-    <div class="footer-area foo" data-sr='bottom'>
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-            <div class="company-logo">
-              <img class="" src="assets/images/logos/light-logo.webp" alt="responsive img">
-            </div>
-            <div class="footer-content">
-              <ul class="address-list">
-                <li>
-                  <i class="fa fa-map-marker"></i>
-                  <p>House No, Road No, East Road, NY, USA</p>
-                </li>
-                <li>
-                  <i class="fa fa-phone"></i>
-                  <p>+660 256 24857</p>
-                  <p>+660 256 24857</p>
-                </li>
-                <li>
-                  <i class="fa fa-globe"></i>
-                  <p>Username@gmail.com</p>
-                  <p>Damo@gmail.com</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-            <h4 class="footer-title">OPENING TIME</h4>
-            <div class="footer-content">
-              <div class="opening-time">
-                <p><strong>Monday-Friday: </strong> <small>8.00 to 18.00</small></p>
-                <p><strong>Saturday: </strong> <small>9.00 to 18.00</small></p>
-                <p><strong>Sunday: </strong> <small>10.00 to 16.00</small></p>
-                <p>Every friday of week dolor sit amet, cons ctetur adipisi cing elit.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-            <h4 class="footer-title">TWITTER FEED</h4>
-            <div class="footer-content">
-              <ul class="twitter-list">
-                <li>
-                  <p>Lorem ipsum dolor sit am ectet adip isicing elit, sed eiusmod.</p>
-                  <span class="twitt-time">5 hours Ago</span>
-                </li>
-                <li>
-                  <p>Lorem ipsum dolor sit am ectet adip isicing elit, sed eiusmod.</p>
-                  <span class="twitt-time">7 hours Ago</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-            <h4 class="footer-title">Newsletters</h4>
-            <div class="footer-content">
-              <div class="footer-form">
-                <p>Lorem ipsum dolor sit amet, cons ectetur adip isicing elit, sed eiusmod.</p>
-                <form action="#" method="POST">
-                  <div class="form-group">
-                    <label for="email2">Email Address...</label>
-                    <div class="input-group">
-                      <input type="text" placeholder="Email Address..." class="form-control2"
-                             id="email2">
-                    </div>
-                  </div>
-                  <div class="form-btn">
-                    <button type="submit" class="btn btn-default btn-submit">Subscribe</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Ends Footer Section -->
-  <!-- Copyright Section -->
-  <div class="copyright-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <p class="footer-copyright">&copy; Disco, 2021. Made with ❤️ by <a href="//hasthemes.com"
-                                                                             target="_blank">HasThemes.</a></p>
-        </div>
-        <div class="col-12 col-md-6">
-          <ul class="footer-social-link">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-rss"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  <Footer/>
+
+
 
 </template>
 

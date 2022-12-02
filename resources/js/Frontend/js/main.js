@@ -1,3 +1,4 @@
+console.log('Main.js');
 import './bootstrap.bundle.min.js'
 import './countdown.js'
 import './google-map.js'
