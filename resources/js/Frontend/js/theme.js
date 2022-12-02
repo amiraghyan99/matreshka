@@ -27,7 +27,6 @@
  ===========================================================
  */
 $(window).on('load', function () {
-    console.log(132123132)
     // Preloader
     $('.preloader-wrap').fadeOut('slow', function () {
         $(this).remove();
@@ -125,6 +124,7 @@ $(window).on('load', function () {
         var owl = $("#hero-slider-screen");
         owl.owlCarousel({
             loop: true,
+            lazyLoad:true,
             margin: 10,
             smartSpeed: 2000,
             responsiveClass: true,
@@ -135,7 +135,7 @@ $(window).on('load', function () {
             addClassActive: true,
             dots: false,
             autoplay: false,
-            autoplayTimeout: 5000,
+            autoplayTimeout: 3000,
             stopOnHover: true,
             responsive: {
                 0: {
@@ -149,15 +149,7 @@ $(window).on('load', function () {
                 }
             }
         });
-        owl.on('changed.owl.carousel', function (event) {
-            $('.hero-caption-inner h1').addClass('animated').addClass('bounceInDown')
-                .delay(500)
-                .fadeIn(900);
 
-            $('.hero-caption-inner p').addClass('animated').addClass('zoomIn')
-                .delay(600)
-                .fadeIn(900);
-        });
         owl.on('change.owl.carousel', function (event) {
             $('.hero-caption-inner h1')
                 .fadeOut(0);

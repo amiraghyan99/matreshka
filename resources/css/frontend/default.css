@@ -27,6 +27,7 @@ Table of contents
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    transform: translateZ(0);
 }
 
 *:focus {
@@ -35,13 +36,11 @@ Table of contents
 
 html {
     font-size: 62.5%;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'Open Sans', sans-serif;
 }
 
 body {
     background: #1c1c1c url("assets/img/bg.png") repeat fixed;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Exo 2', sans-serif!important;
     font-weight: 400;
     font-size: 15px;
     letter-spacing: 2px;

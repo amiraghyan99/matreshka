@@ -54,14 +54,12 @@ body {
     text-transform: uppercase!important;
     animation: flicker 1.5s infinite alternate;
     padding: 4rem 6rem 5.5rem;
-    transform: translateZ(0);
 }
 
 /* Animate neon flicker */
 @keyframes flicker {
 
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        transform: translateZ(0);
 
         text-shadow:
                 -0.2rem -0.2rem 1rem #fff,
@@ -82,7 +80,6 @@ body {
     }
 
     20%, 24%, 55%, 60%,80% {
-        transform: translateZ(0);
         text-shadow: none;
         /*box-shadow: none;*/
     }
@@ -90,7 +87,6 @@ body {
 
 .section-title {
     padding: 0.5em 0.5em;
-    transform: translateZ(0);
 
     text-shadow:
 

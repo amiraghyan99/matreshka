@@ -8,7 +8,10 @@
 
     <!-- Scripts -->
     @routes
-    @vite(['resources/js/frontend.js', 'resources/js/Frontend/js/main.js'])
+    @vite([
+            'resources/js/frontend.js',
+            'resources/js/Frontend/js/main.js',
+        ])
     @inertiaHead
 </head>
 <body data-spy="scroll" data-target="#scroll-menu" data-offset="65">
