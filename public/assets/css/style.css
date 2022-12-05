@@ -166,6 +166,9 @@
     letter-spacing: 0;
     color: rgb(230, 9, 9);
     text-transform: capitalize;
+}
+
+.online a:hover {
     text-shadow: -0.2rem -0.2rem 20rem #fff,
     0.2rem 0.2rem 20rem #fff,
     0 0 2rem var(--neon-text-color),
@@ -201,31 +204,27 @@
     transition: all .3s ease-in-out;
 }
 
-.social-link li {
+.social-link > li {
+    padding: 5px;
     display: inline-block;
     margin: 0;
 }
 
 .social-link > li > a {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
     color: #ccc;
-    margin: 0 12px;
-    text-shadow:
-    0.2rem 0.2rem 20rem #fff,
-    0 0 2rem var(--neon-text-color);
+    margin: 0 20px;
+    text-shadow: 0.2rem 0.2rem 2rem #fff,
+    0 0 2rem var(--neon-text-color) !important;
 }
 
 .social-link > li > a:hover {
     color: var(--neon-border-color) !important;
-    text-shadow: -0.2rem -0.2rem 5rem #fff,
-    0.2rem 0.2rem 1rem #fff,
-    0 0 2rem var(--neon-text-color);
-
 }
 
 .social-link li:last-child a {
-    margin-right: 0px;
+    margin-right: 0;
 }
 
 .header-area {
@@ -283,8 +282,7 @@
 }
 
 .main-menu > nav > ul > li:hover {
-    text-shadow: -0.2rem -0.2rem 1rem #fff,
-    0 0 2rem var(--neon-border-color) !important;
+    background-color: var(--neon-text-color);
 }
 
 .main-menu > nav > ul > li > a {
@@ -2900,8 +2898,9 @@ a.close-me,
 }
 
 .company-logo {
-    margin: 5px 0px 30px;
+    margin: auto;
     width: 120px;
+    height: 120px;
 }
 
 .footer-content {
@@ -3149,7 +3148,7 @@ a.close-me,
 }
 
 .call-to-action .footer-title {
-    margin-bottom: 0;
+    margin: auto;
 }
 
 .call-to-action .form-group {

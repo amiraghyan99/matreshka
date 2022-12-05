@@ -19,7 +19,7 @@ class CacheResponseMiddleware
             $this->ttl = null;
         }
 
-        if (Cache::has($this->cacheKey($request))) {
+        if (Cache::has($this->cacheKey($request) && !is_null($this->ttl))) {
             return response(Cache::get($this->cacheKey($request)));
         }
 //
@@ -28,7 +28,7 @@ class CacheResponseMiddleware
 
     public function terminate(Request $request, Response $response): void
     {
-        if (Cache::has($this->cacheKey($request)) || $this->ttl === 0) {
+        if (Cache::has($this->cacheKey($request)) || $this->ttl === null) {
             return;
         }
 

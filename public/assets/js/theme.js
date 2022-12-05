@@ -318,7 +318,7 @@ $(window).on('load', function () {
     });
 
     //scrollReveal js Init
-    window.sr = ScrollReveal({duration: 800});
+    window.sr = ScrollReveal({duration: 200});
     sr.reveal('.foo');
     sr.reveal('.bar');
 

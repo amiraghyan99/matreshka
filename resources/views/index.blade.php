@@ -6,7 +6,7 @@
 <head>
     <!-- Basic Page Needs  -->
     <meta charset="utf-8">
-    <title>Home :: Disco - Night Club HTML Template</title>
+    <title>Welcome to Matreshka Show Club</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    {{--    <link rel="stylesheet" href="assets/css/font-awesome.min.css">--}}
     <!--Owl Carousel CSS -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <!--magnific popup CSS -->
@@ -35,6 +35,7 @@
 </head>
 
 <body data-spy="scroll" data-target="#scroll-menu" data-offset="65">
+
 <!-- Preloader -->
 <div class="preloader-wrap">
     <div class="preloader-inside">
@@ -54,26 +55,23 @@
                 <div class="row">
                     <div class="d-none d-md-block col-xl-6 col-lg-8 col-md-9">
                         <ul class="online">
+{{--                            @foreach($contacts as $key => $contact)--}}
+{{--                                <li><a href="tel:{{$item}}">{{$key}}:<span>{{$item}}</span></a></li>--}}
+{{--                            @endforeach--}}
                             <li><a href="tel:+37412345678">Phone:<span>+374 12 345678</span></a></li>
                             <li><a href="#">Opening Hours:<span><small>Mon-Fri:</small>22:00 - 09:00</span></a></li>
                         </ul>
                     </div>
-                    <div class="col-12 col-6 col-lg-4 col-md-3">
+                    <div class="col-12 col-lg-6 col-md-3">
                         <ul class="social-link">
-                            <li><a href="https://www.facebook.com/matreshkashowclub" target="_blank">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/matreshkashowclub/" target="_blank">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://t.me/matreshkashowclub" target="_blank">
-                                    <i class="fa fa-telegram"></i>
-                                </a>
-                            </li>
+                            @foreach($socials as $social)
+                                <li>
+                                    <a href="{{$social['href']}}"
+                                       target="{{$social['target']}}">
+                                        <i class="{{$social['iconClass']}}"></i>
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -204,7 +202,7 @@
             <img src="assets/images/webp/IMG_3386.webp" alt="responsive img" class="image-cover">
             <div class="hero-caption">
                 <div class="hero-caption-inner">
-                    <h1 class="hero-caption-title">Матрёшка Night Club</h1>
+                    <h1 class="hero-caption-title animation-flicker">Матрёшка Show Club</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
                 </div>
             </div>
@@ -213,7 +211,7 @@
             <img src="assets/images/webp/Gheviphoto-137.webp" alt="responsive img" class="image-cover">
             <div class="hero-caption">
                 <div class="hero-caption-inner">
-                    <h1 class="hero-caption-title">Матрёшка Night Club</h1>
+                    <h1 class="hero-caption-title animation-flicker">Матрёшка Show Club</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
                 </div>
             </div>
@@ -222,7 +220,7 @@
             <img src="assets/images/webp/dancer.webp" alt="responsive img" class="image-cover">
             <div class="hero-caption">
                 <div class="hero-caption-inner">
-                    <h1 class="hero-caption-title">Матрёшка Night Club</h1>
+                    <h1 class="hero-caption-title animation-flicker">Матрёшка Show Club</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
                 </div>
             </div>
@@ -292,41 +290,75 @@
 </div>
 <!-- End Service Section -->
 <!-- About Section -->
-<div class="about-area inner-padding" id="videos">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 foo">
-                <div class="section-title-area-2">
-                    <h2 class="section-title">About Our Club</h2>
-                    {{--                    <div class="section-divider"></div>--}}
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid dunt ut
-                        labore et dolore ma.Ut enim ad minim veniam, quis nos</p>
+<div id="videos">
+    <div
+            class="carousel slide carousel-fade"
+            data-mdb-ride="carousel"
+    >
+        <div class="carousel-inner">
+            <!-- Single item -->
+            <div class="carousel-item active">
+                <video class="img-fluid" autoplay loop muted>
+                    <source src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4" type="video/mp4"/>
+                </video>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>
+                        Nulla vitae elit libero, a pharetra augue mollis interdum.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Single item -->
+            <div class="carousel-item">
+                <video class="img-fluid" autoplay loop muted>
+                    <source src="https://mdbcdn.b-cdn.net/img/video/forest.mp4" type="video/mp4"/>
+                </video>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Single item -->
+            <div class="carousel-item">
+                <video class="img-fluid" autoplay loop>
+                    <source
+                            src="https://mdbcdn.b-cdn.net/img/video/Agua-natural.mp4"
+                            type="video/mp4"
+                    />
+                </video>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="about-vedio">
-                    <video controls class="about-vedio-player">
-                        <source src="mov_bbb.mp4" type="video/mp4">
-                        <source src="mov_bbb.ogg" type="video/ogg">
-                        Your browser does not support HTML video.
-                    </video>
-                    {{--                    <div class="play-btn-area">--}}
-                    {{--                        --}}
-                    {{--                        <div class="about-vedio-btn">--}}
+        <!-- Inner -->
 
-
-
-
-                    {{--                                                        <a class="popup-youtube" href="https://player.vimeo.com/video/7217833">--}}
-                    {{--                                <div class="play-btn"><i class="fa fa-play"></i></div>--}}
-                    {{--                            </a>--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
-                </div>
-            </div>
-        </div>
+        <!-- Controls -->
+        <button
+                class="carousel-control-prev"
+                type="button"
+                data-mdb-target="#carouselVideoExample"
+                data-mdb-slide="prev"
+        >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+                class="carousel-control-next"
+                type="button"
+                data-mdb-target="#carouselVideoExample"
+                data-mdb-slide="next"
+        >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </div>
 <!-- Event Section -->
@@ -426,7 +458,7 @@
         <div class="row">
             <div class="col-12 foo">
                 <div class="section-title-area">
-                    <h2 class="section-title">Night Club Gallery</h2>
+                    <h2 class="section-title">Show Club Gallery</h2>
                 </div>
             </div>
         </div>
@@ -643,9 +675,12 @@
     <div class="footer-area foo" data-sr='bottom'>
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                     <div class="company-logo">
-                        <img class="" src="assets/images/logos/light-logo.webp" alt="responsive img">
+                        <a href="/">
+                            <img class="" src="assets/images/logos/logo.webp" alt="responsive img">
+
+                        </a>
                     </div>
                     <div class="footer-content">
                         <ul class="address-list">
@@ -658,15 +693,10 @@
                                 <p>+660 256 24857</p>
                                 <p>+660 256 24857</p>
                             </li>
-                            <li>
-                                <i class="fa fa-globe"></i>
-                                <p>Username@gmail.com</p>
-                                <p>Damo@gmail.com</p>
-                            </li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                     <h4 class="footer-title">OPENING TIME</h4>
                     <div class="footer-content">
                         <div class="opening-time">
@@ -674,41 +704,6 @@
                             <p><strong>Saturday: </strong> <small>9.00 to 18.00</small></p>
                             <p><strong>Sunday: </strong> <small>10.00 to 16.00</small></p>
                             <p>Every friday of week dolor sit amet, cons ctetur adipisi cing elit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                    <h4 class="footer-title">TWITTER FEED</h4>
-                    <div class="footer-content">
-                        <ul class="twitter-list">
-                            <li>
-                                <p>Lorem ipsum dolor sit am ectet adip isicing elit, sed eiusmod.</p>
-                                <span class="twitt-time">5 hours Ago</span>
-                            </li>
-                            <li>
-                                <p>Lorem ipsum dolor sit am ectet adip isicing elit, sed eiusmod.</p>
-                                <span class="twitt-time">7 hours Ago</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                    <h4 class="footer-title">Newsletters</h4>
-                    <div class="footer-content">
-                        <div class="footer-form">
-                            <p>Lorem ipsum dolor sit amet, cons ectetur adip isicing elit, sed eiusmod.</p>
-                            <form action="#" method="POST">
-                                <div class="form-group">
-                                    <label for="email2">Email Address...</label>
-                                    <div class="input-group">
-                                        <input type="text" placeholder="Email Address..." class="form-control2"
-                                               id="email2">
-                                    </div>
-                                </div>
-                                <div class="form-btn">
-                                    <button type="submit" class="btn btn-default btn-submit">Subscribe</button>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -722,16 +717,15 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
-                <p class="footer-copyright">&copy; Disco, 2021. Made with ❤️ by <a href="//hasthemes.com"
-                                                                                   target="_blank">HasThemes.</a></p>
-            </div>
-            <div class="col-12 col-md-6">
                 <ul class="footer-social-link">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                    @foreach($socials as $social)
+                        <li>
+                            <a href="{{$social['href']}}"
+                               target="{{$social['target']}}">
+                                <i class="{{$social['iconClass']}}"></i>
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -759,6 +753,8 @@
 <script src="assets/js/modernizr-3.11.2.min.js"></script>
 <script src="assets/js/jquery.gridrotator.js"></script>
 <script src="assets/js/theme.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="https://kit.fontawesome.com/57e89dc5d7.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

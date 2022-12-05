@@ -592,7 +592,7 @@
 
     /* Footer Section */
     .company-logo {
-        margin: 5px 0px 12px;
+        margin: 5px 0 12px;
         width: 60px;
     }
 
@@ -926,7 +926,10 @@
     }
 
     .footer-title {
-        margin-bottom: 15px;
+        margin: auto;
+        width: 100%;
+        height: 60px;
+        text-align: center;
     }
 
     .footer-social-link {
