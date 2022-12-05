@@ -17,9 +17,10 @@ import NotificationBar from "@/Components/NotificationBar.vue"
 import Pagination from "@/Components/Admin/Pagination.vue"
 import Sort from "@/Components/Admin/Sort.vue"
 import Label from "@/Components/Label.vue";
+import {Sortable} from "sortablejs-vue3";
 
 const props = defineProps({
-  intros: {
+ intros: {
     type: Object,
     default: () => ({}),
   },
@@ -38,6 +39,9 @@ const form = useForm({
 })
 
 const formDelete = useForm({})
+function showLog(event){
+  console.log(event)
+}
 
 function destroy(id) {
   if (confirm("Are you sure you want to delete?")) {
@@ -120,82 +124,91 @@ function destroy(id) {
           </tr>
           </thead>
 
-          <tbody>
-          <tr v-for="intro in intros.data" :key="intro.id">
-            <td data-label="Id">
-              <Link
-                  :href="route('intro.show', intro.id)"
-                  class="
+          <Sortable
+              :list="intros.data"
+              item-key="id"
+              itemid=""
+              tag="tbody"
+              @change="showLog"
+          >
+            <template #item="{element, index, key}">
+              <tr class="draggable" :key="key">
+                <td data-label="Id">
+                  <Link
+                      :href="route('intro.show', key)"
+                      class="
                     no-underline
                     hover:underline
                     text-cyan-600
                     dark:text-cyan-400
                   "
-              >
-                {{ intro.id }}
-              </Link>
-            </td>
-            <td data-label="Image">
-              <img
-                  v-if="intro.url"
-                  :src="intro.url" :alt="intro.title.en"
-                  class="w-48"
-              />
-              <Label v-else value="No Image"/>
-            </td>
-            <td data-label="Title">
-              <Link
-                  :href="route('intro.show', intro.id)"
-                  class="
+                  >
+                    {{key }}
+                  </Link>
+                </td>
+                <td data-label="Image">
+                  <img
+                      v-if="element.url"
+                      :src="element.url" :alt="element.title.en"
+                      class="w-48"
+                  />
+                  <Label v-else value="No Image"/>
+                </td>
+                <td data-label="Title">
+                  <Link
+                      :href="route('intro.show',key)"
+                      class="
                     no-underline
                     hover:underline
                     text-cyan-600
                     dark:text-cyan-400
                   "
-              >
-                EN: {{ intro.title.en }}
-                <hr>
-                RU: {{ intro.title.ru }}
-              </Link>
-            </td>
-            <td data-label="Description">
-              <Link
-                  :href="route('intro.show', intro.id)"
-                  class="
+                  >
+                    EN: {{element.title.en }}
+                    <hr>
+                    RU: {{element.title.ru }}
+                  </Link>
+                </td>
+                <td data-label="Description">
+                  <Link
+                      :href="route('intro.show',key)"
+                      class="
                     no-underline
                     hover:underline
                     text-cyan-600
                     dark:text-cyan-400
                   "
-              >
-                EN: {{ intro.description.en }}
-                <hr>
-                RU: {{ intro.description.ru }}
-              </Link>
-            </td>
-            <td
-                v-if="can.edit || can.delete"
-                class="before:hidden lg:w-1 whitespace-nowrap"
-            >
-              <BaseButtons type="justify-start lg:justify-end" no-wrap>
-                <BaseButton
-                    v-if="can.edit"
-                    :route-name="route('intro.edit', intro.id)"
-                    color="info"
-                    :icon="mdiSquareEditOutline"
-                    small
-                />
-                <BaseButton
-                    v-if="can.delete"
-                    color="danger"
-                    :icon="mdiTrashCan"
-                    small
-                    @click="destroy(intro.id)"
-                />
-              </BaseButtons>
-            </td>
-          </tr>
-          </tbody>
+                  >
+                    EN: {{element.description.en }}
+                    <hr>
+                    RU: {{element.description.ru }}
+                  </Link>
+                </td>
+                <td
+                    v-if="can.edit || can.delete"
+                    class="before:hidden lg:w-1 whitespace-nowrap"
+                >
+                  <BaseButtons type="justify-start lg:justify-end" no-wrap>
+                    <BaseButton
+                        v-if="can.edit"
+                        :route-name="route('intro.edit',key)"
+                        color="info"
+                        :icon="mdiSquareEditOutline"
+                        small
+                    />
+                    <BaseButton
+                        v-if="can.delete"
+                        color="danger"
+                        :icon="mdiTrashCan"
+                        small
+                        @click="destroy(key)"
+                    />
+                  </BaseButtons>
+                </td>
+              </tr>
+
+            </template>
+          </Sortable>
         </table>
         <div class="py-4">
           <Pagination :data="intros"/>

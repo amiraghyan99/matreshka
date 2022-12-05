@@ -29,25 +29,26 @@ class IntroController extends Controller
     public function index(): Response|ResponseFactory
     {
         $intros = (new Intro)->newQuery();
+//        $intros->serachInTranslates();
 
-        $intros->when($key = request()->query('search'), function (Builder $query) use ($key) {
-            return $query->where('title->en', 'Like', '%'.$key.'%')
-                ->orWhere('title->ru', 'Like', '%'.$key.'%')
-                ->orWhere('description->en', 'Like', '%'.$key.'%')
-                ->orWhere('description->ru', 'Like', '%'.$key.'%');
-        });
-
-        if (request()->query('sort')) {
-            $attribute = request()->query('sort');
-            $sort_order = 'ASC';
-            if (strncmp($attribute, '-', 1) === 0) {
-                $sort_order = 'DESC';
-                $attribute = substr($attribute, 1);
-            }
-            $intros->orderBy($attribute, $sort_order);
-        } else {
-            $intros->latest();
-        }
+//        $intros->when($key = request()->query('search'), function (Builder $query) use ($key) {
+//            return $query->where('title->en', 'Like', '%'.$key.'%')
+//                ->orWhere('title->ru', 'Like', '%'.$key.'%')
+//                ->orWhere('description->en', 'Like', '%'.$key.'%')
+//                ->orWhere('description->ru', 'Like', '%'.$key.'%');
+//        });
+//
+//        if (request()->query('sort')) {
+//            $sort_order = 'ASC';
+//            $attribute = request()->query('sort');
+//            if (strncmp($attribute, '-', 1) === 0) {
+//                $sort_order = 'DESC';
+//                $attribute = substr($attribute, 1);
+//            }
+//            $intros->orderBy($attribute, $sort_order);
+//        } else {
+//            $intros->latest();
+//        }
 
         $intros = $intros->paginate(5)->onEachSide(2)->appends(request()->query());
 
@@ -55,9 +56,9 @@ class IntroController extends Controller
             'intros' => $intros,
             'filters' => request()->all('search'),
             'can' => [
-                'create' => Auth::user()->can('intro create'),
-                'edit' => Auth::user()->can('intro edit'),
-                'delete' => Auth::user()->can('intro delete'),
+                'create' => auth()->user()->can('intro create'),
+                'edit' => auth()->user()->can('intro edit'),
+                'delete' => auth()->user()->can('intro delete'),
             ],
         ]);
     }
@@ -76,7 +77,7 @@ class IntroController extends Controller
      */
     public function store(StoreIntroRequest $request): RedirectResponse
     {
-        $intro = Intro::create($request->only(['title', 'description']));
+        $intro = Intro::query()->create($request->only(['title', 'description']));
 
         $path = $request->file('image')->store('intros', 'public');
 
