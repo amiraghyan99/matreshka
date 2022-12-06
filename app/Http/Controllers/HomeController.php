@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Intro;
+use Dymantic\InstagramFeed\Profile;
 use Illuminate\View\View;
 use Inertia\Inertia;
 
 class HomeController extends Controller
 {
-    public function __invoke(): View
+    public function __invoke()
     {
+//        $profile = Profile::for('gev99');
+//        return $profile->getInstagramAuthUrl();
+
+        app()->setLocale('ru');
         $socials = [
             'tiktok' => [
                 'href' => 'https://www.tiktok.com/@matreshkashowclub',
@@ -37,33 +42,43 @@ class HomeController extends Controller
                 'target' => '_self'
             ],
         ];
-        $navigation = [
-            'menu' => [
-                'href' => '#',
-                'text' => 'Menu',
-            ],
+        $navigations = [
+
             'gallery' => [
-                'href' => '#galery',
-                'text' => 'Gallery',
+                'href' => '#gallery',
+                'text' => trans('menu.gallery'),
             ],
             'videos' => [
                 'href' => '#videos',
-                'text' => 'Videos',
+                'text' => trans('menu.videos'),
+            ],
+            'menu' => [
+                'href' => '#',
+                'text' => trans('menu.crazy-menu'),
             ],
             'vacancies' => [
                 'href' => '#vacancies',
-                'text' => '#vacancies',
+                'text' => trans('menu.vacancies'),
             ],
 
         ];
+        $contacts = [
+            'opening_days' => [
+                ['day' => 'Monday-Friday', 'time' => '8.00 to 18.00'],
+                ['day' => 'Saturday', 'time' => '9.00 to 18.00'],
+                ['day' => 'Sunday', 'time' => '10.00 to 16.00'],
+            ],
+            'address' => 'House No, Road No, East Road, NY, USA2',
 
-        $intros = Intro::actives()->get();
+        ];
+//
+//        $intros = Intro::actives()->get();
+//
+//        $welcome_to_our_club = [];
+//        $about_our_club = [];
+//        $galery = [];
 
-        $welcome_to_our_club = [];
-        $about_our_club = [];
-        $galery = [];
-
-        $data = compact('socials', 'navigation');
+        $data = compact('socials', 'navigations', 'contacts');
         return view('index', $data);
 //        return Inertia::render('Welcome/Welcome', [
 //            'canLogin' => Route::has('login'),

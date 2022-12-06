@@ -16,6 +16,7 @@ export default defineConfig({
                 'resources/js/Frontend/js/main.js'
             ],
             refresh: true,
+            publicDirectory:'public_html'
         }),
         vue({
             template: {
@@ -31,4 +32,5 @@ export default defineConfig({
             '@': '/resources/js',
         },
     },
+
 });

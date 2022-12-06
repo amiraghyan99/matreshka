@@ -12,27 +12,28 @@ class CacheResponseMiddleware
 
     private \DateTimeInterface|\DateInterval|int|null $ttl;
 
-    public function handle(Request $request, Closure $next, $ttl = null): Response
+    public function handle(Request $request, Closure $next, $ttl = null)
     {
-        $this->ttl = $ttl ?? now()->addDay();
-        if (app()->isLocal()) {
-            $this->ttl = null;
+        if (app()->isProduction()) {
+            $this->ttl = $ttl ?? now()->addDay();
+
+            if (Cache::has($this->cacheKey($request) && !is_null($this->ttl))) {
+                return response(Cache::get($this->cacheKey($request)));
+            }
         }
 
-        if (Cache::has($this->cacheKey($request) && !is_null($this->ttl))) {
-            return response(Cache::get($this->cacheKey($request)));
-        }
-//
         return $next($request);
     }
 
     public function terminate(Request $request, Response $response): void
     {
-        if (Cache::has($this->cacheKey($request)) || $this->ttl === null) {
-            return;
-        }
+        if (app()->isProduction()){
+            if (Cache::has($this->cacheKey($request)) || $this->ttl === null) {
+                return;
+            }
 
-        Cache::put($this->cacheKey($request), $response->getContent(), $this->ttl);
+            Cache::put($this->cacheKey($request), $response->getContent(), $this->ttl);
+        }
     }
 
     private function cacheKey(Request $request): string

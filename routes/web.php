@@ -15,4 +15,6 @@
 use App\Http\Controllers\HomeController;
 
 Route::get('/', HomeController::class)
-    ->name('frontend.home');
+    ->name('home');
+
+Route::get('{any?}', fn() => redirect()->route('home'));

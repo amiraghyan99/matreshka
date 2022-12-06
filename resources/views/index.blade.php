@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<!--[if IE 9]>
-<html class="ie" lang="zxx">
 <![endif]-->
-<html lang="zxx">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!-- Basic Page Needs  -->
     <meta charset="utf-8">
@@ -53,16 +51,16 @@
         <div class="header-top">
             <div class="container">
                 <div class="row">
-                    <div class="d-none d-md-block col-xl-6 col-lg-8 col-md-9">
+                    <div class="d-none d-md-block col-xl-6 col-md-6">
                         <ul class="online">
-{{--                            @foreach($contacts as $key => $contact)--}}
-{{--                                <li><a href="tel:{{$item}}">{{$key}}:<span>{{$item}}</span></a></li>--}}
-{{--                            @endforeach--}}
+                            {{--                            @foreach($contacts as $key => $contact)--}}
+                            {{--                                <li><a href="tel:{{$item}}">{{$key}}:<span>{{$item}}</span></a></li>--}}
+                            {{--                            @endforeach--}}
                             <li><a href="tel:+37412345678">Phone:<span>+374 12 345678</span></a></li>
                             <li><a href="#">Opening Hours:<span><small>Mon-Fri:</small>22:00 - 09:00</span></a></li>
                         </ul>
                     </div>
-                    <div class="col-12 col-lg-6 col-md-3">
+                    <div class="col-12 col-lg-6 col-md-6">
                         <ul class="social-link">
                             @foreach($socials as $social)
                                 <li>
@@ -90,21 +88,11 @@
                 <div class="main-menu main-menu-mrg1">
                     <nav>
                         <ul>
-                            <li>
-                                <a href="/">Menu</a>
-                            </li>
-                            <li>
-                                <a href="#videos">Videos</a>
-                            </li>
-                            <li>
-                                <a href="#gallery">Gallery</a>
-                            </li>
-                            <li>
-                                <a href="#blog">Blog</a>
-                            </li>
-                            <li>
-                                <a href="#vacancies">Vacancies</a>
-                            </li>
+                            @foreach($navigations as $navigation)
+                                <li>
+                                    <a href="{{$navigation['href']}}">{{$navigation['text']}}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </nav>
                 </div>
@@ -113,79 +101,11 @@
                 <div class="mobile-menu">
                     <nav id="mobile-menu-active">
                         <ul class="menu-overflow">
-                            <li><a href="index.html">HOME</a></li>
-                            <li><a href="#">Mega menu</a>
-                                <ul>
-                                    <li><a href="#">Menu Style</a>
-                                        <ul>
-                                            <li><a href="menu-style-2.html">Menu Style 2</a></li>
-                                            <li><a href="menu-style-3.html">Menu Style 3</a></li>
-                                            <li><a href="menu-style-4.html">Menu Style 4</a></li>
-                                            <li><a href="menu-style-5.html">Menu Style 5</a></li>
-                                            <li><a href="menu-style-6.html">Menu Style 6</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Footer Style</a>
-                                        <ul>
-                                            <li><a href="index.html">Footer Style 1</a></li>
-                                            <li><a href="footer-style-2.html">Footer Style 2</a></li>
-                                            <li><a href="footer-style-3.html">Footer Style 3</a></li>
-                                            <li><a href="footer-style-4.html">Footer Style 4</a></li>
-                                            <li><a href="footer-style-5.html">Footer Style 5</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Mega menu 3</a>
-                                        <ul>
-                                            <li><a href="#">Mega menu</a></li>
-                                            <li><a href="#">Mega menu</a></li>
-                                            <li><a href="#">Mega menu</a></li>
-                                            <li><a href="#">Mega menu</a></li>
-                                            <li><a href="#">Mega menu</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Mega menu 4</a>
-                                        <ul>
-                                            <li><a href="#">Mega menu</a></li>
-                                            <li><a href="#">Mega menu</a></li>
-                                            <li><a href="#">Mega menu</a></li>
-                                            <li><a href="#">Mega menu</a></li>
-                                            <li><a href="#">Mega menu</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="event.html">Event</a></li>
-                            <li><a href="#">Gallery</a>
-                                <ul>
-                                    <li><a href="gallery-photos.html">Gallery Photos</a></li>
-                                    <li><a href="gallery-videos.html">Gallery Videos</a></li>
-                                    <li><a href="gallery-1.html">Gallery Header Slide</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Pages</a>
-                                <ul>
-                                    <li><a href="booking.html">Booking Page</a></li>
-                                    <li><a href="404.html">404 Page</a></li>
-                                    <li><a href="#">Sub Menu</a>
-                                        <ul>
-                                            <li><a href="#">Sub Menu 1</a></li>
-                                            <li><a href="#">Sub Menu 2</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Blog</a>
-                                <ul>
-                                    <li><a href="blog-right.html">Blog Right Sidebar</a></li>
-                                    <li><a href="blog-fullwidth.html">Blog Fullwidth</a></li>
-                                    <li><a href="blog-3grid.html">Blog 3 Grid</a></li>
-                                    <li><a href="blog-2grid.html">Blog 2 Grid Sidebar</a></li>
-                                    <li><a href="blog-details-sidebar.html">Blog Details Sidebar</a></li>
-                                    <li><a href="blog-details-fullwidth.html">Blog Details Fullwidth</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            @foreach($navigations as $navigation)
+                                <li>
+                                    <a href="{{$navigation['href']}}">{{$navigation['text']}}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </nav>
                 </div>
@@ -199,7 +119,7 @@
     <div id="hero-slider-screen" class="owl-carousel owl-theme hero-slider-inner">
         <div class="item">
 
-            <img src="assets/images/webp/IMG_3386.webp" alt="responsive img" class="image-cover">
+            <img src="assets/images/webp/IMG_3386.webp" alt="responsive img" class="image-cover" loading="lazy">
             <div class="hero-caption">
                 <div class="hero-caption-inner">
                     <h1 class="hero-caption-title animation-flicker">Матрёшка Show Club</h1>
@@ -208,7 +128,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="assets/images/webp/Gheviphoto-137.webp" alt="responsive img" class="image-cover">
+            <img src="assets/images/webp/Gheviphoto-137.webp" alt="responsive img" class="image-cover"  loading="lazy">
             <div class="hero-caption">
                 <div class="hero-caption-inner">
                     <h1 class="hero-caption-title animation-flicker">Матрёшка Show Club</h1>
@@ -217,7 +137,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="assets/images/webp/dancer.webp" alt="responsive img" class="image-cover">
+            <img src="assets/images/webp/dancer.webp" alt="responsive img" class="image-cover"  loading="lazy">
             <div class="hero-caption">
                 <div class="hero-caption-inner">
                     <h1 class="hero-caption-title animation-flicker">Матрёшка Show Club</h1>
@@ -678,21 +598,29 @@
                 <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                     <div class="company-logo">
                         <a href="/">
-                            <img class="" src="assets/images/logos/logo.webp" alt="responsive img">
+                            <img class="" src="{{asset('storage/frontend/images/logos/logo-night-club.webp')}}" alt="responsive img">
 
                         </a>
                     </div>
                     <div class="footer-content">
-                        <ul class="address-list">
+                        <ul class="social-link">
                             <li>
-                                <i class="fa fa-map-marker"></i>
-                                <p>House No, Road No, East Road, NY, USA</p>
+                                <a href="#">
+                                    <i class="fa fa-map-marker"></i>
+                                </a>
+                                <span class="address">{{$contacts['address']}}</span>
                             </li>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                <p>+660 256 24857</p>
-                                <p>+660 256 24857</p>
-                            </li>
+                        </ul>
+
+                        <ul class="social-link">
+                            @foreach($socials as $social)
+                                <li>
+                                    <a href="{{$social['href']}}"
+                                       target="{{$social['target']}}">
+                                        <i class="{{$social['iconClass']}}"></i>
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -700,10 +628,9 @@
                     <h4 class="footer-title">OPENING TIME</h4>
                     <div class="footer-content">
                         <div class="opening-time">
-                            <p><strong>Monday-Friday: </strong> <small>8.00 to 18.00</small></p>
-                            <p><strong>Saturday: </strong> <small>9.00 to 18.00</small></p>
-                            <p><strong>Sunday: </strong> <small>10.00 to 16.00</small></p>
-                            <p>Every friday of week dolor sit amet, cons ctetur adipisi cing elit.</p>
+                            @foreach($contacts['opening_days'] as $day)
+                                <p><strong>{{$day['day']}}: </strong><small>{{$day['time']}}</small></p>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -711,49 +638,24 @@
         </div>
     </div>
 </footer>
-<!-- Ends Footer Section -->
-<!-- Copyright Section -->
-<div class="copyright-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <ul class="footer-social-link">
-                    @foreach($socials as $social)
-                        <li>
-                            <a href="{{$social['href']}}"
-                               target="{{$social['target']}}">
-                                <i class="{{$social['iconClass']}}"></i>
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Ends Copyright Section -->
+
 <!-- Scripts -->
-<script src="assets/js/jquery-3.6.0.min.js"></script>
-<script src="assets/js/jquery-migrate-3.3.2.min.js"></script>
-<script src="assets/js/popper.js"></script>
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/scrollreveal.min.js"></script>
-<script src="assets/js/jquery.waypoints.min.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/meanmenu.js"></script>
-<script src='assets/js/countdown.js'></script>
-<!-- Magnific Popup js -->
-<script src='assets/js/jquery.magnific-popup.min.js'></script>
-<!-- Isotope Js -->
-<script src="assets/js/isotope.pkgd.min.js"></script>
-<script src="assets/js/isotope_custom.js"></script>
-<!-- Masonary Js -->
-<script src="assets/js/masonry.pkgd.min.js"></script>
-<!-- jquery gridrotator js -->
-<script src="assets/js/modernizr-3.11.2.min.js"></script>
-<script src="assets/js/jquery.gridrotator.js"></script>
-<script src="assets/js/theme.js"></script>
-<script src="assets/js/custom.js"></script>
+<script src="{{url('/assets/js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{url('/assets/js/jquery-migrate-3.3.2.min.js')}}"></script>
+<script src="{{url('/assets/js/popper.js')}}"></script>
+<script src="{{url('/assets/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{url('/assets/js/scrollreveal.min.js')}}"></script>
+<script src="{{url('/assets/js/jquery.waypoints.min.js')}}"></script>
+<script src="{{url('/assets/js/owl.carousel.min.js')}}"></script>
+<script src="{{url('/assets/js/meanmenu.js')}}"></script>
+<script src="{{url('/assets/js/countdown.js')}}"></script>
+<script src="{{url('/assets/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{url('/assets/js/isotope.pkgd.min.js')}}"></script>
+<script src="{{url('/assets/js/isotope_custom.js')}}"></script>
+<script src="{{url('/assets/js/masonry.pkgd.min.js')}}"></script>
+<script src="{{url('/assets/js/modernizr-3.11.2.min.js')}}"></script>
+<script src="{{url('/assets/js/jquery.gridrotator.js')}}"></script>
+<script src="{{url('/assets/js/theme.js')}}"></script>
 <script src="https://kit.fontawesome.com/57e89dc5d7.js" crossorigin="anonymous"></script>
 </body>
 
