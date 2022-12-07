@@ -4,17 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Intro;
 use Dymantic\InstagramFeed\Profile;
+use Illuminate\Support\Facades\File;
 use Illuminate\View\View;
 use Inertia\Inertia;
 
 class HomeController extends Controller
 {
-    public function __invoke()
+    public function __invoke($loacle = null)
     {
 //        $profile = Profile::for('gev99');
 //        return $profile->getInstagramAuthUrl();
 
-        app()->setLocale('ru');
         $socials = [
             'tiktok' => [
                 'href' => 'https://www.tiktok.com/@matreshkashowclub',
@@ -71,6 +71,8 @@ class HomeController extends Controller
             'address' => 'House No, Road No, East Road, NY, USA2',
 
         ];
+        $paths = File::glob(public_path('assets/images/webp').'/*.webp');
+        $galleries = array_map(fn($item) => url(str_replace(public_path(), '', $item)), $paths );
 //
 //        $intros = Intro::actives()->get();
 //
@@ -78,8 +80,8 @@ class HomeController extends Controller
 //        $about_our_club = [];
 //        $galery = [];
 
-        $data = compact('socials', 'navigations', 'contacts');
-        return view('index', $data);
+        $data = compact('socials', 'navigations', 'contacts', 'galleries');
+        return view('welcome', $data);
 //        return Inertia::render('Welcome/Welcome', [
 //            'canLogin' => Route::has('login'),
 //            'canRegister' => Route::has('register'),

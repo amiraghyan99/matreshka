@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    transform: translateZ(0) !important;
+    /*transform: translateZ(0) !important;*/
 }
 
 ::-webkit-scrollbar-track {
@@ -54,6 +54,7 @@ body {
     --neon-border-color: #08f;
 }
 
+
 .hero-caption-title {
     /*font-size: 4rem!important;*/
     /*font-weight: 200!important;*/
@@ -61,7 +62,7 @@ body {
     font-family: 'Exo 2', sans-serif !important;
     color: #fff !important;
     text-transform: uppercase !important;
-    /*animation: flicker 5s infinite alternate;*/
+    /*animation: flicker 1.5s;*/
     padding: 4rem 6rem 5.5rem;
     text-shadow: -0.2rem -0.2rem 1rem #fff,
     0.2rem 0.2rem 1rem #fff,
@@ -70,6 +71,7 @@ body {
     0 0 6rem var(--neon-text-color),
     0 0 8rem var(--neon-text-color),
     0 0 10rem var(--neon-text-color);
+
 }
 
 /* Animate neon flicker */
@@ -104,9 +106,21 @@ body {
     text-shadow: -0.2rem -0.2rem 1rem #fff,
     0.2rem 0.2rem 1rem #fff,
     0 0 2rem var(--neon-text-color),
-    0 0 4rem var(--neon-text-color),
-    0 0 6rem var(--neon-text-color),
-    0 0 8rem var(--neon-text-color),
-    0 0 10rem var(--neon-text-color);
+    0 0 4rem var(--neon-text-color);
 
+}
+
+.my-svg {
+    width: 50px;
+    height: auto;
+    margin: 10px 0;
+}
+
+.my-svg path {
+    fill: white !important;
+}
+
+.localization {
+    float: right;
+    display: inline-block;
 }

@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
         // ---------------Google Map------------------------------
-        var myCenter = new google.maps.LatLng(51.511059, -0.117148);
-        var marker;
+        var myCenter = new google.maps.LatLng(40.19931171239167, 44.584189292044506);
+        var animation = google.maps.Animation.BOUNCE;
 
         function initialize() {
             var mapProp = {
@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
 
             var marker = new google.maps.Marker({
                 position: myCenter,
-                animation: google.maps.Animation.BOUNCE
+                animation: animation
             });
 
             marker.setMap(map);

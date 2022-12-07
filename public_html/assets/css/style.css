@@ -172,10 +172,7 @@
     text-shadow: -0.2rem -0.2rem 20rem #fff,
     0.2rem 0.2rem 20rem #fff,
     0 0 2rem var(--neon-text-color),
-    0 0 4rem var(--neon-text-color),
-    0 0 6rem var(--neon-text-color),
-    0 0 8rem var(--neon-text-color),
-    0 0 10rem var(--neon-text-color);
+    0 0 4rem var(--neon-text-color);
 }
 
 .online span,
@@ -213,7 +210,7 @@
     font-size: 18px;
     line-height: 24px;
     color: #ccc;
-    margin: 0 20px;
+    margin: 0 12px;
     text-shadow: -0.2rem -0.2rem 4rem #fff,
     0.2rem 0.2rem 4rem #fff,
     0 0 2rem var(--neon-text-color) !important;
@@ -1646,6 +1643,8 @@ a.close-me,
     float: left;
     position: relative;
     overflow: hidden;
+    padding: 3px;
+    transition: box-shadow .3s;
 }
 
 .gallery-item img {
@@ -1694,12 +1693,18 @@ a.close-me,
     color: #d32d0b;
 }
 
-.gallery-item:hover img {
+.gallery-item:hover > img {
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
     transform: scale(1.2);
+}
+.gallery-item:hover {
+
+    box-shadow:
+            -0.2rem -0.2rem 1rem #fff,
+            0 0 1rem var(--neon-text-color) !important;
 }
 
 .gallery-item:hover .caption {
@@ -2767,25 +2772,6 @@ a.close-me,
     background-position: center;
 }
 
-.googleMap:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    opacity: .7;
-    z-index: 1;
-    -webkit-transition: all .6s ease-in-out;
-    -moz-transition: all .6s ease-in-out;
-    -ms-transition: all .6s ease-in-out;
-    -o-transition: all .6s ease-in-out;
-    transition: all .6s ease-in-out;
-}
-
-.googleMap:hover::after {
-    z-index: -1;
-    opacity: 0;
-}
 
 /*
 --------------------------------

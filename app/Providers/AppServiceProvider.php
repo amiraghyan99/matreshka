@@ -34,6 +34,11 @@ class AppServiceProvider extends ServiceProvider
             return base_path().'/public_html';
         });
 
+        view()->composer('partials.language_switcher', function ($view) {
+            $view->with('current_locale', app()->currentLocale());
+            $view->with('available_locales', config('app.available_locales'));
+        });
+
 
     }
 }

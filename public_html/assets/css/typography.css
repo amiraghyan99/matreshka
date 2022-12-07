@@ -322,7 +322,7 @@ dd {
     height: 25px;
     text-align: center;
     margin: auto;
-    background-image: url(../img/divider.png);
+    background-image: url(../img/divider.svg);
     background-repeat: no-repeat;
     background-position: center top;
 }
