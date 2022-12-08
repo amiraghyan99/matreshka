@@ -37,27 +37,31 @@ class BasicAdminPermissionSeeder extends Seeder
             'user edit',
             'user delete',
 
+            'intro list',
             'intro create',
             'intro edit',
             'intro delete',
         ];
+
+
+        $roleSuperAdmin = Role::create(['name' => 'super-admin']);
+        $roleAdmin = Role::create(['name' => 'admin']);
+        $roleWriter = Role::create(['name' => 'writer']);
+
+
 
         foreach ($permissions as $permission) {
             Permission::create(['name' => $permission]);
         }
 
         // create roles and assign existing permissions
-        $roleWriter = Role::create(['name' => 'writer']);
-        $roleWriter->givePermissionTo('permission list');
-        $roleWriter->givePermissionTo('role list');
         $roleWriter->givePermissionTo('user list');
+        $roleWriter->givePermissionTo('intro list');
 
-        $roleAdmin = Role::create(['name' => 'admin']);
         foreach ($permissions as $permission) {
             $roleAdmin->givePermissionTo($permission);
         }
 
-        $roleSuperAdmin = Role::create(['name' => 'super-admin']);
         // gets all permissions via Gate::before rule; see AuthServiceProvider
 
         // create demo users

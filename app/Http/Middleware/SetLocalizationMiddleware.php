@@ -11,9 +11,7 @@ class SetLocalizationMiddleware
 
     public function handle(Request $request, Closure $next)
     {
-        app()->setLocale($request->segment(1));
-
-        URL::defaults(['locale' => $request->segment(1)]);
+        if (session()->has('locale')) app()->setLocale(session('locale'));
 
         return $next($request);
     }

@@ -51,6 +51,12 @@ class HandleInertiaRequests extends Middleware
             'flash' => [
                 'message' => fn () => $request->session()->get('message'),
             ],
+            'viewMenu' => [
+                'permission' => $request->user()?->can('permission list'),
+                'role' => $request->user()?->can('role list'),
+                'user' => $request->user()?->can('user list'),
+                'intro' => $request->user()?->can('intro list'),
+            ],
         ]);
     }
 

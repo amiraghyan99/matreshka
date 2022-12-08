@@ -58,16 +58,17 @@ function submit() {
             label="Image"
             :class="{ 'text-red-400': form.errors['image'] }"
         >
+
           <FormFilePicker
               v-model="form.image"
               label="Upload Image"
           >
-            <div class="text-red-400 text-sm" v-if="form.errors['image']">
-              {{ form.errors['image'] }}
-            </div>
           </FormFilePicker>
 
         </FormField>
+        <div class="text-red-400 text-sm my-4" v-if="form.errors['image']">
+          {{ form.errors['image'] }}
+        </div>
         <FormField
             label="Title EN"
             :class="{ 'text-red-400': form.errors['title.en'] }"

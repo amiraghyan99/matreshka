@@ -10,7 +10,7 @@ use Inertia\Inertia;
 
 class HomeController extends Controller
 {
-    public function __invoke($loacle = null)
+    public function __invoke(): View
     {
 //        $profile = Profile::for('gev99');
 //        return $profile->getInstagramAuthUrl();

@@ -11,26 +11,32 @@ export default [
   {
     route: 'dashboard',
     icon: mdiMonitor,
-    label: 'Dashboard'
+    label: 'Dashboard',
+    can: 'dashboard'
   },
   {
     route: 'permission.index',
     icon: mdiAccountKey,
-    label: 'Permissions'
+    label: 'Permissions',
+    can: 'permission'
   },
   {
     route: 'role.index',
     icon: mdiAccountEye,
-    label: 'Roles'
+    label: 'Roles',
+    can: 'role'
+
   },
   {
     route: 'user.index',
     icon: mdiAccountGroup,
-    label: 'Users'
+    label: 'Users',
+    can: 'user'
   },
   {
     route: 'intro.index',
     icon: mdiImageEdit,
-    label: 'Intro'
+    label: 'Intro',
+    can: 'intro'
   },
 ]

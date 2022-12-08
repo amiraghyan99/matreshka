@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <![endif]-->
-{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!-- Basic Page Needs  -->
     <meta charset="utf-8">
@@ -38,7 +38,7 @@
 <div class="preloader-wrap">
     <div class="preloader-inside">
         <div class="logo-loading animated bounce zoomIn">
-            <img src="{{asset('storage/frontend/images/logos/logo-image.webp')}}" alt="responsive img">
+            <img src="{{asset('assets/images/logos/logo-image.webp')}}" alt="Matreshka Show Club">
         </div>
     </div>
 </div>
@@ -71,7 +71,6 @@
                                 </li>
                             @endforeach
                             @include('partials/language_switcher')
-
                         </ul>
                     </div>
 
@@ -82,8 +81,8 @@
         <div class="container">
             <div class="logo-menu-wrap">
                 <div class="logo">
-                    <a href="/">
-                        <img src="{{asset('storage/frontend/images/logos/logo-night-club.webp')}}"
+                    <a href="{{route('home', app()->currentLocale())}}">
+                        <img src="{{asset('assets/images/logos/logo-night-club.webp')}}"
                              alt="responsive img"
                              class="logo-image"
                              loading="lazy"
@@ -295,75 +294,37 @@
 </div>
 <!-- End Service Section -->
 <!-- About Section -->
-<div id="videos">
-    <div
-            class="carousel slide carousel-fade"
-            data-mdb-ride="carousel"
-    >
-        <div class="carousel-inner">
-            <!-- Single item -->
+<div id="videos" class="container">
+    <div id="carouselVideo" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner videoSection">
             <div class="carousel-item active">
-                <video class="img-fluid" autoplay loop muted>
-                    <source src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4" type="video/mp4"/>
+                <video class="d-block w-100 video" autoplay muted controls loop preload="auto">
+                    <source src="assets/videos/IMG_2222.webm" type="video/webm">
+                    Your browser does not support the video tag.
                 </video>
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>
-                        Nulla vitae elit libero, a pharetra augue mollis interdum.
-                    </p>
-                </div>
             </div>
-
-            <!-- Single item -->
             <div class="carousel-item">
-                <video class="img-fluid" autoplay loop muted>
-                    <source src="https://mdbcdn.b-cdn.net/img/video/forest.mp4" type="video/mp4"/>
+                <video class="d-block w-100 video" autoplay muted controls loop preload="auto">
+                    <source src="assets/videos/IMG_2222.webm" type="video/webm">
+                    Your browser does not support the video tag.
                 </video>
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                </div>
             </div>
-
-            <!-- Single item -->
             <div class="carousel-item">
-                <video class="img-fluid" autoplay loop>
-                    <source
-                            src="https://mdbcdn.b-cdn.net/img/video/Agua-natural.mp4"
-                            type="video/mp4"
-                    />
+                <video class="d-block w-100 video" autoplay muted controls loop preload="auto">
+                    <source src="assets/videos/IMG_2222.webm" type="video/webm">
+                    Your browser does not support the video tag.
                 </video>
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                    </p>
-                </div>
             </div>
         </div>
-        <!-- Inner -->
-
-        <!-- Controls -->
-        <button
-                class="carousel-control-prev"
-                type="button"
-                data-mdb-target="#carouselVideoExample"
-                data-mdb-slide="prev"
-        >
+        <a class="carousel-control-prev" href="#carouselVideo" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-                class="carousel-control-next"
-                type="button"
-                data-mdb-target="#carouselVideoExample"
-                data-mdb-slide="next"
-        >
+            <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#carouselVideo" role="button" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 </div>
 
@@ -388,7 +349,6 @@
                                 <div class="caption-inner">
                                     <div class="caption-content">
                                         <ul>
-                                            {{--                                            <li><a href="{{$gallery}}"><i class="fa fa-link"></i></a></li>--}}
                                             <li><a href="{{ $gallery }}"><i
                                                             class="fa-solid fa-magnifying-glass"></i></a>
                                             </li>
@@ -411,7 +371,6 @@
             <div class="col-12 foo">
                 <div class="section-title-area">
                     <h2 class="section-title">Our Instagram Blog</h2>
-                    {{--                    <div class="section-divider"></div>--}}
                 </div>
             </div>
         </div>
@@ -427,9 +386,6 @@
                         <div class="post-caption">
                             <div class="post-caption-inner">
                                 <div class="post-caption-content">
-                                    <div class="post-link"><a href="blog-details-sidebar.html"
-                                                              class="btn btn-default link-btn"><i
-                                                    class="fa fa-link"></i></a></div>
                                     <div class="post-sticker hidden-xs"><i class="fa fa-clock-o"></i>Date : 26 oct 2021
                                     </div>
                                     <h2 class="post-heading"><a href="blog-details-sidebar.html">The Best Blog Post
@@ -560,18 +516,19 @@
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                     <div class="company-logo">
-                        <a href="/">
-                            <img src="{{asset('storage/frontend/images/logos/logo-night-club.webp')}}"
+                        <a href="{{route('home', app()->currentLocale())}}">
+                            <img src="{{asset('assets/images/logos/logo-night-club.webp')}}"
                                  alt="responsive img" loading="lazy">
                         </a>
                     </div>
                     <div class="footer-content">
                         <ul class="social-link">
                             <li>
-                                <a href="#">
+                                <a href="https://www.google.com/maps/place/Matreshka+Show+Club/@40.1987449,44.5817158,17z/data=!3m1!4b1!4m5!3m4!1s0x406aa37f3f0decb1:0xbf605c39da28501a!8m2!3d40.1987112!4d44.5839217"
+                                   target="_blank">
                                     <i class="fa fa-map-marker"></i>
+                                    <span class="address">{{$contacts['address']}}</span>
                                 </a>
-                                <span class="address">{{$contacts['address']}}</span>
                             </li>
                         </ul>
 
@@ -603,28 +560,30 @@
 </footer>
 
 <!-- Scripts -->
-<script src="{{url('/assets/js/jquery-3.6.0.min.js')}}"></script>
-<script src="{{url('/assets/js/jquery-migrate-3.3.2.min.js')}}"></script>
-<script src="{{url('/assets/js/popper.js')}}"></script>
-<script src="{{url('/assets/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{url('/assets/js/scrollreveal.min.js')}}"></script>
-<script src="{{url('/assets/js/jquery.waypoints.min.js')}}"></script>
-<script src="{{url('/assets/js/owl.carousel.min.js')}}"></script>
-<script src="{{url('/assets/js/meanmenu.js')}}"></script>
-<script src="{{url('/assets/js/countdown.js')}}"></script>
-<script src="{{url('/assets/js/jquery.magnific-popup.min.js')}}"></script>
-<script src="{{url('/assets/js/isotope.pkgd.min.js')}}"></script>
-<script src="{{url('/assets/js/isotope_custom.js')}}"></script>
-<script src="{{url('/assets/js/masonry.pkgd.min.js')}}"></script>
-<script src="{{url('/assets/js/modernizr-3.11.2.min.js')}}"></script>
-<script src="{{url('/assets/js/jquery.gridrotator.js')}}"></script>
-<script src="{{url('/assets/js/theme.js')}}"></script>
+<script src="{{asset('/assets/js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('/assets/js/jquery-migrate-3.3.2.min.js')}}"></script>
+<script src="{{asset('/assets/js/popper.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+<script src="{{asset('/assets/js/scrollreveal.min.js')}}"></script>
+<script src="{{asset('/assets/js/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('/assets/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('/assets/js/meanmenu.js')}}"></script>
+<script src="{{asset('/assets/js/countdown.js')}}"></script>
+<script src="{{asset('/assets/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('/assets/js/isotope.pkgd.min.js')}}"></script>
+<script src="{{asset('/assets/js/isotope_custom.js')}}"></script>
+<script src="{{asset('/assets/js/masonry.pkgd.min.js')}}"></script>
+<script src="{{asset('/assets/js/modernizr-3.11.2.min.js')}}"></script>
+<script src="{{asset('/assets/js/jquery.gridrotator.js')}}"></script>
+<script src="{{asset('/assets/js/theme.js')}}"></script>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
 {{--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>--}}
 
 <script src="https://kit.fontawesome.com/57e89dc5d7.js" crossorigin="anonymous"></script>
-<script src="{{url('/assets/js/custom.js')}}"></script>
+<script src="{{asset('/assets/js/custom.js')}}"></script>
 
 </body>
 

@@ -68,12 +68,11 @@ const form = useForm({
               label="Upload Image"
               :src="props.intro.url"
           >
-            <div class="text-red-400 text-sm" v-if="form.errors['image']">
-              {{ form.errors['image'] }}
-            </div>
           </FormFilePicker>
-
         </FormField>
+        <div class="text-red-400 text-sm my-4" v-if="form.errors['image']">
+          {{ form.errors['image'] }}
+        </div>
 
         <FormField
             label="Title EN"
