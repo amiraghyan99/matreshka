@@ -30,7 +30,7 @@ class StoreIntroRequest extends FormRequest
             'title.*' => ['required', 'string', 'max:30'],
             'description.*' => ['required', 'string', 'max:150'],
 
-            'image' => ['required','image', 'mimes:jpg,bmp,png,gif,webp', 'max:20000'],
+            'image' => ['required', 'image', 'mimes:jpg,bmp,png,gif,webp', 'max:20000'],
         ];
     }
 

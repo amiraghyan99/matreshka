@@ -1,271 +1,228 @@
-/* Addition media query */
 @media (min-width: 1200px) {
     .container {
-        max-width: 1170px;
-        --bs-gutter-x: 15px;
+        max-width: 1170px
     }
 
-    .container-fluid {
-        --bs-gutter-x: 15px;
-    }
-
-    .row:not(class*='g-0') {
-        --bs-gutter-x: 30px;
+    .container, .container-fluid {
+        --bs-gutter-x: 15px
     }
 }
 
-
-/* Medium Layout: 1367px. */
 @media only screen and (min-width: 1366px) and (max-width: 1500px) {
-
     .nav-area-4 .dropdown-menu {
-        min-width: 220px;
+        min-width: 220px
     }
 }
 
-/* Medium Layout: 1367px. */
 @media only screen and (min-width: 1200px) and (max-width: 1365px) {
     .error-caption img {
-        margin: 0 auto 70px;
+        margin: 0 auto 70px
     }
 
     .dropdown-menu {
-        min-width: 212px;
+        min-width: 212px
     }
 
-    .dropdown-menu > li > a {
-        font-size: 12px;
-    }
-
-    .sub-menu li a {
-        font-size: 12px;
+    .dropdown-menu > li > a, .sub-menu li a {
+        font-size: 12px
     }
 
     .main-menu-mrg1 {
-        margin-left: 170px;
+        margin-left: 170px
     }
 
     .nav-area-4 .dropdown-menu {
-        left: -55px;
+        left: -55px
     }
 
     .main-menu-mrg3 {
-        margin-left: 30px;
+        margin-left: 30px
     }
-
-
 }
 
-/* Medium Layout: 1367px. */
 @media only screen and (min-width: 1025px) and (max-width: 1367px) {
-    /* Nav Style */
     .navbar-default .navbar-nav > li > a {
-        padding: 30px 20px;
+        padding: 30px 20px
     }
 
-    /* Hero Section */
     .hero-slider-inner .owl-nav {
-        padding: 0px 4%;
+        padding: 0 4%
     }
 }
 
-/* Medium Layout: 1367px. */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .main-menu-mrg1 {
-        margin-left: 150px;
+        margin-left: 150px
     }
 
     .dropdown-menu {
         min-width: 212px;
-        left: 0px;
+        left: 0
     }
 
-    .dropdown-menu > li > a {
-        font-size: 12px;
-    }
-
-    .sub-menu li a {
-        font-size: 12px;
+    .dropdown-menu > li > a, .sub-menu li a {
+        font-size: 12px
     }
 
     .main-menu > nav > ul > li > a {
-        padding: 35px 14px;
+        padding: 35px 14px
     }
 
     .sticky .main-menu > nav > ul > li > a {
-        padding: 22px 14px;
+        padding: 22px 14px
     }
 
     .sticky.nav-area-3 .main-menu > nav > ul > li > a {
-        padding: 25px 14px;
+        padding: 25px 14px
     }
 
     .nav-area-4 .dropdown-menu {
         left: -65px;
+        min-width: 200px
     }
 
     .nav-area-4 .main-menu > nav > ul > li > a {
-        padding: 35px 17px;
-    }
-
-    .nav-area-4 .dropdown-menu {
-        min-width: 200px;
+        padding: 35px 17px
     }
 
     .nav-area-4 .dropdown-menu > li > a {
-        padding: 9px 20px 10px 20px;
+        padding: 9px 20px 10px
     }
 
     .main-menu-mrg2 {
-        margin-left: 20px;
+        margin-left: 20px
     }
 
     .nav-area-5 .social-link a {
-        margin: 0px 3px;
+        margin: 0 3px
     }
 
     .nav-area-5 .main-menu > nav > ul > li > a {
-        padding: 35px 10px;
+        padding: 35px 10px
     }
 
     .nav-area-5.sticky .main-menu > nav > ul > li > a {
-        padding: 22px 10px;
+        padding: 22px 10px
     }
 
-    .nav-area-6 .main-menu > nav > ul > li > a,
-    .nav-area-7 .main-menu > nav > ul > li > a {
-        padding: 35px 9px;
+    .nav-area-6 .main-menu > nav > ul > li > a, .nav-area-7 .main-menu > nav > ul > li > a {
+        padding: 35px 9px
     }
 
-    .nav-area-6.sticky .main-menu > nav > ul > li > a,
-    .nav-area-7.sticky .main-menu > nav > ul > li > a {
-        padding: 22px 9px;
+    .nav-area-6.sticky .main-menu > nav > ul > li > a, .nav-area-7.sticky .main-menu > nav > ul > li > a {
+        padding: 22px 9px
     }
 
     .main-menu-mrg3 {
-        margin-left: 15px;
+        margin-left: 15px
     }
-
-
 }
 
-/* Tablet Layout: 992px. */
-
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
-
-    /* Customize Owl Carousel */
     .post-contant {
-        padding: 0px 0px 20px 85px;
+        padding: 0 0 20px 85px
     }
 
     .ml-180 {
-        margin-left: 55px;
+        margin-left: 55px
     }
 
     .right-box {
-        margin-top: 12px;
+        margin-top: 12px
     }
 
     .single-post-caption {
-        padding: 40px 15px 90px;
+        padding: 40px 15px 90px
     }
 
     .owl-dots {
-        bottom: 0;
+        bottom: 0
     }
 
     .caption-content {
-        padding: 10px;
+        padding: 10px
     }
 
     .opening-time p:last-child {
-        margin: 15px 0px 0px;
+        margin: 15px 0 0
     }
 
     .owl-nav {
         width: 100%;
-        left: 0%;
+        left: 0;
         -webkit-transform: translate(0);
         -moz-transform: translate(0);
         -ms-transform: translate(0);
         -o-transform: translate(0);
-        transform: translate(0);
+        transform: translate(0)
     }
 
-    .owl-prev,
-    .owl-next {
+    .owl-next, .owl-prev {
         width: 35px;
         height: 35px;
         border-radius: 50%;
         font-size: 25px;
         line-height: 30px;
         text-align: center;
-        background: #000;
+        background: #000
     }
 
-    /* Nav Section */
     .nav-area {
-        padding: 0px;
-        background-color: rgba(19, 19, 19, .25);
+        padding: 0;
+        background-color: rgba(19, 19, 19, .25)
     }
 
     .navbar-nav {
         float: left;
-        width: 100%;
+        width: 100%
     }
 
-    .navbar > .container .navbar-brand {
-        padding: 15px;
+    .navbar-default .navbar-nav > li > a, .navbar > .container .navbar-brand {
+        padding: 15px
     }
 
     .navbar-nav > li {
         width: 100%;
-        border-bottom: 1px solid rgba(30, 30, 30, 0.94);
+        border-bottom: 1px solid rgba(30, 30, 30, .94)
     }
 
     .navbar-nav > li:last-child {
-        border-bottom: 0px;
-    }
-
-    .navbar-default .navbar-nav > li > a {
-        padding: 15px;
+        border-bottom: 0
     }
 
     .navbar-default .navbar-nav > .active > a:after {
         height: 40px;
         width: 3px;
         top: 15px;
-        left: 0px;
+        left: 0
     }
 
     .dropdown-menu {
-        background-color: rgba(30, 30, 30, 0.94);
+        background-color: rgba(30, 30, 30, .94)
     }
 
     .navbar-toggle {
-        display: block;
+        display: block
     }
 
     .navbar-collapse.collapse {
-        display: none !important;
+        display: none !important
     }
 
     .navbar-collapse.collapse.in {
         display: block !important;
         border-top: 1px solid #fff;
-        margin-top: 60px;
+        margin-top: 60px
     }
 
     .navbar-header {
-        width: 100%;
+        width: 100%
     }
 
-    .nav-area-6.navbar > .container .navbar-brand,
-    .nav-area-7.navbar > .container-fluid .navbar-brand {
-        margin-top: 0;
+    .nav-area-6.navbar > .container .navbar-brand, .nav-area-7.navbar > .container-fluid .navbar-brand {
+        margin-top: 0
     }
 
-    /* Hero Section */
     .hero-slider-inner.owl-carousel .owl-item img {
         width: auto;
         height: 100%;
@@ -273,191 +230,165 @@
         -moz-transform: translateX(-10%);
         -ms-transform: translateX(-10%);
         -o-transform: translateX(-10%);
-        transform: translateX(-10%);
+        transform: translateX(-10%)
     }
 
     .hero-caption-inner h1 {
         font-size: 80px;
-        line-height: 80px;
+        line-height: 80px
     }
 
-    /* Service Section */
     .service-content {
-        padding: 25px;
+        padding: 25px
     }
 
-    /* Event Section */
     .event-slider .owl-nav {
         width: 100%;
         left: 0;
-        top: 53%;
+        top: 53%
     }
 
-    /* Dj's Profile Section */
     .profile {
-        margin-top: 20px;
+        margin-top: 20px
     }
 
     .profile-tab {
-        padding: 30px 0px;
+        padding: 30px 0
     }
 
-    .profile-tab {
-        padding-bottom: 30px;
-    }
-
-    /* Blog Section */
     .post-link {
-        margin-bottom: 8px;
+        margin-bottom: 8px
     }
 
     .post-sticker {
-        line-height: 18px;
+        line-height: 18px
     }
 
     .post-row p {
-        margin: 0px;
+        margin: 0
     }
 
-    /* Header Section */
     .ri-grid ul {
-        padding-top: 60px;
+        padding-top: 60px
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .main-menu {
-        display: none;
+        display: none
     }
 
-    .mobile-menu-area {
+    .logo-menu-wrap, .mobile-menu-area {
         display: block;
-        width: 100%;
+        width: 100%
     }
 
     .logo-menu-wrap {
-        display: block;
         align-items: inherit;
         flex-wrap: inherit;
-        width: 100%;
-        margin: 20px 0;
+        margin: 20px 0
     }
 
     .nav-area-3 .online {
-        text-align: center;
+        text-align: center
     }
-
-
 }
-
-/* Tablet Layout: 768px. */
 
 @media only screen and (min-width: 768px) and (max-width: 1020px) {
     .social-link a {
-        margin: 0px 5px;
+        margin: 0 5px
     }
 
     .ml-180 {
-        margin-left: 0;
+        margin-left: 0
     }
 
-    /* Utility Classes */
     .inner-padding {
-        padding: 30px 0px;
+        padding: 30px 0
     }
 
     .inner-padding2 {
-        padding: 75px 0px 30px;
+        padding: 75px 0 30px
     }
 
     .inner-padding3 {
-        padding: 30px 0px 75px;
+        padding: 30px 0 75px
     }
 
     .inner-padding4 {
-        padding: 75px 0px;
+        padding: 75px 0
     }
 
-    /* Custom Typography */
     .section-title-area {
-        margin-bottom: 25px;
+        margin-bottom: 25px
     }
 
     .section-title-area-2 {
-        margin-bottom: 20px;
+        margin-bottom: 20px
     }
 
-    /* Customize Owl Carousel */
     .owl-dots {
-        bottom: 30px;
+        bottom: 30px
     }
 
     .owl-nav {
         width: 100%;
-        left: 0%;
+        left: 0;
         -webkit-transform: translate(0);
         -moz-transform: translate(0);
         -ms-transform: translate(0);
         -o-transform: translate(0);
-        transform: translate(0);
+        transform: translate(0)
     }
 
-    .owl-prev,
-    .owl-next {
+    .owl-next, .owl-prev {
         width: 35px;
         height: 35px;
         border-radius: 50%;
         font-size: 25px;
         line-height: 30px;
         text-align: center;
-        background: #000;
+        background: #000
     }
 
-    /* Nav Section */
     .nav-area {
-        padding: 0px;
-        background-color: rgba(19, 19, 19, .25);
+        padding: 0;
+        background-color: rgba(19, 19, 19, .25)
     }
 
     .navbar-nav {
         float: left;
-        width: 100%;
+        width: 100%
     }
 
     .nav-area-6.navbar > .container .navbar-brand {
-        margin: 0px;
+        margin: 0
     }
 
     .navbar-nav > li {
         width: 100%;
-        border-bottom: 1px solid rgba(30, 30, 30, 0.94);
+        border-bottom: 1px solid rgba(30, 30, 30, .94)
     }
 
     .navbar-nav > li:last-child {
-        border-bottom: 0px;
+        border-bottom: 0
     }
 
-    .navbar-default .navbar-nav > li > a,
-    .nav-area-5.navbar-default .navbar-nav > li > a,
-    .nav-area-5.sticky.navbar-default .navbar-nav > li > a,
-    .nav-area-6.navbar-default .navbar-nav > li > a,
-    .nav-area-6.sticky.navbar-default .navbar-nav > li > a,
-    .nav-area-7.navbar-default .navbar-nav > li > a,
-    .nav-area-7.sticky.navbar-default .navbar-nav > li > a {
-        padding: 15px;
+    .nav-area-5.navbar-default .navbar-nav > li > a, .nav-area-5.sticky.navbar-default .navbar-nav > li > a, .nav-area-6.navbar-default .navbar-nav > li > a, .nav-area-6.sticky.navbar-default .navbar-nav > li > a, .nav-area-7.navbar-default .navbar-nav > li > a, .nav-area-7.sticky.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a {
+        padding: 15px
     }
 
     .navbar-default .navbar-nav > .active > a:after {
         height: 40px;
         width: 3px;
         top: 15px;
-        left: 0px;
+        left: 0
     }
 
     .navbar-nav .open .dropdown-menu {
         position: static;
         width: 100%;
-        background-color: rgba(30, 30, 30, 0.94);
+        background-color: rgba(30, 30, 30, .94)
     }
 
     .navbar-nav .open .sub-menu {
@@ -467,31 +398,30 @@
         -moz-transform: rotateY(0deg) translateX(0);
         -ms-transform: rotateY(0deg) translateX(0);
         -o-transform: rotateY(0deg) translateX(0);
-        transform: rotateY(0deg) translateX(0);
+        transform: rotateY(0deg) translateX(0)
     }
 
     .navbar-toggle {
-        display: block;
+        display: block
     }
 
     .navbar-collapse.collapse {
-        display: none !important;
+        display: none !important
     }
 
     .navbar-collapse.collapse.in {
         display: block !important;
-        margin-top: 60px;
+        margin-top: 60px
     }
 
     .navbar-header {
-        width: 100%;
+        width: 100%
     }
 
     .nav-area-7.navbar > .container-fluid .navbar-brand {
-        margin-top: 0;
+        margin-top: 0
     }
 
-    /* Hero Section */
     .hero-slider-inner.owl-carousel .owl-item img {
         width: auto;
         height: 100%;
@@ -499,268 +429,232 @@
         -moz-transform: translateX(-10%);
         -ms-transform: translateX(-10%);
         -o-transform: translateX(-10%);
-        transform: translateX(-10%);
+        transform: translateX(-10%)
     }
 
     .hero-caption-inner h1 {
         font-size: 80px;
-        line-height: 80px;
+        line-height: 80px
     }
 
-    /* About Section */
     .about-content {
-        padding: 15px 0px 50px;
+        padding: 15px 0 50px
     }
 
     .jockey-slider .owl-nav {
-        top: 40%;
+        top: 40%
     }
 
     .about-title {
-        margin-bottom: 12px;
+        margin-bottom: 12px
     }
 
-    /* Service Section */
-    .service-item {
-        margin-bottom: 30px;
+    .popular-event, .profile-item-tab, .service-item {
+        margin-bottom: 30px
     }
 
-    /*Event Section */
     .event-slider .owl-nav {
         width: 100%;
         left: 0;
-        top: 52%;
-    }
-
-    .popular-event {
-        margin-bottom: 30px;
-    }
-
-    /* Dj's Profile Section */
-    .profile-item-tab {
-        margin-bottom: 30px;
+        top: 52%
     }
 
     .profile-tab {
-        padding: 30px;
+        padding: 30px
     }
 
-    /* Blog Section */
     .post-row {
-        margin-bottom: 30px;
+        margin-bottom: 30px
     }
 
     .post-link {
-        margin-bottom: 15px;
+        margin-bottom: 15px
     }
 
     .post-body p {
-        margin: 10px 0px;
+        margin: 10px 0
     }
 
     .recent-post-feature {
-        width: 70px;
+        width: 70px
     }
 
-    .single-post-row {
-        margin-bottom: 30px;
+    .call-to-action .footer-title, .single-post-row {
+        margin-bottom: 30px
     }
 
     .sidebar {
-        margin-top: 30px;
+        margin-top: 30px
     }
 
-    /* What We Offer Section */
     .offer-feature {
-        width: 25%;
+        width: 25%
     }
 
     .offer-short {
         width: 75%;
-        padding: 25px 0px 30px 70px;
+        padding: 25px 0 30px 70px
     }
 
     .row .col-md-6:last-child .offer-short {
-        padding-bottom: 0;
+        padding-bottom: 0
     }
 
-    /* contact Page */
-    .map-feature,
-    .googleMap {
-        height: 300px;
+    .googleMap, .map-feature {
+        height: 300px
     }
 
-    /* Footer Section */
     .company-logo {
         margin: 5px 0 12px;
-        width: 60px;
+        width: 60px
     }
 
     .footer-content {
-        margin-bottom: 50px;
+        margin-bottom: 50px
     }
 
     .footer-area {
-        padding: 75px 0px 25px;
-    }
-
-    .call-to-action .footer-title {
-        margin-bottom: 30px;
+        padding: 75px 0 25px
     }
 
     .navbar-toggle {
         margin-bottom: 0;
-        margin-top: 22px;
+        margin-top: 22px
     }
 
     .navbar > .container .navbar-brand {
         margin-bottom: 25px;
         margin-top: 6px;
-        padding: 15px;
+        padding: 15px
     }
 
     .social-link {
-        margin-top: 0px;
+        margin-top: 0
     }
 
     .caption-content {
-        padding: 15px;
+        padding: 15px
     }
 
     .error-caption img {
-        margin: 0px auto 40px;
+        margin: 0 auto 40px
     }
 
     .opening-time p:last-child {
-        margin: 20px 0px 0px;
+        margin: 20px 0 0
     }
 
     .footer-social-link a {
         width: 30px;
         height: 30px;
-        margin: 0px 3px;
+        margin: 0 3px;
         font-size: 14px;
-        line-height: 30px;
+        line-height: 30px
     }
-
-
 }
 
-/* Mobile Layout: 320px. */
-
 @media only screen and (max-width: 767px) {
-    /* Utility Classes */
     .inner-padding {
-        padding: 25px 0px;
+        padding: 25px 0
     }
 
     .inner-padding2 {
-        padding: 45px 0px 25px;
+        padding: 45px 0 25px
     }
 
     .inner-padding3 {
-        padding: 25px 0px 45px;
+        padding: 25px 0 45px
     }
 
     .inner-padding4 {
-        padding: 45px 0px;
+        padding: 45px 0
     }
 
-    /* Form Elements */
     .booking-area-inner {
-        padding: 40px 0px 30px;
+        padding: 40px 0 30px
     }
 
     .input-group {
-        margin-bottom: 15px;
+        margin-bottom: 15px
     }
 
-    .map-feature,
-    .googleMap {
-        height: 200px;
+    .googleMap, .map-feature {
+        height: 200px
     }
 
-    /* Custom Typography */
     .section-title-area {
-        margin-bottom: 30px;
+        margin-bottom: 30px
     }
 
     .section-title-area-2 {
-        margin-bottom: 25px;
+        margin-bottom: 25px
     }
 
     .section-title-area-2 p {
-        width: 100%;
+        width: 100%
     }
 
-    /* Customize Owl Carousel */
     .owl-dots {
-        bottom: 30px;
+        bottom: 30px
     }
 
     .owl-nav {
         width: 100%;
-        left: 0%;
+        left: 0;
         -webkit-transform: translate(0);
         -moz-transform: translate(0);
         -ms-transform: translate(0);
         -o-transform: translate(0);
         transform: translate(0);
-        z-index: 1;
+        z-index: 1
     }
 
-    .owl-prev,
-    .owl-next {
+    .owl-next, .owl-prev {
         font-size: 25px;
         width: 35px;
         line-height: 35px;
         border-radius: 50%;
         height: 35px;
         text-align: center;
-        background: #000;
+        background: #000
     }
 
-    /* Nav Style */
     .nav-area {
         padding-top: 0;
-        background-color: rgba(30, 30, 30, 0.25);
+        background-color: rgba(30, 30, 30, .25)
     }
 
     .navbar > .container .navbar-brand {
-        padding: 15px;
-        margin: 0;
+        margin: 0
     }
 
     .navbar-nav {
         float: left;
-        width: 100%;
+        width: 100%
     }
 
     .navbar-nav > li {
         width: 100%;
-        border-bottom: 1px solid rgba(30, 30, 30, 0.94);
+        border-bottom: 1px solid rgba(30, 30, 30, .94)
     }
 
     .navbar-nav > li:last-child {
-        border-bottom: 0px;
+        border-bottom: 0
     }
 
-    .navbar-default .navbar-nav > li > a,
-    .nav-area-5.navbar-default .navbar-nav > li > a,
-    .nav-area-6.navbar-default .navbar-nav > li > a,
-    .nav-area-7.navbar-default .navbar-nav > li > a {
-        padding: 15px;
+    .nav-area-5.navbar-default .navbar-nav > li > a, .nav-area-6.navbar-default .navbar-nav > li > a, .nav-area-7.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a {
+        padding: 15px
     }
 
     .nav-area-7.navbar > .container-fluid .navbar-brand {
-        margin: 0;
+        margin: 0
     }
 
     .navbar-default .navbar-nav > .active > a:after {
         height: 40px;
         width: 3px;
         top: 15px;
-        left: 0px;
+        left: 0
     }
 
     .dropdown li ul.sub-menu {
@@ -771,46 +665,42 @@
         -moz-transform: rotateY(0deg) translateX(20%) !important;
         -ms-transform: rotateY(0deg) translateX(20%) !important;
         -o-transform: rotateY(0deg) translateX(20%) !important;
-        transform: rotateY(0deg) translateX(20%) !important;
+        transform: rotateY(0deg) translateX(20%) !important
     }
 
-    /* Hero Section */
     .hero-area {
-        min-height: 0;
+        min-height: 0
     }
 
     .hero-slider-inner.owl-carousel .owl-item img {
         max-width: none;
-        /*width: auto;*/
-        height: 100%;
+        height: 100%
     }
 
     .hero-caption-inner h1 {
         font-size: 39px;
-        line-height: 55px;
+        line-height: 55px
     }
 
     .hero-caption-inner p {
         width: 100%;
-        padding: 0px 15px;
+        padding: 0 15px
     }
 
-    /* Service Section */
     .service-item {
-        margin: 15px 0;
+        margin: 15px 0
     }
 
-    /* Event Section */
     .event-area-inner {
-        padding: 50px 0px;
+        padding: 50px 0
     }
 
     .cdown {
-        margin-bottom: 15px;
+        margin-bottom: 15px
     }
 
     .event-slider {
-        padding: 0;
+        padding: 0
     }
 
     .event-slider .owl-item.center {
@@ -819,292 +709,262 @@
         -ms-transform: scale(1);
         -o-transform: scale(1);
         transform: scale(1);
-        z-index: 100;
+        z-index: 100
     }
 
     .event-fee {
         font-size: 24px;
-        line-height: 24px;
+        line-height: 24px
     }
 
     .event-slider .owl-stage-outer {
-        padding: 30px 0px 0px;
+        padding: 30px 0 0
     }
 
     .event-btn {
-        margin: 0;
+        margin: 0
     }
 
     .popular-event {
-        margin-bottom: 30px;
+        margin-bottom: 30px
     }
 
-    /* Gallery Section */
     .gallery-item {
-        width: 100%;
+        width: 100%
     }
 
-    /* Dj Profile Section */
     .dj-profile-area-inner {
-        padding-top: 50px;
+        padding-top: 50px
     }
 
     .profile-item-tab {
-        margin-bottom: 15px;
+        margin-bottom: 15px
     }
 
     .profile-tab {
-        padding: 30px 15px 15px;
+        padding: 30px 15px 15px
     }
 
-    /* Blog Section */
     .post-row {
-        margin-bottom: 15px;
+        margin-bottom: 15px
     }
 
     .post-link {
-        margin-bottom: 2px;
+        margin-bottom: 2px
     }
 
     .post-row p {
-        margin: 10px 0px;
+        margin: 10px 0
     }
 
     .single-post-row {
-        margin-bottom: 15px;
+        margin-bottom: 15px
     }
 
     .single-post-caption {
-        margin: -15px 15px 0px;
-        padding: 20px 15px 40px;
+        margin: -15px 15px 0;
+        padding: 20px 15px 40px
     }
 
-    .post-action .post-sticker,
-    .post-share {
+    .post-action .post-sticker, .post-share {
         width: 100%;
-        text-align: center;
+        text-align: center
     }
 
     blockquote {
-        padding: 10px 40px;
+        padding: 10px 40px
     }
 
     .user-comment {
-        padding: 100px 0px 25px 0px;
+        padding: 100px 0 25px
     }
 
     .comment-list ol li {
-        margin-left: 50px;
+        margin-left: 50px
     }
 
     .sidebar {
-        margin-top: 30px;
+        margin-top: 30px
     }
 
-    /* What We Offer Section */
     .offer-feature {
-        width: 100%;
+        width: 100%
     }
 
     .offer-short {
         width: 100%;
-        padding: 25px 0px 30px 70px;
+        padding: 25px 0 30px 70px
     }
 
     .row .col-md-6:last-child .offer-short {
-        padding-bottom: 0;
+        padding-bottom: 0
     }
 
-    /* Footer Section */
     .footer-area {
         margin: 0 !important;
-        padding: 40px 0px 20px;
+        padding: 40px 0 20px
     }
 
     .footer-content {
-        margin-bottom: 30px;
+        margin-bottom: 30px
     }
 
     .footer-title {
         margin: auto;
         width: 100%;
         height: 60px;
-        text-align: center;
+        text-align: center
     }
 
     .footer-social-link {
         margin-top: 15px;
-        text-align: center;
+        text-align: center
     }
 
-    .call-to-action .input-group {
-        margin-bottom: 15px;
-    }
-
-    /* About Page */
     .about-content {
-        padding: 15px 0px 50px;
+        padding: 15px 0 50px
     }
 
-    /* Gallery Page */
-    .video-tab {
-        margin-bottom: 15px;
+    .call-to-action .input-group, .video-tab {
+        margin-bottom: 15px
     }
 
     .video-tab-content .video-player {
         border: 30px solid #000;
-        min-height: 200px;
+        min-height: 200px
     }
 
     .video-tab-content a.close-me {
-        top: 0px;
-        right: 0px;
-        font-size: 20px;
+        top: 0;
+        right: 0;
+        font-size: 20px
     }
 
-    /* Booking Page */
     .booking-form {
-        padding: 0px 15px;
+        padding: 0 15px
     }
 
-    /* Blog Page */
     .header-caption-inner h1 {
-        font-size: 36px;
+        font-size: 36px
     }
 
-    /* Error Page */
     .error-caption {
-        min-height: 0px;
+        min-height: 0
     }
 
     .error-caption img {
-        margin: 0px auto 40px;
+        margin: 0 auto 40px
     }
 
     .error-caption p {
-        font-size: 22px;
+        font-size: 22px
     }
 
-    /* Footer Section */
     .call-to-action {
-        margin-top: 0px !important;
+        margin-top: 0 !important;
         text-align: center;
         margin-bottom: 30px;
-        padding: 15px;
+        padding: 15px
     }
 
     .footer-logo {
-        margin: 0px;
+        margin: 0
     }
 
     .social-link-center2 {
-        margin-bottom: 30px;
+        margin-bottom: 30px
     }
 
     .call-to-action .footer-title {
-        margin-bottom: 15px;
+        margin-bottom: 15px
     }
 
     .navbar-toggle {
         margin-bottom: 0;
-        margin-top: 22px;
+        margin-top: 22px
     }
 
     .navbar > .container .navbar-brand {
         margin-bottom: 25px;
         margin-top: 6px;
-        padding: 15px;
+        padding: 15px
     }
 
     #event-slider-screen .caption-inner::after {
-        content: inherit;
+        content: inherit
     }
 
     .social-link {
-        text-align: center;
+        text-align: center
     }
 
     .header-top {
-        padding: 5px 0px;
+        padding: 5px 0
     }
 
     .footer-copyright {
-        text-align: center;
+        text-align: center
     }
 
     .about-title {
-        margin-bottom: 10px;
+        margin-bottom: 10px
     }
 
     .ml-180 {
-        margin-left: 0;
+        margin-left: 0
     }
 
     .footer-style-4 .footer-social-link {
-        text-align: left;
+        text-align: left
     }
 
     .footer-social-link a {
         width: 30px;
         height: 30px;
-        margin: 0px 3px;
+        margin: 0 3px;
         font-size: 14px;
-        line-height: 30px;
+        line-height: 30px
     }
 
     .main-menu {
-        display: none;
+        display: none
     }
 
-    .mobile-menu-area {
+    .logo-menu-wrap, .mobile-menu-area {
         display: block;
-        width: 100%;
+        width: 100%
     }
 
     .logo-menu-wrap {
-        display: block;
         align-items: inherit;
         flex-wrap: inherit;
-        width: 100%;
-        margin: 20px 0;
+        margin: 20px 0
     }
 
-    .logo{
-        margin-left: 20px;
+    .logo {
+        margin-left: 20px
     }
 
     .online {
-        text-align: center;
+        text-align: center
     }
-
-
 }
 
-/* Wide Mobile Layout: 480px. */
-
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-
     .gallery-item {
-        width: 50%;
+        width: 50%
     }
 
     .caption-content {
-        padding: 15px;
+        padding: 15px
     }
 
     .hero-caption-inner h1 {
         font-size: 45px;
-        line-height: 55px;
+        line-height: 55px
     }
 
     .hero-caption-inner p {
-        width: 80%;
+        width: 80%
     }
-
-
-}
-
-/* Wide Mobile Layout: 480px. */
-
-@media only screen and (min-width: 320px) and (max-width: 374px) {
 }

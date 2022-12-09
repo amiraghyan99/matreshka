@@ -17,7 +17,6 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton(CacheResponseMiddleware::class);
-
     }
 
     /**
@@ -30,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
         Model::shouldBeStrict();
         Schema::defaultStringLength(191);
 
-        $this->app->bind('path.public', function() {
+        $this->app->bind('path.public', function () {
             return base_path().'/public_html';
         });
 
@@ -38,7 +37,5 @@ class AppServiceProvider extends ServiceProvider
             $view->with('current_locale', app()->currentLocale());
             $view->with('available_locales', config('app.available_locales'));
         });
-
-
     }
 }

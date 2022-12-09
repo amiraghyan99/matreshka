@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'debug' => (bool)env('APP_DEBUG', false),
+    'debug' => (bool) env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -69,7 +69,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Yerevan',
 
     /*
     |--------------------------------------------------------------------------
@@ -201,7 +201,6 @@ return [
          */
 
         Intervention\Image\ImageServiceProvider::class,
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         /*
          * Application Service Providers...
          */

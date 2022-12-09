@@ -9,11 +9,12 @@ use App\Http\Requests\Admin\StoreUserRequest;
 use App\Http\Requests\Admin\UpdateUserRequest;
 use App\Models\Role;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-use Inertia\Inertia;
+use Inertia\Response;
 
 class UserController extends Controller
 {
@@ -25,12 +26,7 @@ class UserController extends Controller
         $this->middleware('can:user delete', ['only' => ['destroy']]);
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function index(): Response
     {
         $users = (new User)->newQuery();
 
@@ -52,7 +48,7 @@ class UserController extends Controller
 
         $users = $users->paginate(5)->onEachSide(2)->appends(request()->query());
 
-        return Inertia::render('Admin/User/Index', [
+        return inertia()->render('Admin/User/Index', [
             'users' => $users,
             'filters' => request()->all('search'),
             'can' => [
@@ -63,28 +59,16 @@ class UserController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create(): Response
     {
         $roles = Role::all()->pluck('name', 'id');
 
-        return Inertia::render('Admin/User/Create', [
+        return inertia()->render('Admin/User/Create', [
             'roles' => $roles,
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\Admin\StoreUserRequest  $request
-     * @param  \App\Actions\Admin\User\CreateUser  $createUser
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreUserRequest $request, CreateUser $createUser)
+    public function store(StoreUserRequest $request, CreateUser $createUser): RedirectResponse
     {
         $createUser->handle($request);
 
@@ -92,51 +76,31 @@ class UserController extends Controller
                         ->with('message', __('User created successfully.'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
+    public function show(User $user): Response
     {
         $roles = Role::all()->pluck('name', 'id');
         $userHasRoles = array_column(json_decode($user->roles, true), 'id');
 
-        return Inertia::render('Admin/User/Show', [
+        return inertia()->render('Admin/User/Show', [
             'user' => $user,
             'roles' => $roles,
             'userHasRoles' => $userHasRoles,
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user)
+    public function edit(User $user): Response
     {
         $roles = Role::all()->pluck('name', 'id');
         $userHasRoles = array_column(json_decode($user->roles, true), 'id');
 
-        return Inertia::render('Admin/User/Edit', [
+        return inertia()->render('Admin/User/Edit', [
             'user' => $user,
             'roles' => $roles,
             'userHasRoles' => $userHasRoles,
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\Admin\UpdateUserRequest  $request
-     * @param  \App\Models\User  $user
-     * @param  \App\Actions\Admin\User\UpdateUser  $updateUser
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateUserRequest $request, User $user, UpdateUser $updateUser)
+    public function update(UpdateUserRequest $request, User $user, UpdateUser $updateUser): RedirectResponse
     {
         $updateUser->handle($request, $user);
 
@@ -163,10 +127,8 @@ class UserController extends Controller
      */
     public function accountInfo()
     {
-        $user = \Auth::user();
-
-        return Inertia::render('Admin/User/AccountInfo', [
-            'user' => $user,
+        return inertia()->render('Admin/User/AccountInfo', [
+            'user' => auth()->user(),
         ]);
     }
 
@@ -177,10 +139,10 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,'.\Auth::user()->id],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,'.auth()->user()->id],
         ]);
 
-        $user = \Auth::user()->update($request->except(['_token']));
+        $user = auth()->user()->update($request->except(['_token']));
 
         if ($user) {
             $message = 'Account updated successfully.';
@@ -206,7 +168,7 @@ class UserController extends Controller
             if ($validator->failed()) {
                 return;
             }
-            if (! Hash::check($request->input('old_password'), \Auth::user()->password)) {
+            if (! Hash::check($request->input('old_password'), auth()->user()->password)) {
                 $validator->errors()->add(
                     'old_password', __('Old password is incorrect.')
                 );
@@ -215,7 +177,7 @@ class UserController extends Controller
 
         $validator->validate();
 
-        $user = \Auth::user()->update([
+        $user = auth()->user()->update([
             'password' => Hash::make($request->input('new_password')),
         ]);
 

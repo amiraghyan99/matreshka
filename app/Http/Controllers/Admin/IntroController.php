@@ -8,7 +8,6 @@ use App\Http\Requests\UpdateIntroRequest;
 use App\Models\Intro;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Response;
 use Inertia\ResponseFactory;

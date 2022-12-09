@@ -4,7 +4,6 @@ namespace App\Traits;
 
 trait HasImages
 {
-
     public function initializeHasImages(): void
     {
         $this->setAppends(['url']);

@@ -43,12 +43,9 @@ class BasicAdminPermissionSeeder extends Seeder
             'intro delete',
         ];
 
-
         $roleSuperAdmin = Role::create(['name' => 'super-admin']);
         $roleAdmin = Role::create(['name' => 'admin']);
         $roleWriter = Role::create(['name' => 'writer']);
-
-
 
         foreach ($permissions as $permission) {
             Permission::create(['name' => $permission]);

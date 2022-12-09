@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Builder;
 
 trait HasFilters
 {
-
     /**
      * Get all searchable fields
      *
@@ -27,8 +26,8 @@ trait HasFilters
     public static function getSearchableKey(): string
     {
         $model = new static;
-        return $model->searchable_key ?? 'search';
 
+        return $model->searchable_key ?? 'search';
     }
 
     public function scopeSearch(Builder $query, array $data, bool $matchAllFields = false)
@@ -54,7 +53,7 @@ trait HasFilters
 
     public function scopeSerachInTranslates(Builder $query, bool $matchAllFields = false)
     {
-        $query->when($key = request()->query('search'), function (Builder $query, $keyword) use ($matchAllFields, $key) {
+        $query->when($key = request()->query('search'), function (Builder $query, $keyword) use ($matchAllFields) {
             foreach (static::getSearchableFields() as $field) {
                 if ($matchAllFields) {
                     $query->where("${field}->", "%$keyword%");
@@ -76,6 +75,4 @@ trait HasFilters
             $query->latest();
         }
     }
-
-
 }

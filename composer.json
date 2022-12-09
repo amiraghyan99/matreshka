@@ -59,10 +59,7 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": [
-                "barryvdh/laravel-debugbar",
-                "barryvdh/laravel-ide-helper"
-            ]
+            "dont-discover": []
         }
     },
     "config": {

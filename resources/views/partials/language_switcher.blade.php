@@ -1,3 +1,4 @@
+@section('language_switcher')
 <div class="dropdown localization">
     <div class="dropdown-toggle" id="Localization" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
         <img width="20px" src="{{url('assets/images/svg/flags', $available_locales[app()->currentLocale()].'.svg')}}"
@@ -24,3 +25,4 @@
         @endforeach
     </ul>
 </div>
+@endsection

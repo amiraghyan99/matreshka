@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Cache;
 
 class CacheResponseMiddleware
 {
-
     private \DateTimeInterface|\DateInterval|int|null $ttl;
 
     public function handle(Request $request, Closure $next, $ttl = null)
@@ -17,7 +16,7 @@ class CacheResponseMiddleware
         if (app()->isProduction()) {
             $this->ttl = $ttl ?? now()->addDay();
 
-            if (Cache::has($this->cacheKey($request) && !is_null($this->ttl))) {
+            if (Cache::has($this->cacheKey($request) && ! is_null($this->ttl))) {
                 return response(Cache::get($this->cacheKey($request)));
             }
         }
@@ -27,7 +26,7 @@ class CacheResponseMiddleware
 
     public function terminate(Request $request, Response $response): void
     {
-        if (app()->isProduction()){
+        if (app()->isProduction()) {
             if (Cache::has($this->cacheKey($request)) || $this->ttl === null) {
                 return;
             }
@@ -38,6 +37,6 @@ class CacheResponseMiddleware
 
     private function cacheKey(Request $request): string
     {
-        return md5($request->fullUrl() . '-' . auth()->id());
+        return md5($request->fullUrl().'-'.auth()->id());
     }
 }

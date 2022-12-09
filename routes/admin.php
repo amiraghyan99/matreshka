@@ -7,7 +7,6 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Models\Intro;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -18,7 +17,6 @@ Route::resource('permission', PermissionController::class);
 Route::get('edit-account-info', [UserController::class, 'accountInfo'])->name('admin.account.info');
 Route::post('edit-account-info', [UserController::class, 'accountInfoStore'])->name('admin.account.info.store');
 
-Route::get('change-password', [UserController::class, 'changePasswordStore'])->name('admin.account.password.store');
 Route::post('change-password', [UserController::class, 'changePasswordStore'])->name('admin.account.password.store');
 
 Route::resource('intro', IntroController::class);

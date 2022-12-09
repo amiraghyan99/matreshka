@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Spatie\Translatable\HasTranslations;
 
-
 class Intro extends Model
 {
     use HasFactory, HasTranslations, HasActive, HasImages, HasDateFormat, HasFilters;
