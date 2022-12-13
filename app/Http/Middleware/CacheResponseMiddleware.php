@@ -13,7 +13,6 @@ class CacheResponseMiddleware
 
     public function handle(Request $request, Closure $next, $ttl = null)
     {
-        dump(app()->isProduction());
         if (app()->isProduction()) {
             $this->ttl = $ttl ?? now()->addDay();
 
@@ -27,7 +26,6 @@ class CacheResponseMiddleware
 
     public function terminate(Request $request, Response $response): void
     {
-        dd(app()->isProduction());
         if (app()->isProduction()) {
             if (Cache::has($this->cacheKey($request)) || $this->ttl === null) {
                 return;
