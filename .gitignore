@@ -16,4 +16,5 @@ composer.lock
 package-lock.json
 _ide_helper.php
 _ide_helper_models.php
-storage
+/storage
+/tests

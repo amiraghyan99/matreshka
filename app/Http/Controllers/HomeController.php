@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Dymantic\InstagramFeed\Profile;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
@@ -82,7 +81,7 @@ class HomeController extends Controller
         {
             $path = Storage::files($directory);
 
-            return array_map(fn($item) => Storage::url($item), $path);
+            return array_map(fn ($item) => Storage::url($item), $path);
         }
 
         $galleries = getFiles('images/webp');
@@ -93,5 +92,4 @@ class HomeController extends Controller
 
         return view('index', $data);
     }
-
 }
