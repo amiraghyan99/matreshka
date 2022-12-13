@@ -23,7 +23,7 @@ return [
             ],
         ],
         'gallery' => 'Show Club Gallery',
-        'video' => 'Show Club Video',
+        'videos' => 'Show Club Video',
     ],
 
 ];
