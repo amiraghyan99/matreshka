@@ -601,7 +601,7 @@
 <script src="{{asset('/assets/js/jquery.gridrotator.js')}}"></script>
 <script src="{{asset('/assets/js/theme.js')}}"></script>
 
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+{{--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>--}}
 
 <script src="https://kit.fontawesome.com/57e89dc5d7.js" crossorigin="anonymous"></script>
 <script src="{{asset('/assets/js/custom.js')}}"></script>
