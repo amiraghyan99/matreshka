@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Dymantic\InstagramFeed\Profile;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -51,7 +52,7 @@ class HomeController extends Controller
                 'text' => __('menu.videos'),
             ],
             'menu' => [
-                'href' => '#',
+                'href' => '#menu',
                 'text' => __('menu.crazy-menu'),
             ],
             'vacancies' => [
@@ -63,29 +64,34 @@ class HomeController extends Controller
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-                'image' => 'assets/images/webp/IMG_3386.webp',
+                'image' => Storage::url('images/webp/IMG_3386.webp'),
             ],
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-                'image' => 'assets/images/webp/Gheviphoto-137.webp',
+                'image' => Storage::url('images/webp/Gheviphoto-137.webp'),
             ],
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-                'image' => 'assets/images/webp/Gheviphoto-23.webp',
+                'image' => Storage::url('images/webp/Gheviphoto-23.webp'),
             ],
         ];
 
-        $gallery_path = File::glob(public_path('assets/images/webp').'/*.webp');
-        $galleries = array_map(fn ($item) => url(str_replace(public_path(), '', $item)), $gallery_path);
+        function getFiles($directory): array
+        {
+            $path = Storage::files($directory);
 
-        $video_path = File::glob(public_path('assets/videos').'/*.webm');
-        $videos = array_map(fn ($item) => url(str_replace(public_path(), '', $item)), $video_path);
+            return array_map(fn($item) => Storage::url($item), $path);
+        }
 
+        $galleries = getFiles('images/webp');
 
-        $data = compact('socials', 'navigations', 'intros', 'galleries' , 'videos');
+        $videos = getFiles('videos/mov');
 
-        return view('welcome', $data);
+        $data = compact('socials', 'navigations', 'intros', 'galleries', 'videos');
+
+        return view('index', $data);
     }
+
 }

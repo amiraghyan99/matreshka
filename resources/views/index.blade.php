@@ -1,5 +1,5 @@
 @include('partials/language_switcher')
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -7,19 +7,21 @@
     @foreach(__('meta') as $name => $content)
         <meta name="{{$name}}" content="{{$content}}">
     @endforeach
-    <meta property="og:title" name="title" content="Matreshka Show Club" />
+    <meta property="og:title" name="title" content="Matreshka Show Club"/>
     <meta property="og:description" name="description" content="Matreshka Show Club">
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://matreshka.am" />
-    <meta property="og:image" content="/images/logos/logo-night-club.PNG" />
-    <link rel="apple-touch-icon" href="/images/logos/light-logo.png">
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://matreshka.am"/>
+    <meta property="og:image" content="/assets/img/logos/logo-night-club.PNG"/>
+    <link rel="apple-touch-icon" href="/assets/img/logos/light-logo.png">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Mobile Specific Mega  -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">{{--    <link rel="stylesheet" href="assets/css/font-awesome.min.css">--}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous">{{--    <link rel="stylesheet" href="assets/css/font-awesome.min.css">--}}
     <!--Owl Carousel CSS -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <!--magnific popup CSS -->
@@ -35,7 +37,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="assets/images/logos/light-logo.png">
+    <link rel="shortcut icon" type="image/png" href="assets/img/logos/light-logo.png">
 </head>
 
 <body data-spy="scroll" data-target="#scroll-menu" data-offset="65">
@@ -44,7 +46,7 @@
 <div class="preloader-wrap">
     <div class="preloader-inside">
         <div class="logo-loading animated bounce zoomIn">
-            <img src="{{asset('assets/images/logos/logo-image.webp')}}" alt="Matreshka Show Club">
+            <img src="{{asset('assets/img/logos/logo-image.webp')}}" alt="Matreshka Show Club">
         </div>
     </div>
 </div>
@@ -60,10 +62,12 @@
                     <div class="d-none d-md-block col-lg-8 col-md-6">
                         <ul class="online">
                             <li>
-                                <a href="{{'tel:' . str_replace(' ', '', __('main.phone.number'))}}">@lang('main.phone.title'):<span>@lang('main.phone.number')</span></a>
+                                <a href="{{'tel:' . str_replace(' ', '', __('main.phone.number'))}}">@lang('main.phone.title')
+                                    :<span>@lang('main.phone.number')</span></a>
                             </li>
 
-                            <li><a href="#">@lang('main.opening.title'):<span><small>@lang('main.opening.days')</small>@lang('main.opening.times')</span></a></li>
+                            <li><a href="#">@lang('main.opening.title'):<span><small>@lang('main.opening.days')</small>@lang('main.opening.times')</span></a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-12 col-lg-4 col-md-6">
@@ -88,7 +92,7 @@
             <div class="logo-menu-wrap">
                 <div class="logo">
                     <a href="{{route('home', app()->currentLocale())}}">
-                        <img src="{{asset('assets/images/logos/logo-night-club.webp')}}"
+                        <img src="{{asset('assets/img/logos/logo-night-club.webp')}}"
                              alt="responsive img"
                              class="logo-image"
                              loading="lazy"
@@ -132,7 +136,7 @@
                 <img src="{{$intro['image']}}" alt="{{$intro['title']}}" class="image-cover" loading="lazy">
                 <div class="hero-caption">
                     <div class="hero-caption-inner">
-                        <h1 class="hero-caption-title animation-flicker">{{$intro['title']}}</h1>
+                        <h1 class="hero-caption-title neonText">{{$intro['title']}}</h1>
                         <p>{{$intro['description']}}</p>
                     </div>
                 </div>
@@ -154,7 +158,7 @@
         <div class="row">
             <div class="col-md-6 col-lg-4">
                 <div class="service-item">
-                    <img src="assets/images/webp/Gheviphoto-13.webp" alt="responsive img" loading="lazy">
+                    <img src="storage/images/webp/Gheviphoto-13.webp" alt="responsive img" loading="lazy">
                     <div class="caption">
                         <div class="caption-inner">
                             <div class="caption-content">
@@ -236,7 +240,7 @@
             </div>
             <div class="col-md-6 col-lg-4">
                 <div class="service-item">
-                    <img src="assets/images/webp/Gheviphoto-23.webp" alt="responsive img" loading="lazy">
+                    <img src="storage/images/webp/Gheviphoto-23.webp" alt="responsive img" loading="lazy">
                     <div class="caption">
                         <div class="caption-inner">
                             <div class="caption-content">
@@ -262,11 +266,12 @@
             </div>
             <div class="col-md-6 col-lg-4">
                 <div class="service-item foo">
-                    <img src="assets/images/webp/Gheviphoto-60.webp" alt="responsive img" loading="lazy">
+                    <img src="storage/images/webp/Gheviphoto-60.webp" alt="responsive img" loading="lazy">
                     <div class="caption">
                         <div class="caption-inner">
                             <div class="caption-content">
-                                <svg version="1.1" class="my-svg svg-dance"  viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+                                <svg version="1.1" class="my-svg svg-dance" viewBox="0 0 700 700"
+                                     xmlns="http://www.w3.org/2000/svg">
                                     <g>
                                         <path d="m420.53 316.86c3.6641 1.3242 7.2148 2.9336 10.621 4.8164 3.3906 2.0273 6.7148 4.1836 9.9023 6.5156 6.4414 4.7227 12.59 9.8359 18.406 15.305 2.8281 2.6523 5.5898 5.3633 8.3164 8.1172 2.0234 2.0469 4.2188 3.9219 6.293 5.9141l-0.003906-0.003906c2.2891 2.207 4.3594 4.6211 6.1914 7.2148 1.875 2.3906 3.1602 5.1914 3.7422 8.1758 0.28516 1.6289 0.43359 3.2812 0.44141 4.9375-0.125 2.082-0.66016 4.1211-1.5664 6-1.7344 3.8242-4.2617 7.2344-7.4141 10.008-1 0.85547-2.7617-0.33594-1.9023-1.5117h-0.003906c2.2539-2.668 4.293-5.5078 6.1055-8.4961 1.668-2.8164 2.1406-6.1836 1.3164-9.3555-1.0781-2.6953-2.5508-5.2188-4.3672-7.4883-2.0156-2.3633-4.1914-4.582-6.5078-6.6523-10.496-10.27-21.625-19.871-33.328-28.746-2.8203-2.0508-5.6328-4.0977-8.5312-6.0234-3.0078-1.9844-5.7539-4.332-8.7578-6.332-1.1836-0.80078-0.40234-2.9844 1.0469-2.3945z"/>
                                         <path d="m447.33 457.66c1.0781-6.4727 2.8164-12.82 5.1914-18.938 4.6992-12.227 10.164-24.145 16.363-35.68 0.59375-1.1445 2.5938-0.28125 2.0859 0.91406-4.6328 11.062-10.062 21.812-14.238 33.074l0.035156-0.078125v-0.003907c2.7305-5.1094 5.75-10.055 9.043-14.816 6.6602-10.48 13.215-20.996 20.539-31.035h-0.003906c0.23828-0.36719 0.72266-0.47656 1.0938-0.25 0.37109 0.22266 0.49219 0.70703 0.27734 1.082-5.6992 10.648-11.129 21.48-17.246 31.898-2.8945 4.8359-6.0586 9.5039-9.4766 13.984-1.7109 2.2773-3.293 4.6758-4.8359 7.0664-1.2227 2.6367-2.2188 5.3711-2.9766 8.1758-0.19141 0.47656-0.66406 0.77734-1.1758 0.74219l-0.46484 2.625c-0.47266 3.0156-0.84766 6.0234-1.0664 9.0703-0.20312 1.543-0.13672 3.1094 0.19922 4.6328 0.48438 1.7266 1.2188 3.3906 1.8711 5.0586 0.55078 1.4219-1.8555 2.3789-2.4727 1l-1.9453-4.4375c-0.63281-1.4062-1.082-2.8867-1.3477-4.4062-0.22266-3.2383-0.035156-6.4883 0.55078-9.6797z"/>
@@ -308,38 +313,6 @@
         </div>
     </div>
 </div>
-<div class="container" id="videos">
-
-    <div class="row">
-        <div class="col-12 foo">
-            <div class="section-title-area">
-                <h2 class="section-title">Show Club Videos</h2>
-            </div>
-        </div>
-    </div>
-    <div id="carouselVideo" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner videoSection">
-            @foreach($videos as $key => $video)
-                <div class="carousel-item {{$key == 0 ? 'active': ''}}">
-                    <video class="d-block w-100 video" autoplay muted controls loop preload="auto">
-                        <source src="{{$video}}" type="video/webm">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            @endforeach
-
-        </div>
-        <a class="carousel-control-prev" href="#carouselVideo" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-
-        <a class="carousel-control-next" href="#carouselVideo" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</div>
 
 <div class="gallery-area inner-padding" id="gallery">
     <div class="container">
@@ -371,12 +344,47 @@
                             </div>
                         </div>
                     @endforeach
-
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+@if($videos)
+    <div class="container" id="videos">
+        <div class="row">
+            <div class="col-12 foo">
+                <div class="section-title-area">
+                    <h2 class="section-title">@lang('main.section.videos')</h2>
+                </div>
+            </div>
+        </div>
+        <div id="carouselVideo" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner videoSection">
+                @foreach($videos as $key => $video)
+                    <div class="carousel-item {{$key == 0 ? 'active': ''}}">
+                        <video id="video-player-{{$key}}" class="d-block w-100 video" controls loop
+                               preload="{{$key == 0 ? 'auto': 'none'}}">
+                            <source src="{{$video}}" type="video/mp4">
+                            {{--                        <source src="{{$video}}" type="video/webm">--}}
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                @endforeach
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselVideo" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next" href="#carouselVideo" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+@endif
 
 {{--INSTAGRAM SECTION--}}
 {{--<div class="blog-area inner-padding3" id="blog">--}}
@@ -531,7 +539,7 @@
                 <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                     <div class="company-logo">
                         <a href="{{route('home', app()->currentLocale())}}">
-                            <img src="{{asset('assets/images/logos/logo-night-club.webp')}}"
+                            <img src="{{asset('assets/img/logos/logo-night-club.webp')}}"
                                  alt="responsive img" loading="lazy">
                         </a>
                     </div>
@@ -562,7 +570,9 @@
                     <h4 class="footer-title">@lang('main.opening.title')</h4>
                     <div class="footer-content">
                         <div class="opening-time">
-                                <p><strong class="me-5">@lang('main.opening.days')</strong><small>@lang('main.opening.times')</small></p>
+                            <p>
+                                <strong class="me-5">@lang('main.opening.days')</strong><small>@lang('main.opening.times')</small>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -592,7 +602,6 @@
 <script src="{{asset('/assets/js/theme.js')}}"></script>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-{{--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>--}}
 
 <script src="https://kit.fontawesome.com/57e89dc5d7.js" crossorigin="anonymous"></script>
 <script src="{{asset('/assets/js/custom.js')}}"></script>
