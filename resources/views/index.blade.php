@@ -17,7 +17,8 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Mobile Specific Mega  -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
@@ -314,41 +315,44 @@
     </div>
 </div>
 
-<div class="gallery-area inner-padding" id="gallery">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 foo">
-                <div class="section-title-area">
-                    <h2 class="section-title">@lang('main.section.gallery')</h2>
+@if($galleries)
+    <div class="gallery-area inner-padding" id="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 foo">
+                    <div class="section-title-area">
+                        <h2 class="section-title">@lang('main.section.gallery')</h2>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row no-gutters">
-            <div class="col-12">
-                <div class="gallery-masonry gallery">
-                    @foreach($galleries as $gallery)
-                        <div class="gallery-item">
-                            <img src="{{ $gallery }}" alt="Gallery" loading="lazy">
-                            <div class="caption">
-                                <div class="caption-inner">
-                                    <div class="caption-content">
-                                        <ul>
-                                            <li><a href="{{ $gallery }}"><i
-                                                            class="fa-solid fa-magnifying-glass"></i></a>
-                                            </li>
-                                        </ul>
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-12">
+                    <div class="gallery-masonry gallery">
+                        @foreach($galleries as $gallery)
+                            <div class="gallery-item">
+                                <img src="{{ $gallery }}" alt="Gallery" loading="lazy">
+                                <div class="caption">
+                                    <div class="caption-inner">
+                                        <div class="caption-content">
+                                            <ul>
+                                                <li><a href="{{ $gallery }}"><i
+                                                                class="fa-solid fa-magnifying-glass"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+@endif
 
 @if($videos)
     <div class="container" id="videos">
@@ -592,16 +596,16 @@
 <script src="{{asset('/assets/js/jquery.waypoints.min.js')}}"></script>
 <script src="{{asset('/assets/js/owl.carousel.min.js')}}"></script>
 <script src="{{asset('/assets/js/meanmenu.js')}}"></script>
-<script src="{{asset('/assets/js/countdown.js')}}"></script>
+{{--<script src="{{asset('/assets/js/countdown.js')}}"></script>--}}
 <script src="{{asset('/assets/js/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('/assets/js/isotope.pkgd.min.js')}}"></script>
 <script src="{{asset('/assets/js/isotope_custom.js')}}"></script>
 <script src="{{asset('/assets/js/masonry.pkgd.min.js')}}"></script>
 <script src="{{asset('/assets/js/modernizr-3.11.2.min.js')}}"></script>
-<script src="{{asset('/assets/js/jquery.gridrotator.js')}}"></script>
+{{--<script src="{{asset('/assets/js/jquery.gridrotator.js')}}"></script>--}}
 <script src="{{asset('/assets/js/theme.js')}}"></script>
 
-{{--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>--}}
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
 
 <script src="https://kit.fontawesome.com/57e89dc5d7.js" crossorigin="anonymous"></script>
 <script src="{{asset('/assets/js/custom.js')}}"></script>
