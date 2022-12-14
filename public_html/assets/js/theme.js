@@ -1,8 +1,8 @@
 checkWindowSize();
 
 // Check if the page has enough content or not. If not then fetch records
-function checkWindowSize(){
-    if($(window).height() >= $(document).height()){
+function checkWindowSize() {
+    if ($(window).height() >= $(document).height()) {
         // Fetch records
         fetchData();
     }
@@ -15,46 +15,69 @@ function fetchData() {
 
 $(document).on('touchmove', onScroll); // for mobile
 
-function onScroll(){
+function onScroll() {
 
-    if($(window).scrollTop() > $(document).height() - $(window).height()-100) {
+    if ($(window).scrollTop() > $(document).height() - $(window).height() - 100) {
         fetchData();
     }
 }
 
-$(window).scroll(function(){
+$(window).scroll(function () {
 
     var position = $(window).scrollTop();
     var bottom = $(document).height() - $(window).height();
 
-    if( position === bottom ){
+    if (position === bottom) {
         fetchData();
     }
 
 });
 
+function hero_slider_carousel() {
+    var owl = $("#hero-slider-screen");
+    owl.owlCarousel({
+        lazyLoad: true,
+        margin: 10,
+        smartSpeed: 2000,
+        responsiveClass: true,
+        navigation: true,
+        navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+        nav: true,
+        items: 1,
+        addClassActive: true,
+        dots: false,
+        autoplay: false,
+        autoplayTimeout: 3000,
+        stopOnHover: true,
+        responsive: {
+            0: {
+                dots: true,
+                nav: false,
+            },
 
+            768: {
+                dots: false,
+                nav: true,
+            }
+        }
+    });
 
+    owl.on('change.owl.carousel', function (event) {
+        $('.hero-caption-inner h1')
+            .fadeOut(0);
 
+        $('.hero-caption-inner p')
+            .fadeOut(0)
+    });
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+hero_slider_carousel();
 
 
 $(window).on('load', function () {
     // Preloader
-    $('.preloader-wrap').fadeOut('fast', function () {
+    $('.preloader-wrap').fadeOut('slow', function () {
         $(this).remove();
     });
 

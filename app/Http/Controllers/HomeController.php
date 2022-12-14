@@ -63,17 +63,20 @@ class HomeController extends Controller
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-                'image' => $this->getImageUrl('images/original/IMG_3386.JPG'),
+                'image' => $this->getImageUrl('images/original/IMG_3386.JPG', 10),
+                'image-large' => $this->getImageUrl('images/original/IMG_3386.JPG', 90, 1280,),
             ],
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-                'image' => $this->getImageUrl('images/original/Gheviphoto-60.jpg'),
+                'image' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 10),
+                'image-large' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 90, 1280, 910),
             ],
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg'),
+                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 10),
+                'image-large' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 90, 1280, 910),
             ],
         ];
 
@@ -81,6 +84,7 @@ class HomeController extends Controller
 
 
         $galleries = $this->getImages('images/original');
+
 
 //        $videos = getFiles('videos/mov');
         $videos = [];
@@ -90,10 +94,11 @@ class HomeController extends Controller
         return view('index', $data);
     }
 
-    public function getImageUrl($src, $width = null, $height = null): string
+    public function getImageUrl(string $src, int $quantity = 90, int $width = null, int $height = null): string
     {
         return route('cache-image', [
             'src' => $src,
+            'quantity' => $quantity,
             'w' => $width,
             'h' => $height
         ]);
@@ -103,6 +108,9 @@ class HomeController extends Controller
     {
         $path = Storage::files($directory);
 
-        return array_map(fn($item) => $this->getImageUrl($item), $path);
+        return array_map(fn($item) => [
+            'min' => $this->getImageUrl($item, 100, 500),
+            'max' => $this->getImageUrl($item, 100),
+        ], $path);
     }
 }
