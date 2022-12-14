@@ -44,7 +44,12 @@ html {
 .logo:not(:hover) {
     transition: .3s ease-in
 }
-.hero-slider-inner.owl-carousel{
+
+.hero-slider-inner.owl-carousel {
+    background-color: black;
+}
+
+.service-item {
     background-color: black;
 }
 

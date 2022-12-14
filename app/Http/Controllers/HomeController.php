@@ -64,23 +64,44 @@ class HomeController extends Controller
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
                 'image' => $this->getImageUrl('images/original/IMG_3386.JPG', 10),
-                'image-large' => $this->getImageUrl('images/original/IMG_3386.JPG', 90, 1280,),
+                'image-large' => $this->getImageUrl('images/original/IMG_3386.JPG', 100, 1280,),
             ],
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
                 'image' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 10),
-                'image-large' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 90, 1280, 910),
+                'image-large' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 100, 1280, 910),
             ],
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
                 'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 10),
-                'image-large' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 90, 1280, 910),
+                'image-large' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 100, 1280, 910),
             ],
         ];
 
-//        Storage::url($item)
+        $services = [
+            [
+                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 100, 400, 400),
+                'title' => __('main.section.welcome.card.hookah.title'),
+                'desc' => __('main.section.welcome.card.hookah.desc'),
+                'id' => 'hookah',
+            ],
+            [
+                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 100, 400, 400),
+                'title' => __('main.section.welcome.card.hookah.title'),
+                'desc' => __('main.section.welcome.card.hookah.desc'),
+                'id' => 'drink-bar',
+            ],
+            [
+                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 100, 400, 400),
+                'title' => __('main.section.welcome.card.hookah.title'),
+                'desc' => __('main.section.welcome.card.hookah.desc'),
+                'id' => 'dance',
+            ],
+
+
+        ];
 
 
         $galleries = $this->getImages('images/original');
@@ -89,7 +110,7 @@ class HomeController extends Controller
 //        $videos = getFiles('videos/mov');
         $videos = [];
 
-        $data = compact('socials', 'navigations', 'intros', 'galleries', 'videos');
+        $data = compact('socials', 'navigations', 'intros', 'services', 'galleries', 'videos');
 
         return view('index', $data);
     }

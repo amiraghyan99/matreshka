@@ -45,7 +45,7 @@
 <body data-spy="scroll" data-target="#scroll-menu" data-offset="65">
 <x-header :$socials :$navigations />
 <x-intro :$intros />
-<x-service-area />
+<x-service-area :$services />
 <x-gallery :$galleries />
 <x-videos :$videos />
 {{--<x-instagram-area :$videos />--}}

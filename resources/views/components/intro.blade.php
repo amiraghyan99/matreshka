@@ -1,8 +1,8 @@
 <div class="hero-area" id="home">
     <div id="hero-slider-screen" class="owl-carousel owl-theme hero-slider-inner">
-        @foreach($intros as $intro)
+        @foreach($intros as $key => $intro)
             <div class="item">
-                <img data-src-retina="{{$intro['image']}}" data-src="{{$intro['image-large']}}" alt="{{$intro['title']}}" class="owl-lazy">
+                <img data-src-retina="{{$intro['image']}}" data-src="{{$intro['image-large']}}" alt="{{$intro['title']}}" @class(['owl-lazy' => $key != 0])>
                 <div class="hero-caption">
                     <div class="hero-caption-inner">
                         <h1 class="hero-caption-title neonText">{{$intro['title']}}</h1>
