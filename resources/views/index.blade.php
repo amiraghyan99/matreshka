@@ -45,13 +45,13 @@
 <body data-spy="scroll" data-target="#scroll-menu" data-offset="65">
 
 <!-- Preloader -->
-{{--<div class="preloader-wrap">--}}
-{{--    <div class="preloader-inside">--}}
-{{--        <div class="logo-loading animated bounce zoomIn">--}}
-{{--            <img src="{{asset('assets/img/logos/logo-image.webp')}}" alt="Matreshka Show Club">--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
+<div class="preloader-wrap">
+    <div class="preloader-inside">
+        <div class="logo-loading animated bounce zoomIn">
+            <img src="{{asset('assets/img/logos/logo-image.webp')}}" alt="Matreshka Show Club">
+        </div>
+    </div>
+</div>
 <!-- End Preloader -->
 <!-- Nav Section -->
 <header class="header-area">
@@ -333,7 +333,7 @@
                     <div class="gallery-masonry gallery">
                         @foreach($galleries as $gallery)
                             <div class="gallery-item">
-                                <img src="{{ $gallery }}" alt="Gallery" loading="lazy">
+                                <img src="{{ $gallery }}" alt="Gallery">
                                 <div class="caption">
                                     <div class="caption-inner">
                                         <div class="caption-content">

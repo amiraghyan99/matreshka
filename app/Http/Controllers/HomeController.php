@@ -63,33 +63,46 @@ class HomeController extends Controller
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-                'image' => Storage::url('images/webp/IMG_3386.webp'),
+                'image' => $this->getImageUrl('images/original/IMG_3386.JPG'),
             ],
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-                'image' => Storage::url('images/webp/Gheviphoto-137.webp'),
+                'image' => $this->getImageUrl('images/original/Gheviphoto-60.jpg'),
             ],
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-                'image' => Storage::url('images/webp/Gheviphoto-23.webp'),
+                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg'),
             ],
         ];
 
-        function getFiles($directory): array
-        {
-            $path = Storage::files($directory);
+//        Storage::url($item)
 
-            return array_map(fn ($item) => Storage::url($item), $path);
-        }
 
-        $galleries = getFiles('images/webp');
+        $galleries = $this->getImages('images/original');
 
-        $videos = getFiles('videos/mov');
+//        $videos = getFiles('videos/mov');
+        $videos = [];
 
         $data = compact('socials', 'navigations', 'intros', 'galleries', 'videos');
 
         return view('index', $data);
+    }
+
+    public function getImageUrl($src, $width = null, $height = null): string
+    {
+        return route('cache-image', [
+            'src' => $src,
+            'w' => $width,
+            'h' => $height
+        ]);
+    }
+
+    public function getImages($directory): array
+    {
+        $path = Storage::files($directory);
+
+        return array_map(fn($item) => $this->getImageUrl($item), $path);
     }
 }
