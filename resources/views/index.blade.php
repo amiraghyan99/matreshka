@@ -17,7 +17,8 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Mobile Specific Mega  -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -367,8 +368,8 @@
             <div class="carousel-inner videoSection">
                 @foreach($videos as $key => $video)
                     <div class="carousel-item {{$key == 0 ? 'active': ''}}">
-                        <video id="video-player-{{$key}}" class="d-block w-100 video" controls loop
-                               preload="{{$key == 0 ? 'auto': 'none'}}">
+                        <video id="video-player-{{$key}}" class="d-block w-100 video"
+                               controls loop playsinline preload="{{$key == 0 ? 'auto': 'none'}}">
                             <source src="{{$video}}" type="video/mp4">
                             {{--                        <source src="{{$video}}" type="video/webm">--}}
                             Your browser does not support the video tag.
