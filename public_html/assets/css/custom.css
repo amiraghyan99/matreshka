@@ -46,7 +46,11 @@ html {
 }
 
 .hero-slider-inner.owl-carousel, .service-item {
-    background-color: #000
+    background-color: #000;
+}
+
+.service-padding {
+    padding: 5px;
 }
 
 .neonText {

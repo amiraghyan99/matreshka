@@ -43,6 +43,13 @@
 </head>
 
 <body data-spy="scroll" data-target="#scroll-menu" data-offset="65">
+<div class="preloader-wrap">
+    <div class="preloader-inside">
+        <div class="logo-loading animated bounce zoomIn">
+            <img src="{{asset('assets/img/logos/logo-image.webp')}}" alt="Matreshka Show Club">
+        </div>
+    </div>
+</div>
 <x-header :$socials :$navigations />
 <x-intro :$intros />
 <x-service-area :$services />

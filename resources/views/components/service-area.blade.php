@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             @foreach($services as $service)
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 service-padding">
                 <div class="service-item">
                     <img data-src="{{$service['image']}}" alt="{{$service['title']}}" class="lazy">
                     <div class="caption">
