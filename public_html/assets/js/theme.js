@@ -72,11 +72,16 @@ function hero_slider_carousel() {
 
 }
 
-hero_slider_carousel();
 
+hero_slider_carousel();
 
 $(window).on('load', function () {
     // Preloader
+
+
+});
+
+window.addEventListener('load', function (){
     $('.preloader-wrap').fadeOut('slow', function () {
         $(this).remove();
     });
@@ -85,9 +90,9 @@ $(window).on('load', function () {
         itemSelector: '.gallery-item'
     });
 
-    $(function (){
-        $('img.lazy').lazy();
-    });
+    $('img.lazy').lazy();
+
+
 });
 
 // Js Index
