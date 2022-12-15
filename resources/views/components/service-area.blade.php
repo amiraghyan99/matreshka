@@ -11,11 +11,11 @@
             @foreach($services as $service)
             <div class="col-md-6 col-lg-4">
                 <div class="service-item">
-                    <img src="{{$service['image']}}" alt="{{$service['title']}}" loading="lazy">
+                    <img data-src="{{$service['image']}}" alt="{{$service['title']}}" class="lazy">
                     <div class="caption">
                         <div class="caption-inner">
                             <div class="caption-content">
-                                {{ $svgIcon($service['id']) }}
+                                <x-dynamic-component :component="$svgIcon($service['id'])" class="mt-4" />
                                 <h3 class="service-title">{{$service['title']}}</h3>
                                 <p>{{$service['desc']}}</p>
                             </div>

@@ -84,6 +84,10 @@ $(window).on('load', function () {
     $('.gallery-masonry').masonry({
         itemSelector: '.gallery-item'
     });
+
+    $(function (){
+        $('img.lazy').lazy();
+    });
 });
 
 // Js Index
@@ -169,7 +173,6 @@ $(window).on('load', function () {
             }
         });
         owl.on('changed.owl.carousel', function (event) {
-            console.log(event)
             $('.hero-caption-inner h1').addClass('animated').addClass('bounceIn')
                 .delay(500)
                 .fadeIn(900);

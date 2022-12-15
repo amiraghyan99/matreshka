@@ -35,7 +35,7 @@ class HomeController extends Controller
                 'target' => '_blank',
             ],
             'phone' => [
-                'href' => 'tel:+37400000000',
+                'href' => 'tel:+37455338848',
                 'iconClass' => 'fa-solid fa-phone',
                 'target' => '_self',
             ],
@@ -82,22 +82,22 @@ class HomeController extends Controller
 
         $services = [
             [
-                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 100, 400, 400),
+                'image' => $this->getImageUrl('images/original/Gheviphoto-13.jpg', 100, 400 ),
                 'title' => __('main.section.welcome.card.hookah.title'),
                 'desc' => __('main.section.welcome.card.hookah.desc'),
                 'id' => 'hookah',
             ],
             [
-                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 100, 400, 400),
-                'title' => __('main.section.welcome.card.hookah.title'),
-                'desc' => __('main.section.welcome.card.hookah.desc'),
+                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 100, 400 ),
+                'title' => __('main.section.welcome.card.drink_bar.title'),
+                'desc' => __('main.section.welcome.card.drink_bar.desc'),
                 'id' => 'drink-bar',
             ],
             [
-                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 100, 400, 400),
-                'title' => __('main.section.welcome.card.hookah.title'),
-                'desc' => __('main.section.welcome.card.hookah.desc'),
-                'id' => 'dance',
+                'image' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 100, 400 ),
+                'title' => __('main.section.welcome.card.dance.title'),
+                'desc' => __('main.section.welcome.card.dance.desc'),
+                'id' => 'dancer',
             ],
 
 

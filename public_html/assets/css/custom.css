@@ -45,12 +45,8 @@ html {
     transition: .3s ease-in
 }
 
-.hero-slider-inner.owl-carousel {
-    background-color: black;
-}
-
-.service-item {
-    background-color: black;
+.hero-slider-inner.owl-carousel, .service-item {
+    background-color: #000
 }
 
 .neonText {
