@@ -90,7 +90,7 @@ window.addEventListener('load', function (){
         itemSelector: '.gallery-item'
     });
 
-    $('img.lazy').lazy();
+    $('img.lazy').Lazy();
 
 
 });
