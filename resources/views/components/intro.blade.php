@@ -3,7 +3,8 @@
         @foreach($intros as $key => $intro)
             <div class="item">
                 <img
-                        data-src="{{$intro['image-large']}}"
+                        src="{{$intro['image']}}"
+                        data-src="{{$intro['image']}}"
                         alt="{{$intro['title']}}"
                         class="owl-lazy"
                 >

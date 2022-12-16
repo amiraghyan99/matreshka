@@ -63,20 +63,20 @@ class HomeController extends Controller
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-                'image' => $this->getImageUrl('images/original/IMG_3386.JPG', 10),
-                'image-large' => $this->getImageUrl('images/original/IMG_3386.JPG', 100, 1280,),
+//                'image' => $this->getImageUrl('images/original/IMG_3386.JPG', 10),
+                'image' => $this->getImageUrl('images/original/IMG_3386.JPG', 100, 1280,),
             ],
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-                'image' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 10),
-                'image-large' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 100, 1280, 910),
+//                'image' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 10),
+                'image' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 100, 1280, 910),
             ],
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 10),
-                'image-large' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 100, 1280, 910),
+//                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 10),
+                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 100, 1280, 910),
             ],
         ];
 
