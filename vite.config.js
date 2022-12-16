@@ -13,7 +13,7 @@ export default defineConfig({
             input: [
                 'resources/js/app.js',
                 'resources/js/frontend.js',
-                'resources/js/Frontend/js/main.js'
+                // 'resources/js/Frontend/js/main.js'
             ],
             refresh: true,
             publicDirectory:'public_html'
