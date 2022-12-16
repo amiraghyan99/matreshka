@@ -15,7 +15,7 @@ return [
     'address' => '98 Bagrevand St, Yerevan, Armenia',
     'section' => [
         'welcome' => [
-            'title' => 'Welcome To Our Show Club',
+            'title' => 'Welcome To Our Night Club',
             'card' => [
                 'hookah' => ['title' => 'HOOKAH', 'desc' => \Faker\Provider\Lorem::text()],
                 'drink_bar' => ['title' => 'DRINK BAR', 'desc' => \Faker\Provider\Lorem::text()],
