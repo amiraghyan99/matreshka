@@ -25,7 +25,7 @@ export default defineConfig({
                     includeAbsolute: false,
                 },
             },
-        }),:q
+        }),
     ],
     resolve: {
         alias: {
