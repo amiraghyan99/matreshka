@@ -63,49 +63,46 @@ class HomeController extends Controller
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-//                'image' => $this->getImageUrl('images/original/IMG_3386.JPG', 10),
-                'image' => $this->getImageUrl('images/original/IMG_3386.JPG', 100, 1280,),
+                //                'image' => $this->getImageUrl('images/original/IMG_3386.JPG', 10),
+                'image' => $this->getImageUrl('images/original/IMG_3386.JPG', 100, 1280),
             ],
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-//                'image' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 10),
+                //                'image' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 10),
                 'image' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 100, 1280, 910),
             ],
             [
                 'title' => __('intro.title'),
                 'description' => __('intro.description'),
-//                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 10),
+                //                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 10),
                 'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 100, 1280, 910),
             ],
         ];
 
         $services = [
             [
-                'image' => $this->getImageUrl('images/original/Gheviphoto-13.jpg', 100, 400 ),
+                'image' => $this->getImageUrl('images/original/Gheviphoto-13.jpg', 100, 400),
                 'title' => __('main.section.welcome.card.hookah.title'),
                 'desc' => __('main.section.welcome.card.hookah.desc'),
                 'id' => 'hookah',
             ],
             [
-                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 100, 400 ),
+                'image' => $this->getImageUrl('images/original/Gheviphoto-23.jpg', 100, 400),
                 'title' => __('main.section.welcome.card.drink_bar.title'),
                 'desc' => __('main.section.welcome.card.drink_bar.desc'),
                 'id' => 'drink-bar',
             ],
             [
-                'image' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 100, 400 ),
+                'image' => $this->getImageUrl('images/original/Gheviphoto-60.jpg', 100, 400),
                 'title' => __('main.section.welcome.card.dance.title'),
                 'desc' => __('main.section.welcome.card.dance.desc'),
                 'id' => 'dancer',
             ],
 
-
         ];
 
-
         $galleries = $this->getImages('images/original');
-
 
 //        $videos = getFiles('videos/mov');
         $videos = [];
@@ -121,7 +118,7 @@ class HomeController extends Controller
             'src' => $src,
             'quantity' => $quantity,
             'w' => $width,
-            'h' => $height
+            'h' => $height,
         ]);
     }
 
@@ -129,7 +126,7 @@ class HomeController extends Controller
     {
         $path = Storage::files($directory);
 
-        return array_map(fn($item) => [
+        return array_map(fn ($item) => [
             'min' => $this->getImageUrl($item, 100, 500),
             'max' => $this->getImageUrl($item, 100),
         ], $path);

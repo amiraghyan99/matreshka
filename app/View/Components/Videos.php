@@ -6,9 +6,9 @@ use Illuminate\View\Component;
 
 class Videos extends Component
 {
-
-
-    public function __construct(public array $videos) {}
+    public function __construct(public array $videos)
+    {
+    }
 
     /**
      * Get the view / contents that represent the component.

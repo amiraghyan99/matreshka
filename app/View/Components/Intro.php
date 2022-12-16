@@ -6,8 +6,7 @@ use Illuminate\View\Component;
 
 class Intro extends Component
 {
-
-    public function __construct( public array $intros)
+    public function __construct(public array $intros)
     {
     }
 

@@ -11,26 +11,26 @@ Route::get('/', function () {
     return redirect()->route('home', $locale);
 });
 
-Route::get('images', function (\Illuminate\Http\Request $request) {
+Route::get('images', function (Illuminate\Http\Request $request) {
     $src = $request->get('src');
     $quantity = $request->get('quantity');
     $width = $request->get('w');
     $height = $request->get('h');
 
-    if (!Storage::fileExists($src)) return 'File Not Found';
+    if (! Storage::fileExists($src)) {
+        return 'File Not Found';
+    }
 
-    $cacheImage = Image::cache(function (ImageCache $img) use ($src, $quantity, $width, $height) {
-
+    $cacheImage = Image::cache(function (ImageCache $img) use ($src, $width, $height) {
         $img = $img->make(Storage::path($src));
-        if ($width || $height){
-            $img->resize($width, $height, fn($constraint) => $constraint->aspectRatio());
+        if ($width || $height) {
+            $img->resize($width, $height, fn ($constraint) => $constraint->aspectRatio());
         }
+
         return $img;
     });
 
-
     return Image::make($cacheImage)->response('jpg', $quantity);
-
 })->name('cache-image');
 
 Route::get('locale/{locale}', function ($locale) {
