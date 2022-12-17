@@ -1,7 +1,7 @@
-<div class="service-area inner-padding2">
+<div class="service-area inner-padding2 reveal">
     <div class="container">
         <div class="row">
-            <div class="col-12 foo">
+            <div class="col-12 reveal">
                 <div class="section-title-area">
                     <h2 class="section-title">@lang('main.section.welcome.title')</h2>
                 </div>
@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             @foreach($services as $service)
-                <div class="col-md-6 col-lg-4 service-padding">
+                <div class="col-md-6 col-lg-4 service-padding reveal">
                     <div class="service-item">
                         <img data-src="{{$service['image']}}" alt="{{$service['title']}}" class="lazy">
                         <div class="caption">

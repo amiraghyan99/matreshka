@@ -20,6 +20,7 @@
     0 0 2.8rem var(--neon-custom-color),
     inset 0 0 1.3rem var(--neon-custom-color);
 }
+
 .menu {
     transition: 0.5s linear;
     background-color: black;

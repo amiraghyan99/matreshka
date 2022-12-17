@@ -28,16 +28,16 @@ $(function () {
         closeMenu();
     });
 
-    $('.service-item').hover(
-        function () {
-            var svg = $(this).find(".my-svg")[0]
-
-            new Vivus(svg, {duration: 200}, function (e) {
-                console.log(e)
-            });
-        },
-        function () {
-
-
-        })
+    // $('.service-item').hover(
+    //     function () {
+    //         var svg = $(this).find(".my-svg")[0]
+    //
+    //         new Vivus(svg, {duration: 200}, function (e) {
+    //             console.log(e)
+    //         });
+    //     },
+    //     function () {
+    //
+    //
+    //     })
 })

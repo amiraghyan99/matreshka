@@ -1,10 +1,10 @@
 @if($galleries)
-    <div class="gallery-area inner-padding" id="gallery">
+    <div class="gallery-area inner-padding reveal" id="gallery">
         <div class="container">
             <div class="row">
-                <div class="col-12 foo">
+                <div class="col-12 reveal">
                     <div class="section-title-area">
-                        <h2 class="section-title">@lang('main.section.gallery')</h2>
+                        <h2 class="section-title ">@lang('main.section.gallery')</h2>
                     </div>
                 </div>
             </div>

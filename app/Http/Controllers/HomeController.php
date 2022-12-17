@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Dymantic\InstagramFeed\Profile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
@@ -104,15 +103,14 @@ class HomeController extends Controller
 
         $galleries = $this->getImages('images/original');
 
-//        $videos = getFiles('videos/mov');
-        $videos = [];
+        $videos = $this->getVideos('videos/mov');
 
         $data = compact('socials', 'navigations', 'intros', 'services', 'galleries', 'videos');
 
         return view('index', $data);
     }
 
-    public function getImageUrl(string $src, int $quantity = 90, int $width = null, int $height = null): string
+    private function getImageUrl(string $src, int $quantity = 90, int $width = null, int $height = null): string
     {
         return route('cache-image', [
             'src' => $src,
@@ -122,13 +120,20 @@ class HomeController extends Controller
         ]);
     }
 
-    public function getImages($directory): array
+    private function getImages(string $directory): array
     {
-        $path = Storage::files($directory);
+        $paths = Storage::files($directory);
 
-        return array_map(fn ($item) => [
+        return array_map(fn($item) => [
             'min' => $this->getImageUrl($item, 100, 500),
             'max' => $this->getImageUrl($item, 100),
-        ], $path);
+        ], $paths);
+    }
+
+    private function getVideos(string $directory): array
+    {
+        $paths = Storage::files($directory);
+
+        return array_map(fn($item) => Storage::url($item), $paths);
     }
 }
