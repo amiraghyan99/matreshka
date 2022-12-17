@@ -215,13 +215,18 @@
 }
 
 .mobile-social-links > ul > li {
+    display: flex;
     animation: wiggle 3s linear;
     border: 0.2rem solid white;
     border-radius: 50%;
+    align-items: center;
+    width: 54px;
+    height: 54px;
     padding: 10px;
 }
 
 .mobile-social-links > ul > li > a {
     font-size: 1.5em;
     color: var(--neon-text-color);
+    margin: auto;
 }
