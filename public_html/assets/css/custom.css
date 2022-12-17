@@ -11,7 +11,8 @@
 
 :root {
     font-size: 10px;
-    --neon-text-color: #f043f0;
+    --neon-text-color: #ED1D26;
+    --neon-custom-color: #bc13fe;
     --neon-border-color: #08f
 }
 
@@ -24,7 +25,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: 7px
+    width: 7px;
 }
 
 ::-webkit-scrollbar-thumb {

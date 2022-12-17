@@ -1,6 +1,6 @@
 
 <footer>
-    <div class="footer-area foo" data-sr='bottom'>
+    <div class="footer-area reveal" data-sr='bottom'>
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-6">

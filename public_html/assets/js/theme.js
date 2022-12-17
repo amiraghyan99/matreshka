@@ -214,4 +214,11 @@ window.addEventListener('load', function (){
             }
         });
     });
+
+    //scrollReveal js Init
+    window.sr = ScrollReveal({duration: 800});
+    sr.reveal('.reveal');
+    sr.reveal('.foo');
+    sr.reveal('.bar');
+
 }(jQuery));

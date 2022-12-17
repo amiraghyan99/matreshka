@@ -41,7 +41,6 @@
                         <img src="{{asset('assets/img/logos/logo-night-club.webp')}}"
                              alt="responsive img"
                              class="logo-image"
-                             loading="lazy"
                         >
                     </a>
                 </div>
@@ -57,19 +56,38 @@
                     </nav>
                 </div>
             </div>
-            <div class="mobile-menu-area">
-                <div class="mobile-menu">
-                    <nav id="mobile-menu-active">
-                        <ul class="menu-overflow">
-                            @foreach($navigations as $navigation)
-                                <li>
-                                    <a href="{{$navigation['href']}}">{{$navigation['text']}}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </nav>
+            {{--            <div class="mobile-menu-area">--}}
+            {{--                <div class="mobile-menu">--}}
+            {{--                    <nav id="mobile-menu-active">--}}
+            {{--                        <ul class="menu-overflow">--}}
+            {{--                            @foreach($navigations as $navigation)--}}
+            {{--                                <li>--}}
+            {{--                                    <a href="{{$navigation['href']}}">{{$navigation['text']}}</a>--}}
+            {{--                                </li>--}}
+            {{--                            @endforeach--}}
+            {{--                        </ul>--}}
+            {{--                    </nav>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
+
+            <div class="mobile-menu">
+                <div class="menu js-menu neonMenu">
+                    <span class="menu__line neonLine"></span>
+                    <span class="menu__line neonLine"></span>
+                    <span class="menu__line neonLine"></span>
                 </div>
+                <nav class="nav js-nav">
+                    <ul class="nav__list js-nav__list">
+                        @foreach($navigations as $navigation)
+                            <li class="nav__item">
+                                <a href="{{$navigation['href']}}">{{$navigation['text']}}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </nav>
             </div>
+
+
         </div>
     </nav>
 </header>

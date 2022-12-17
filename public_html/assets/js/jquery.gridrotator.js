@@ -126,7 +126,7 @@
 		// random || [some number]
 		// note: for performance issues, the number "can't" be > options.maxStep
 		step : 'random',
-		// change it as you wish..
+		// change it as you wish
 		maxStep : 3,
 		// prevent user to click the items
 		preventClick : true,

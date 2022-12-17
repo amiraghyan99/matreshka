@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+
+.mobile-menu {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.neonMenu {
+    border: 0.2rem solid #fff;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem var(--neon-custom-color),
+    0 0 0.8rem var(--neon-custom-color),
+    0 0 2.8rem var(--neon-custom-color),
+    inset 0 0 1.3rem var(--neon-custom-color);
+}
+
+
+.menu, .nav {
+    display: block;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.nav {
+    z-index: 10;
+    transition-duration: 0.4s;
+}
+
+.menu__line {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 4px;
+    background-color: var(--neon-text-color);
+    border-radius: 13px;
+    transition-duration: 0.4s;
+}
+
+.menu__line:nth-child(1) {
+    top: 14px;
+}
+
+.menu__line:nth-child(2) {
+    top: 23px;
+}
+
+.menu__line:nth-child(3) {
+    bottom: 14px;
+}
+
+.menu.active {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.menu.active .menu__line:nth-child(1) {
+    transform: translate(-12px, 9px) rotate(-45deg);
+}
+
+.menu.active .menu__line:nth-child(2) {
+    transition-duration: 0s;
+    opacity: 0;
+    display: none;
+}
+
+.menu.active .menu__line:nth-child(3) {
+    transform: translate(-12px, -9px) rotate(45deg);
+}
+
+
+.nav.open {
+    background-color: rgba(0, 0, 0, .9);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__list {
+    display: none;
+}
+
+.nav__list.show {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__item {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 100%;
+    opacity: 0;
+    animation-name: menuAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.nav__item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.nav__item:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.nav__item:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.nav__item:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.nav__item:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+.nav__link {
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: #fff;
+}
+
+@keyframes menuAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    100% {
+        opacity: 1;
+    }
+}

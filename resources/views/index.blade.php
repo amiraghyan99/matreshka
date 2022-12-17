@@ -33,11 +33,12 @@
     <!-- Meanmenu CSS -->
     <link rel="stylesheet" href="assets/css/meanmenu.css">
     <!-- Theme CSS-->
-    <link rel="stylesheet" href="assets/css/default.css">
-    <link rel="stylesheet" href="assets/css/typography.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/default.min.css">
+    <link rel="stylesheet" href="assets/css/typography.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+    <link rel="stylesheet" href="assets/css/custom.min.css">
+    <link rel="stylesheet" href="assets/css/custom-menu.min.css">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="assets/img/logos/light-logo.png">
 </head>
@@ -92,6 +93,7 @@
 <script src="{{asset('/assets/js/modernizr-3.11.2.min.js')}}"></script>
 {{--<script src="{{asset('/assets/js/jquery.gridrotator.js')}}"></script>--}}
 <script src="{{asset('/assets/js/theme.js')}}"></script>
+
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.plugins.min.js"></script>
