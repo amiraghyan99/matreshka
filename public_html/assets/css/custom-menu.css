@@ -20,6 +20,10 @@
     0 0 2.8rem var(--neon-custom-color),
     inset 0 0 1.3rem var(--neon-custom-color);
 }
+.menu {
+    transition: 0.5s linear;
+    background-color: black;
+}
 
 .menu, .nav {
     display: block;
@@ -72,7 +76,7 @@
 }
 
 .menu.active .menu__line:nth-child(2) {
-    transition-duration: 0s;
+    transition-duration: .1s;
     opacity: 0;
 }
 

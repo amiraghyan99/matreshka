@@ -25,7 +25,19 @@ $(function () {
     });
 
     $('.nav').on('click', () => {
-        console.log(1123);
         closeMenu();
     });
+
+    $('.service-item').hover(
+        function () {
+            var svg = $(this).find(".my-svg")[0]
+
+            new Vivus(svg, {duration: 200}, function (e) {
+                console.log(e)
+            });
+        },
+        function () {
+
+
+        })
 })

@@ -9,20 +9,20 @@
         </div>
         <div class="row">
             @foreach($services as $service)
-            <div class="col-md-6 col-lg-4 service-padding">
-                <div class="service-item">
-                    <img data-src="{{$service['image']}}" alt="{{$service['title']}}" class="lazy">
-                    <div class="caption">
-                        <div class="caption-inner">
-                            <div class="caption-content">
-                                <x-dynamic-component :component="$svgIcon($service['id'])" class="mt-4" />
-                                <h3 class="service-title">{{$service['title']}}</h3>
-                                <p>{{$service['desc']}}</p>
+                <div class="col-md-6 col-lg-4 service-padding">
+                    <div class="service-item">
+                        <img data-src="{{$service['image']}}" alt="{{$service['title']}}" class="lazy">
+                        <div class="caption">
+                            <div class="caption-inner">
+                                <div class="caption-content">
+                                    <x-dynamic-component :component="$svgIcon($service['id'])" class="svg-animation"/>
+                                    <h3 class="service-title">{{$service['title']}}</h3>
+                                    <p>{{$service['desc']}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>
