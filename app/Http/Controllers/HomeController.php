@@ -103,7 +103,7 @@ class HomeController extends Controller
 
         $galleries = $this->getImages('images/original');
 
-        $videos = $this->getVideos('videos/mov');
+        $videos = $this->getVideos('videos/mp4');
 
         $data = compact('socials', 'navigations', 'intros', 'services', 'galleries', 'videos');
 
