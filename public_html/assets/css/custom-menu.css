@@ -5,7 +5,7 @@
     display: none;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
     .mobile-menu {
         display: block;
     }
@@ -21,11 +21,10 @@
     inset 0 0 1.3rem var(--neon-custom-color);
 }
 
-
 .menu, .nav {
     display: block;
     position: fixed;
-    bottom: 16px;
+    bottom: 20px;
     right: 16px;
     width: 54px;
     height: 54px;
@@ -64,7 +63,8 @@
 }
 
 .menu.active {
-    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    border-color: transparent;
 }
 
 .menu.active .menu__line:nth-child(1) {
@@ -74,7 +74,6 @@
 .menu.active .menu__line:nth-child(2) {
     transition-duration: 0s;
     opacity: 0;
-    display: none;
 }
 
 .menu.active .menu__line:nth-child(3) {
@@ -140,8 +139,13 @@
     margin-bottom: 32px;
 }
 
+.nav > .social-link {
+    position: absolute;
+    top: 0;
+}
+
 .nav__link {
-    font-size: 24px;
+    font-size: 30px;
     letter-spacing: 0.1em;
     text-decoration: none;
     color: #fff;
@@ -155,4 +159,64 @@
     100% {
         opacity: 1;
     }
+}
+
+@keyframes wiggle {
+    0%, 7% {
+        transform: rotateZ(0);
+    }
+    15% {
+        transform: rotateZ(-15deg);
+    }
+    20% {
+        transform: rotateZ(10deg);
+    }
+    25% {
+        transform: rotateZ(-10deg);
+    }
+    30% {
+        transform: rotateZ(6deg);
+    }
+    35% {
+        transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+        transform: rotateZ(0);
+    }
+}
+
+.mobile-social-links {
+    display: block;
+    position: fixed;
+    bottom: 15%;
+    right: 5%;
+    z-index: 20;
+    width: 54px;
+    height: auto;
+
+    animation-name: menuAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.mobile-social-links > ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-social-links > ul > li {
+    animation: wiggle 3s linear;
+    border: 0.2rem solid white;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.mobile-social-links > ul > li > a {
+    font-size: 1.5em;
+    color: var(--neon-text-color);
 }

@@ -51,11 +51,11 @@
         </div>
     </div>
 </div>
-<x-header :$socials :$navigations />
-<x-intro :$intros />
-<x-service-area :$services />
-<x-gallery :$galleries />
-<x-videos :$videos />
+<x-header :$socials :$navigations/>
+<x-intro :$intros/>
+<x-service-area :$services/>
+<x-gallery :$galleries/>
+<x-videos :$videos/>
 {{--<x-instagram-area :$videos />--}}
 <div class="map-area inner-padding3">
     <div class="container-fluid">
@@ -71,7 +71,7 @@
     </div>
 </div>
 
-<x-footer :$socials />
+<x-footer :$socials/>
 
 
 <!-- Scripts -->
@@ -96,7 +96,8 @@
 
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.plugins.min.js"></script>
+<script type="text/javascript"
+        src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.plugins.min.js"></script>
 <script src="https://kit.fontawesome.com/57e89dc5d7.js" crossorigin="anonymous"></script>
 <script src="{{asset('/assets/js/custom.js')}}"></script>
 

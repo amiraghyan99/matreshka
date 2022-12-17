@@ -99,9 +99,11 @@
     transition: all .6s ease-in-out
 }
 
-.online {
+.gionline {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: space-between;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -ms-transition: all .5s ease-in-out;

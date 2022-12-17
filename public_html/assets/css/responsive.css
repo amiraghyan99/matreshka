@@ -278,6 +278,10 @@
         display: none
     }
 
+    .logo {
+        margin: 0 auto;
+    }
+
     .logo-menu-wrap, .mobile-menu-area {
         display: block;
         width: 100%
@@ -937,7 +941,7 @@
     .online {
         text-align: center
     }
-    
+
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {

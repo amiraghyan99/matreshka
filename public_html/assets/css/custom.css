@@ -58,6 +58,11 @@ html {
     color: #fff;
     text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px var(--neon-text-color), 0 0 82px var(--neon-text-color), 0 0 92px var(--neon-text-color)
 }
+.neonHeroText {
+    color: #fff;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+    0 0 42px var(--neon-custom-color), 0 0 82px var(--neon-custom-color), 0 0 92px var(--neon-custom-color)
+}
 
 .hero-caption-title {
     font-style: italic !important;

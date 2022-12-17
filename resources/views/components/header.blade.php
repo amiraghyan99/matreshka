@@ -5,7 +5,7 @@
         <div class="header-top">
             <div class="container">
                 <div class="row">
-                    <div class="d-none d-md-block col-lg-8 col-md-6">
+                    <div class="d-none d-lg-block col-12">
                         <ul class="online">
                             <li>
                                 <a href="{{'tel:' . str_replace(' ', '', __('main.phone.number'))}}">@lang('main.phone.title')
@@ -16,7 +16,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-12 col-lg-4 col-md-6">
+                    <div class="col-12">
                         <ul class="social-link">
                             @foreach($socials as $social)
                                 <li>
@@ -37,9 +37,9 @@
         <div class="container">
             <div class="logo-menu-wrap">
                 <div class="logo">
-                    <a href="{{route('home', app()->currentLocale())}}">
+                    <a href="#">
                         <img src="{{asset('assets/img/logos/logo-night-club.webp')}}"
-                             alt="responsive img"
+                             alt="Matreshka Show Club"
                              class="logo-image"
                         >
                     </a>
@@ -83,7 +83,22 @@
                                 <a href="{{$navigation['href']}}">{{$navigation['text']}}</a>
                             </li>
                         @endforeach
+
                     </ul>
+                    <div class="nav__list js-nav_social">
+                        <ul>
+                            @foreach($socials as $social)
+                                <li>
+                                    <a href="{{$social['href']}}"
+                                       target="{{$social['target']}}">
+                                        <i class="{{$social['iconClass']}}"></i>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+
+                    </div>
+
                 </nav>
             </div>
 
