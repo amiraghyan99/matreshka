@@ -110,6 +110,19 @@ class HomeController extends Controller
         return view('index', $data);
     }
 
+    private function getImages(string $directory, ?int $count = null): array
+    {
+        $paths = Storage::files($directory);
+
+        return $this->getFirstItems(
+            array_map(fn($item) => [
+                'min' => $this->getImageUrl($item, 100, 500),
+                'max' => $this->getImageUrl($item, 100),
+            ], $paths),
+            $count
+        );
+    }
+
     private function getImageUrl(string $src, int $quantity = 90, int $width = null, int $height = null): string
     {
         return route('cache-image', [
@@ -120,20 +133,16 @@ class HomeController extends Controller
         ]);
     }
 
-    private function getImages(string $directory): array
-    {
-        $paths = Storage::files($directory);
-
-        return array_map(fn($item) => [
-            'min' => $this->getImageUrl($item, 100, 500),
-            'max' => $this->getImageUrl($item, 100),
-        ], $paths);
-    }
 
     private function getVideos(string $directory): array
     {
         $paths = Storage::files($directory);
 
         return array_map(fn($item) => Storage::url($item), $paths);
+    }
+
+    private function getFirstItems(array $array, ?int $count = null): array
+    {
+        return array_slice($array, 0, $count);
     }
 }

@@ -81,7 +81,7 @@ $(window).on('load', function () {
 
 });
 
-window.addEventListener('load', function () {
+$(document).ready(function () {
     $('.preloader-wrap').fadeOut('slow', function () {
         $(this).remove();
     });
@@ -217,6 +217,6 @@ window.addEventListener('load', function () {
 
     //scrollReveal js Init
     let reveal = ScrollReveal({duration: 800});
-    reveal.reveal('.reveal');
+    reveal.reveal('.reveal', { mobile: false });
 
 }(jQuery));
