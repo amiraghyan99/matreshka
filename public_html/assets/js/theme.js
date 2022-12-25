@@ -78,16 +78,15 @@ hero_slider_carousel();
 $(window).on('load', function () {
     // Preloader
 
+    $('.gallery-masonry').masonry({
+        itemSelector: '.gallery-item'
+    });
 
 });
 
 $(document).ready(function () {
     $('.preloader-wrap').fadeOut('slow', function () {
         $(this).remove();
-    });
-
-    $('.gallery-masonry').masonry({
-        itemSelector: '.gallery-item'
     });
 
     $('img.lazy').Lazy();

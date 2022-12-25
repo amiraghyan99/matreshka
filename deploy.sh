@@ -14,7 +14,6 @@ fi
 
 echo $commit
 
-
 git commit -m "$commit"
 
 git push origin main
