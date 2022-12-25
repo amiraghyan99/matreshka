@@ -56,19 +56,6 @@
                     </nav>
                 </div>
             </div>
-            {{--            <div class="mobile-menu-area">--}}
-            {{--                <div class="mobile-menu">--}}
-            {{--                    <nav id="mobile-menu-active">--}}
-            {{--                        <ul class="menu-overflow">--}}
-            {{--                            @foreach($navigations as $navigation)--}}
-            {{--                                <li>--}}
-            {{--                                    <a href="{{$navigation['href']}}">{{$navigation['text']}}</a>--}}
-            {{--                                </li>--}}
-            {{--                            @endforeach--}}
-            {{--                        </ul>--}}
-            {{--                    </nav>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
 
             <div class="mobile-menu">
                 <div class="menu js-menu neonMenu">
