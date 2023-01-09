@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Intervention\Image\ImageCache;
@@ -17,9 +18,7 @@ Route::get('images', function (Illuminate\Http\Request $request) {
     $width = $request->get('w');
     $height = $request->get('h');
 
-    if (! Storage::fileExists($src)) {
-        return 'File Not Found';
-    }
+    throw_if(! Storage::fileExists($src), 'File Not Found');
 
     $cacheImage = Image::cache(function (ImageCache $img) use ($src, $width, $height) {
         $img = $img->make(Storage::path($src));
@@ -31,7 +30,7 @@ Route::get('images', function (Illuminate\Http\Request $request) {
     });
 
     return Image::make($cacheImage)->response('jpg', $quantity);
-})->name('cache-image');
+})->name('image-service');
 
 Route::get('locale/{locale}', function ($locale) {
     $availableLanguages = config('app.available_locales');

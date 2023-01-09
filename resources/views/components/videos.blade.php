@@ -22,13 +22,11 @@
 
             </div>
             <a class="carousel-control-prev" href="#carouselVideo" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+                <span class="carousel-control-prev-icon sr-only" aria-hidden="true"></span>
             </a>
 
             <a class="carousel-control-next" href="#carouselVideo" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+                <span class="carousel-control-next-icon sr-only" aria-hidden="true"></span>
             </a>
         </div>
     </div>

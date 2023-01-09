@@ -15,13 +15,15 @@
                     <div class="gallery-masonry gallery">
                         @foreach($galleries as $gallery)
                             <div class="gallery-item">
-                                <img src="{{ $gallery['min'] }}" alt="Gallery">
+                                {{$gallery}}
                                 <div class="caption">
                                     <div class="caption-inner">
                                         <div class="caption-content">
                                             <ul>
-                                                <li><a href="{{ $gallery['max'] }}"><i
-                                                                class="fa-solid fa-magnifying-glass"></i></a>
+                                                <li>
+                                                    <a href="{{ $gallery->getUrl() }}">
+                                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </div>

@@ -1,26 +1,19 @@
 <script setup>
-import {Head, Link, useForm} from "@inertiajs/inertia-vue3"
-import {
-  mdiAccountKey,
-  mdiPlus,
-  mdiSquareEditOutline,
-  mdiTrashCan,
-  mdiAlertBoxOutline,
-} from "@mdi/js"
+import {Head, useForm} from "@inertiajs/inertia-vue3"
+import {mdiAccountKey, mdiAlertBoxOutline, mdiPlus,} from "@mdi/js"
 import LayoutAuthenticated from "@/Layouts/LayoutAuthenticated.vue"
 import SectionMain from "@/Components/SectionMain.vue"
 import SectionTitleLineWithButton from "@/Components/SectionTitleLineWithButton.vue"
 import BaseButton from "@/Components/BaseButton.vue"
 import CardBox from "@/Components/CardBox.vue"
-import BaseButtons from "@/Components/BaseButtons.vue"
 import NotificationBar from "@/Components/NotificationBar.vue"
 import Pagination from "@/Components/Admin/Pagination.vue"
 import Sort from "@/Components/Admin/Sort.vue"
 import Label from "@/Components/Label.vue";
-import {Sortable} from "sortablejs-vue3";
+import Draggable from "vuedraggable";
 
 const props = defineProps({
- intros: {
+  intros: {
     type: Object,
     default: () => ({}),
   },
@@ -39,7 +32,8 @@ const form = useForm({
 })
 
 const formDelete = useForm({})
-function showLog(event){
+
+function showLog(event) {
   console.log(event)
 }
 
@@ -124,91 +118,21 @@ function destroy(id) {
           </tr>
           </thead>
 
-          <Sortable
+          <Draggable
               :list="intros.data"
               item-key="id"
-              itemid=""
               tag="tbody"
               @change="showLog"
           >
-            <template #item="{element, index, key}">
-              <tr class="draggable" :key="key">
-                <td data-label="Id">
-                  <Link
-                      :href="route('intro.show', key)"
-                      class="
-                    no-underline
-                    hover:underline
-                    text-cyan-600
-                    dark:text-cyan-400
-                  "
-                  >
-                    {{key }}
-                  </Link>
-                </td>
-                <td data-label="Image">
-                  <img
-                      v-if="element.url"
-                      :src="element.url" :alt="element.title.en"
-                      class="w-48"
-                  />
-                  <Label v-else value="No Image"/>
-                </td>
-                <td data-label="Title">
-                  <Link
-                      :href="route('intro.show',key)"
-                      class="
-                    no-underline
-                    hover:underline
-                    text-cyan-600
-                    dark:text-cyan-400
-                  "
-                  >
-                    EN: {{element.title.en }}
-                    <hr>
-                    RU: {{element.title.ru }}
-                  </Link>
-                </td>
-                <td data-label="Description">
-                  <Link
-                      :href="route('intro.show',key)"
-                      class="
-                    no-underline
-                    hover:underline
-                    text-cyan-600
-                    dark:text-cyan-400
-                  "
-                  >
-                    EN: {{element.description.en }}
-                    <hr>
-                    RU: {{element.description.ru }}
-                  </Link>
-                </td>
-                <td
-                    v-if="can.edit || can.delete"
-                    class="before:hidden lg:w-1 whitespace-nowrap"
-                >
-                  <BaseButtons type="justify-start lg:justify-end" no-wrap>
-                    <BaseButton
-                        v-if="can.edit"
-                        :route-name="route('intro.edit',key)"
-                        color="info"
-                        :icon="mdiSquareEditOutline"
-                        small
-                    />
-                    <BaseButton
-                        v-if="can.delete"
-                        color="danger"
-                        :icon="mdiTrashCan"
-                        small
-                        @click="destroy(key)"
-                    />
-                  </BaseButtons>
-                </td>
-              </tr>
-
+            <template #item="{element, index, item}">
+              <div>
+                <pre>
+                  IDX : {{ index }}
+                  KEY: {{ item }}
+                </pre>
+              </div>
             </template>
-          </Sortable>
+          </Draggable>
         </table>
         <div class="py-4">
           <Pagination :data="intros"/>

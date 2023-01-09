@@ -56,6 +56,7 @@ class HandleInertiaRequests extends Middleware
                 'role' => $request->user()?->can('role list'),
                 'user' => $request->user()?->can('user list'),
                 'intro' => $request->user()?->can('intro list'),
+                'gallery' => $request->user()?->can('gallery list'),
             ],
         ]);
     }

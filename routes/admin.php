@@ -1,11 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\IntroController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DashboardController;
-use App\Models\Intro;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -20,6 +20,9 @@ Route::post('edit-account-info', [UserController::class, 'accountInfoStore'])->n
 Route::post('change-password', [UserController::class, 'changePasswordStore'])->name('admin.account.password.store');
 
 Route::resource('intro', IntroController::class);
+
+Route::resource('gallery', GalleryController::class);
+Route::put('gallery/{gallery}/move', [GalleryController::class, 'move'])->name('gallery.move');
 
 Route::get('/test', function () {
 //    Update

@@ -1,6 +1,6 @@
 <script setup>
-import { computed } from 'vue'
-import { mdiClose } from '@mdi/js'
+import {computed} from 'vue'
+import {mdiClose} from '@mdi/js'
 import BaseButton from '@/Components/BaseButton.vue'
 import BaseButtons from '@/Components/BaseButtons.vue'
 import CardBox from '@/Components/CardBox.vue'
@@ -49,40 +49,40 @@ const cancel = () => confirmCancel('cancel')
 
 <template>
   <OverlayLayer
-    v-show="value"
-    @overlay-click="cancel"
+      v-if="value"
+      @overlay-click="cancel"
   >
     <CardBox
-      v-show="value"
-      :title="title"
-      class="shadow-lg max-h-modal w-11/12 md:w-3/5 lg:w-2/5 xl:w-4/12 z-50"
-      :header-icon="mdiClose"
-      modal
-      @header-icon-click="cancel"
+        v-show="value"
+        :title="title"
+        class="shadow-lg max-h-modal w-11/12 md:w-3/5 lg:w-2/5 xl:w-4/12 z-50"
+        :header-icon="mdiClose"
+        modal
+        @header-icon-click="cancel"
     >
       <div class="space-y-3">
         <h1
-          v-if="largeTitle"
-          class="text-2xl"
+            v-if="largeTitle"
+            class="text-2xl"
         >
           {{ largeTitle }}
         </h1>
-        <slot />
+        <slot/>
       </div>
 
       <template #footer>
         <BaseButtons>
           <BaseButton
-            :label="buttonLabel"
-            :color="button"
-            @click="confirm"
+              :label="buttonLabel"
+              :color="button"
+              @click="confirm"
           />
           <BaseButton
-            v-if="hasCancel"
-            label="Cancel"
-            :color="button"
-            outline
-            @click="cancel"
+              v-if="hasCancel"
+              label="Cancel"
+              :color="button"
+              outline
+              @click="cancel"
           />
         </BaseButtons>
       </template>

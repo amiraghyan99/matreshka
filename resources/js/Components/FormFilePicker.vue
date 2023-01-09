@@ -48,7 +48,6 @@ watch(modelValueProp, value => {
   if (!value) {
     root.value.input.value = null
   }
-  console.log('watch')
 })
 
 const upload = event => {

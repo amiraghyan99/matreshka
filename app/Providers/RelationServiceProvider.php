@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Gallery;
 use App\Models\Intro;
 use App\Models\Permission;
 use App\Models\Role;
@@ -33,6 +34,7 @@ class RelationServiceProvider extends ServiceProvider
             'intro' => Intro::class,
             'role' => Role::class,
             'permission' => Permission::class,
+            'gallery' => Gallery::class,
         ]);
     }
 }

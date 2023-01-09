@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
@@ -103,6 +104,13 @@ class HomeController extends Controller
 
         $galleries = $this->getImages('images/original');
 
+        $galleries = [];
+        $images = Gallery::with('media')->get();
+
+        foreach ($images as $image) {
+            $galleries[] = $image?->getFirstMedia('gallery');
+        }
+
         $videos = $this->getVideos('videos/mp4');
 
         $data = compact('socials', 'navigations', 'intros', 'services', 'galleries', 'videos');
@@ -115,7 +123,7 @@ class HomeController extends Controller
         $paths = Storage::files($directory);
 
         return $this->getFirstItems(
-            array_map(fn($item) => [
+            array_map(fn ($item) => [
                 'min' => $this->getImageUrl($item, 100, 500),
                 'max' => $this->getImageUrl($item, 100),
             ], $paths),
@@ -125,7 +133,7 @@ class HomeController extends Controller
 
     private function getImageUrl(string $src, int $quantity = 90, int $width = null, int $height = null): string
     {
-        return route('cache-image', [
+        return route('image-service', [
             'src' => $src,
             'quantity' => $quantity,
             'w' => $width,
@@ -133,12 +141,11 @@ class HomeController extends Controller
         ]);
     }
 
-
     private function getVideos(string $directory): array
     {
         $paths = Storage::files($directory);
 
-        return array_map(fn($item) => Storage::url($item), $paths);
+        return array_map(fn ($item) => Storage::url($item), $paths);
     }
 
     private function getFirstItems(array $array, ?int $count = null): array
