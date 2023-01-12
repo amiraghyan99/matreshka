@@ -28,16 +28,21 @@ $(function () {
         closeMenu();
     });
 
-    // $('.service-item').hover(
-    //     function () {
-    //         var svg = $(this).find(".my-svg")[0]
-    //
-    //         new Vivus(svg, {duration: 200}, function (e) {
-    //             console.log(e)
-    //         });
-    //     },
-    //     function () {
-    //
-    //
-    //     })
+    $('#load-more-gallery').on('click', () => {
+        console.log($(this).data())
+        // loadMoreGalleries()
+    });
+
+    function loadMoreGalleries(id = "", _token) {
+        $.ajax({
+            url: "{{ route('loadmore.load_data') }}",
+            method: "POST",
+            data: {id: id, _token: _token},
+            success: function (data) {
+                $('#load_more_button').remove();
+                $('#post_data').append(data);
+            }
+        })
+    }
+
 })

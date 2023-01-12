@@ -10,7 +10,7 @@ use Tightenco\Ziggy\Ziggy;
 
 class HandleInertiaRequests extends Middleware
 {
-    const APP_ROUTES = [
+    const ADMIN_PREFIX_LIST = [
         'admin',
         'auth',
     ];
@@ -68,7 +68,7 @@ class HandleInertiaRequests extends Middleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (in_array($request->route()->getPrefix(), self::APP_ROUTES)) {
+        if (in_array($request->route()->getPrefix(), self::ADMIN_PREFIX_LIST)) {
             $this->rootView = 'app';
         }
 

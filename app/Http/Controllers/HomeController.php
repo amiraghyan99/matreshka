@@ -102,14 +102,17 @@ class HomeController extends Controller
 
         ];
 
-        $galleries = $this->getImages('images/original');
+//        $galleries = $this->getImages('images/original');
+//
+//        $galleries = [];
+//        $images = Gallery::with('media')->get();
+//
+//
+//        foreach ($images as $image) {
+//            $galleries[] = $image?->getFirstMedia('gallery');
+//        }
 
-        $galleries = [];
-        $images = Gallery::with('media')->get();
-
-        foreach ($images as $image) {
-            $galleries[] = $image?->getFirstMedia('gallery');
-        }
+        $galleries = Gallery::all();
 
         $videos = $this->getVideos('videos/mp4');
 

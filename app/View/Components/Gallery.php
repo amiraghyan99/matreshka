@@ -6,7 +6,7 @@ use Illuminate\View\Component;
 
 class Gallery extends Component
 {
-    public function __construct(public array $galleries)
+    public function __construct(public $galleries)
     {
     }
 

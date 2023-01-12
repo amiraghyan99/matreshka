@@ -11,11 +11,12 @@ import BaseButtons from '@/Components/BaseButtons.vue'
 import FormFilePicker from "@/Components/FormFilePicker.vue";
 
 const form = useForm({
-  image: null
+  images: null
 })
 
-function submit() {
-  form.post(route('gallery.store'))
+function submit(e) {
+  console.log(e)
+  // form.post(route('gallery.store'))
 }
 </script>
 
@@ -44,18 +45,25 @@ function submit() {
       >
         <FormField
             label="Image"
-            :class="{ 'text-red-400': form.errors['image'] }"
+            :class="{ 'text-red-400': form.errors['images'] }"
         >
 
           <FormFilePicker
-              v-model="form.image"
-              label="Upload Image"
+              v-model="form.images"
+              label="Drag & Drop"
+              multiple
           >
           </FormFilePicker>
 
+          <!--          <DropZone-->
+          <!--              @filesDropped="submit"-->
+          <!--          >-->
+          <!--            <div class="w-96 h-64 border border-blue-500"></div>-->
+          <!--          </DropZone>-->
+
         </FormField>
-        <div class="text-red-400 text-sm my-4" v-if="form.errors['image']">
-          {{ form.errors['image'] }}
+        <div class="text-red-400 text-sm my-4" v-if="form.errors['images']">
+          {{ form.errors['images'] }}
         </div>
 
         <template #footer>

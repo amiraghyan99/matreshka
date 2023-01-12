@@ -2,6 +2,7 @@
 import {mdiUpload} from '@mdi/js'
 import {computed, ref, watch} from 'vue'
 import BaseButton from '@/Components/BaseButton.vue'
+import DropZone from "@/Components/DropZone.vue";
 
 const props = defineProps({
   modelValue: {
@@ -20,6 +21,10 @@ const props = defineProps({
     type: String,
     default: null
   },
+  multiple: {
+    type: Boolean,
+    default: false
+  },
   color: {
     type: String,
     default: 'info'
@@ -34,34 +39,28 @@ const emit = defineEmits(['update:modelValue'])
 
 const root = ref(null)
 
-const file = ref(props.modelValue)
+const files = ref(props.modelValue)
 
 const img = ref(props.src)
 
 const modelValueProp = computed(() => props.modelValue)
 
 watch(modelValueProp, value => {
-  console.log(value)
-
-  file.value = value
+  files.value = value
 
   if (!value) {
     root.value.input.value = null
   }
 })
 
-const upload = event => {
-  const value = event.target.files || event.dataTransfer.files
+const upload = e => {
+  const value = [...e.target.files]
 
+  console.log(value)
   if (value[0]) {
-    file.value = value[0]
-
-    img.value = URL.createObjectURL(value[0])
-
-    emit('update:modelValue', file.value)
-  }
-  else {
-
+    //   img.value = URL.createObjectURL(value[0])
+    //
+    emit('update:modelValue', files.value)
   }
 
 
@@ -85,45 +84,22 @@ const upload = event => {
   //
   //   })
 }
+const dropped = event => {
+  console.log(event)
+  // upload()
+}
 
-// const uploadPercent = ref(0)
-//
-// const progressEvent = progressEvent => {
-//   uploadPercent.value = Math.round(
-//     (progressEvent.loaded * 100) / progressEvent.total
-//   )
-// }
+
+const remove = idx => files.splice(idx, 1)
+
 </script>
 
 <template>
-  <div class="flex items-stretch justify-start relative">
-    <label class="inline-flex">
-      <BaseButton
-          as="a"
-          :label="label"
-          :icon="icon"
-          :color="color"
-          :class="{ 'rounded-r-none': file }"
-      />
-      <input
-          ref="root"
-          type="file"
-          class="absolute top-0 left-0 w-full h-full opacity-0 outline-none cursor-pointer -z-1"
-          :accept="accept"
-          @input="upload"
-      >
-    </label>
-    <div v-if="file">
-      <span
-          class="inline-flex px-4 py-2 justify-center bg-gray-100 dark:bg-slate-800 border-gray-200 dark:border-slate-700 border rounded-r"
-      >
-        {{ file.name }}
-      </span>
-    </div>
-  </div>
-  <div
-      v-if="img"
-      class="flex w-1/2 mx-auto items-center mt-10 p-2 dark:bg-slate-800 border-gray-200 dark:border-slate-700 border rounded">
-    <img :src="img" class="h-48 object-cover mx-auto" alt="Intro image">
-  </div>
+  <DropZone
+      @filesDropped="dropped"
+      :multiple="multiple"
+      :accept="accept"
+      :button-color="color"
+      label="Upload Galleries"
+  />
 </template>

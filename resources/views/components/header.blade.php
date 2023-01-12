@@ -1,3 +1,5 @@
+@include('partials/language_switcher')
+
 <header class="header-area">
     <!-- Nav Section -->
     <nav class="navbar navbar-default navbar-fixed-top nav-area" id="scroll-menu">

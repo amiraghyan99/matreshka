@@ -15,13 +15,13 @@
                     <div class="gallery-masonry gallery">
                         @foreach($galleries as $gallery)
                             <div class="gallery-item">
-                                {{$gallery}}
+                                {{$gallery->getFirstMedia('gallery')}}
                                 <div class="caption">
                                     <div class="caption-inner">
                                         <div class="caption-content">
                                             <ul>
                                                 <li>
-                                                    <a href="{{ $gallery->getUrl() }}">
+                                                    <a href="{{ $gallery->getFirstMedia('gallery')->getUrl('optimized') }}">
                                                         <i class="fa-solid fa-magnifying-glass"></i>
                                                     </a>
                                                 </li>

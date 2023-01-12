@@ -38,11 +38,10 @@ class GalleryController extends Controller
         return inertia()->render('Admin/Gallery/Create');
     }
 
-    public function store(Request $request, Gallery $gallery)
+    public function store(Request $request, Gallery $gallery): RedirectResponse
     {
         $gallery->create()
             ->addMedia($request->file('image'))
-            ->withResponsiveImages()
             ->usingName(config('app.name'))
             ->toMediaCollection('gallery');
 
